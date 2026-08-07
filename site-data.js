@@ -1,7 +1,7 @@
 window.SITE_DATA = {
   profile: {
     brand: "Kurai 3D Assets",
-    subtitle: "3D Artist from Ukraine",
+    subtitle: "Game-Ready 3D Asset Creator",
     avatar: "assets/images/avatar.png",
     introHtml: "Hi! I’m Vladyslav, a 3D artist from Ukraine. I publish game-ready assets on <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> and the Unity Asset Store. Here you can quickly browse my work and find useful assets for your projects. I’ll be glad to help make your workflow a little easier, save you some time, and contribute my small part to game development.",
     contacts: [
