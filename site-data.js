@@ -14,6 +14,11 @@ window.SITE_DATA = {
         label: "@Kurai_Primo",
         href: "https://t.me/Kurai_Primo",
         icon: "telegram"
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/@Kurai_3DAssets",
+        icon: "youtube"
       }
     ]
   },
@@ -40,6 +45,7 @@ window.SITE_DATA = {
         "assets/images/retro-gadget-pack-08.png"
       ],
       description: "A small retro technology pack featuring a reel-to-reel tape recorder, two vintage personal computers, one classic television set, and a VHS video recorder. Each model includes three texture resolution options — 1K, 2K, and 4K — provided in PNG format.",
+      tags: ["Retro", "Vintage", "Electronics", "Props", "Analog"],
       keywords: [
         "retro", "vintage", "technology", "tech", "electronics", "computer",
         "personal computer", "television", "tv", "vhs", "video recorder",
@@ -49,7 +55,8 @@ window.SITE_DATA = {
       stores: {
         fab: "https://www.fab.com/listings/e56e5667-9deb-48e4-9193-c2af27e8161f",
         unity: ""
-      }
+      },
+      youtube: ""
     }
   ]
 };

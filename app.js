@@ -21,6 +21,7 @@
   const icons = {
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z"/><path d="m4.5 7.5 7.5 6 7.5-6"/></svg>',
     telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3.7 10.8c-.9.35-.86 1.62.06 1.92l4.42 1.45 1.64 5.02c.28.86 1.39 1.09 1.99.41l2.46-2.77 4.17 3.08c.72.53 1.75.12 1.91-.76L22 5.4C22.2 4.31 21.98 3.62 21 4Z"/><path d="m8.25 14.16 10.1-6.76"/></svg>',
+    youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-4.1-.53-5.6a2.7 2.7 0 0 0-1.87-1.87C17.1 4 12 4 12 4s-5.1 0-6.6.53A2.7 2.7 0 0 0 3.53 6.4C3 7.9 3 12 3 12s0 4.1.53 5.6a2.7 2.7 0 0 0 1.87 1.87C6.9 20 12 20 12 20s5.1 0 6.6-.53a2.7 2.7 0 0 0 1.87-1.87C21 16.1 21 12 21 12Z"/><path d="m10 9 5 3-5 3Z"/></svg>',
     generic: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07.07l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15"/></svg>'
   };
 
@@ -39,11 +40,12 @@
       </div>`;
   }
 
-  function storeButtons(asset) {
+  function actionButtons(asset) {
     const stores = asset.stores || {};
     const buttons = [];
     if (stores.fab) buttons.push(`<a class="store-button primary" href="${stores.fab}" target="_blank" rel="noopener noreferrer">Buy on Fab</a>`);
     if (stores.unity) buttons.push(`<a class="store-button secondary" href="${stores.unity}" target="_blank" rel="noopener noreferrer">Buy on Unity</a>`);
+    if (asset.youtube) buttons.push(`<a class="store-button youtube-button" href="${asset.youtube}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>`);
     return buttons.length ? `<div class="store-row">${buttons.join('')}</div>` : '';
   }
 
@@ -65,6 +67,7 @@
       <article class="asset-card" data-asset-id="${asset.id}">
         <div class="asset-head">
           <h2 class="asset-title">${asset.title}</h2>
+          ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}</div>` : ''}
           <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
         </div>
         <div class="asset-actions">
@@ -75,7 +78,7 @@
             <div class="asset-details-content">
               <p class="asset-description">${asset.description}</p>
               ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
-              ${storeButtons(asset)}
+              ${actionButtons(asset)}
               <div class="detail-footer"><button class="hide-button" type="button">Hide details</button></div>
             </div>
           </div>
@@ -99,6 +102,7 @@
       const setOpen = open => {
         card.classList.toggle('is-open', open);
         detailsBtn.setAttribute('aria-expanded', String(open));
+        detailsBtn.textContent = open ? 'Hide details' : 'Details';
         details.setAttribute('aria-hidden', String(!open));
         if (open) {
           requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
