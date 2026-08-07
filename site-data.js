@@ -89,6 +89,76 @@ window.SITE_DATA = {
         unity: ""
       },
       youtube: ""
+    },
+    {
+      id: "drugdealer-game",
+      title: "Drugdealer Game: 3D Complete Pack",
+      mainImage: "assets/images/drugdealer-game/cover.jpg",
+      gallery: [
+        "assets/images/webstrider-fpv/cover.jpg",
+        "assets/images/webstrider-fpv/01.jpg",
+        "assets/images/webstrider-fpv/02.jpg",
+        "assets/images/webstrider-fpv/03.jpg",
+        "assets/images/webstrider-fpv/04.jpg",
+        "assets/images/webstrider-fpv/05.jpg",
+        "assets/images/webstrider-fpv/06.jpg",
+        "assets/images/webstrider-fpv/07.jpg",
+        "assets/images/webstrider-fpv/08.jpg",
+        "assets/images/webstrider-fpv/09.jpg",
+        "assets/images/webstrider-fpv/10.jpg",
+        "assets/images/webstrider-fpv/11.jpg",
+        "assets/images/webstrider-fpv/12.jpg",
+        "assets/images/webstrider-fpv/13.jpg",
+        "assets/images/webstrider-fpv/14.jpg",
+        "assets/images/webstrider-fpv/15.jpg",
+        "assets/images/webstrider-fpv/16.jpg",
+      ],
+      description: "A large game-ready asset pack designed for crime, farming, and simulation games. It includes multiple plant types with detailed growth and wilting stages, gardening equipment, grow lights, irrigation props, drying equipment, processing machinery, and a wide range of finished product props.
+
+The pack features cannabis, coca, poppy, and mushroom assets with numerous visual variations, along with modular equipment and environment props for building complete cultivation and processing setups.
+
+	• 4 plant categories with multiple growth, flowering, harvesting and wilting stages
+	• Gardening equipment: pots, soil variations, beds, irrigation pipes and supplies
+	• Technical equipment: grow lights, dryers, presses, grinder, stove and other machinery
+	• Production props: raw, processed, dried, ground, packaged and unpackaged variations
+	• Large number of ready-made variations for quickly assembling different scenes",
+      tags: ["Crime", "Simulation", "Plants", "Growing", "Props"],
+      keywords: [
+          "drug dealer",
+  "drugdealer",
+  "crime",
+  "crime game",
+  "simulation",
+  "drug lab",
+  "illegal lab",
+  "contraband",
+  "cannabis",
+  "hemp",
+  "poppy",
+  "mushroom",
+  "plant",
+  "plants",
+  "plant growing",
+  "growth stages",
+  "farming",
+  "garden",
+  "grow lights",
+  "UV lamp",
+  "drying rack",
+  "industrial dryer",
+  "soil",
+  "pots",
+  "irrigation",
+  "props",
+  "3D assets",
+  "game assets",
+  "Unreal Engine"
+      ],
+      stores: {
+        fab: "https://www.fab.com/listings/a4d6afb6-ec22-4fab-986d-14a696a28aac",
+        unity: ""
+      },
+      youtube: ""
     }
   ]
 };
