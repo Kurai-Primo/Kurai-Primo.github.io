@@ -88,7 +88,7 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 116px 1fr;
   gap: 24px;
-  align-items: center;
+  align-items: start;
   padding: 24px;
   background: linear-gradient(135deg, rgba(255,122,10,.025), transparent 38%), rgba(9, 9, 11, .42);
   border: 1px solid rgba(255, 255, 255, .055);
