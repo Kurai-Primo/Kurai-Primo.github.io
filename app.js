@@ -79,7 +79,6 @@
               <p class="asset-description">${asset.description}</p>
               ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
               ${actionButtons(asset)}
-              <div class="detail-footer"><button class="hide-button" type="button">Hide details</button></div>
             </div>
           </div>
         </div>
@@ -96,7 +95,6 @@
     document.querySelectorAll('.asset-card').forEach(card => {
       const asset = data.assets.find(a => a.id === card.dataset.assetId);
       const detailsBtn = card.querySelector('.details-button');
-      const hideBtn = card.querySelector('.hide-button');
       const details = card.querySelector('.asset-details');
 
       const setOpen = open => {
@@ -110,7 +108,6 @@
       };
 
       detailsBtn.addEventListener('click', () => setOpen(!card.classList.contains('is-open')));
-      if (hideBtn) hideBtn.addEventListener('click', () => setOpen(false));
 
       card.querySelectorAll('.js-gallery-image').forEach(img => {
         img.addEventListener('click', () => openLightbox(asset.gallery || [asset.mainImage], Number(img.dataset.galleryIndex || 0), asset.title));

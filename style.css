@@ -13,6 +13,8 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
 html { color-scheme: dark; scroll-behavior: smooth; }
 body {
   margin: 0;
@@ -123,7 +125,7 @@ a { color: inherit; }
   justify-content: flex-end;
   padding: 14px 19px 18px;
 }
-.details-button, .hide-button, .store-button, .load-more {
+.details-button, .store-button, .load-more {
   border: 1px solid rgba(255,122,10,.75);
   border-radius: 9px;
   background: transparent;
@@ -132,8 +134,8 @@ a { color: inherit; }
   cursor: pointer;
   transition: background .15s ease, color .15s ease, border-color .15s ease;
 }
-.details-button, .hide-button { padding: 9px 18px; }
-.details-button:hover, .hide-button:hover, .load-more:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
+.details-button { padding: 9px 18px; }
+.details-button:hover, .load-more:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
 
 .asset-details {
   display: grid;
@@ -176,7 +178,6 @@ a { color: inherit; }
 .store-button.secondary:hover, .store-button.youtube-button:hover { background: rgba(255,122,10,.1); }
 .store-button.youtube-button { border-color: #4a4a50; color: #ededf0; }
 .store-button.youtube-button::before { content: "▶"; color: var(--accent); margin-right: 8px; font-size: .82em; }
-.detail-footer { display: flex; justify-content: flex-end; margin-top: 16px; }
 
 .empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
 .load-more { display: block; margin: 18px auto 0; padding: 10px 22px; }
@@ -237,7 +238,7 @@ body.lightbox-open { overflow: hidden; }
   .asset-tags { margin-bottom: 10px; gap: 5px; }
   .asset-tag { font-size: .7rem; min-height: 23px; padding: 3px 7px; }
   .asset-actions { padding: 11px 14px 14px; }
-  .details-button, .hide-button { padding: 8px 14px; font-size: .88rem; }
+  .details-button { padding: 8px 14px; font-size: .88rem; }
   .asset-details-content { padding: 0 14px 14px; }
   .asset-description { font-size: .9rem; }
   .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
