@@ -1,0 +1,21 @@
+KURAI 3D ASSETS — FIRST UPLOAD TO GITHUB
+
+1. Open your repository: Kurai-Primo/Kurai-Primo.github.io
+2. Click Add file -> Upload files.
+3. Drag ALL files and folders from this package into the upload area:
+   index.html
+   style.css
+   app.js
+   site-data.js
+   README.md
+   assets folder
+4. At the bottom, click Commit changes.
+5. Wait around 1–3 minutes.
+6. Open: https://kurai-primo.github.io
+
+IMPORTANT:
+- The Unity button is intentionally hidden because no Unity URL exists yet.
+- Fab links are already included.
+- Email and Telegram are already included.
+- Images open in a full-screen gallery with arrows, swipe on mobile, Esc, and X close button.
+- Search works by title, description, and hidden keywords.
