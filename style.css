@@ -205,7 +205,7 @@ a { color: inherit; }
 .asset-card.is-open .asset-details { grid-template-rows: 1fr; opacity: 1; }
 .asset-details-inner { overflow: hidden; }
 .asset-details-content { padding: 0 19px 19px; }
-.asset-description { margin: 0 0 16px; color: #c8c8cd; max-width: 850px; }
+.asset-description { margin: 0 0 16px; color: #c8c8cd; max-width: 850px; white-space: pre-line; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0,1fr));

@@ -110,8 +110,7 @@ window.SITE_DATA = {
         "assets/images/drugdealer-game/12.jpg",
         "assets/images/drugdealer-game/13.jpg",
         "assets/images/drugdealer-game/14.jpg",
-        "assets/images/drugdealer-game/15.jpg",
-        "assets/images/drugdealer-game/16.jpg",
+        "assets/images/drugdealer-game/15.jpg"
       ],
       description: `A large game-ready asset pack designed for crime, farming, and simulation games. It includes multiple plant types with detailed growth and wilting stages, gardening equipment, grow lights, irrigation props, drying equipment, processing machinery, and a wide range of finished product props.
 
