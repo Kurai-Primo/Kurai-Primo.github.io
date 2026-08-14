@@ -29,7 +29,7 @@
     const contacts = (data.profile.contacts || []).filter(c => c && c.href && c.label);
     profileEl.innerHTML = `
       <img class="profile-avatar" src="${data.profile.avatar}" alt="Kurai avatar">
-      <div>
+      <div class="profile-content">
         <h1 class="profile-title">${data.profile.brand}</h1>
         <div class="profile-subtitle">${data.profile.subtitle || ''}</div>
         <p class="profile-intro">${data.profile.introHtml || ''}</p>
@@ -37,7 +37,91 @@
           <a class="contact-chip" href="${c.href}" ${c.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${c.label}" title="${c.label}">
             ${icons[c.icon] || icons.generic}<span>${c.label}</span>
           </a>`).join('')}</nav>` : ''}
+      </div>
+      <div class="visit-counter" id="visit-counter" aria-label="Visitor counter">
+        <span class="visit-counter-label">VISITS</span>
+        <div class="visit-counter-digits" aria-hidden="true">
+          ${Array.from({ length: 8 }, () => '<img class="visit-counter-digit" src="assets/images/counter/0.png" alt="">').join('')}
+        </div>
+        <span class="sr-only" id="visit-counter-value" aria-live="polite">0 visits</span>
       </div>`;
+  }
+
+  const VISIT_COUNTER = {
+    apiBase: 'https://countapi.mileshilliard.com/api/v1',
+    key: 'kurai-primo-github-visits-2026-e4aeca852b54922c',
+    cookieName: 'kurai_visit_counted',
+    cookieMaxAge: 24 * 60 * 60,
+    storageKey: 'kurai_visit_counter_last'
+  };
+
+  function hasCookie(name) {
+    return document.cookie.split(';').some(part => part.trim().startsWith(`${name}=`));
+  }
+
+  function setVisitCookie() {
+    let cookie = `${VISIT_COUNTER.cookieName}=1; Max-Age=${VISIT_COUNTER.cookieMaxAge}; Path=/; SameSite=Lax`;
+    if (location.protocol === 'https:') cookie += '; Secure';
+    document.cookie = cookie;
+  }
+
+  function getCachedVisitCount() {
+    try {
+      const value = Number.parseInt(localStorage.getItem(VISIT_COUNTER.storageKey), 10);
+      return Number.isFinite(value) && value >= 0 ? value : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function cacheVisitCount(value) {
+    try {
+      localStorage.setItem(VISIT_COUNTER.storageKey, String(value));
+    } catch {
+      // The counter still works when localStorage is unavailable.
+    }
+  }
+
+  function renderVisitCount(value) {
+    const numericValue = Math.max(0, Math.floor(Number(value) || 0));
+    const displayValue = String(numericValue).padStart(8, '0').slice(-8);
+    const counterEl = document.getElementById('visit-counter');
+    const textEl = document.getElementById('visit-counter-value');
+    if (!counterEl) return;
+
+    counterEl.querySelectorAll('.visit-counter-digit').forEach((img, index) => {
+      const digit = displayValue[index];
+      const src = `assets/images/counter/${digit}.png`;
+      if (!img.src.endsWith(`/${digit}.png`)) img.src = src;
+    });
+
+    counterEl.dataset.value = String(numericValue);
+    counterEl.title = `${numericValue.toLocaleString('en-US')} visits`;
+    if (textEl) textEl.textContent = `${numericValue.toLocaleString('en-US')} visits`;
+  }
+
+  async function initVisitCounter() {
+    const cachedValue = getCachedVisitCount();
+    renderVisitCount(cachedValue ?? 0);
+
+    const alreadyCounted = hasCookie(VISIT_COUNTER.cookieName);
+    const action = alreadyCounted ? 'get' : 'hit';
+    const endpoint = `${VISIT_COUNTER.apiBase}/${action}/${encodeURIComponent(VISIT_COUNTER.key)}`;
+
+    try {
+      const response = await fetch(endpoint, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Visitor counter returned ${response.status}`);
+
+      const payload = await response.json();
+      const value = Number.parseInt(payload.value, 10);
+      if (!Number.isFinite(value) || value < 0) throw new Error('Visitor counter returned an invalid value');
+
+      renderVisitCount(value);
+      cacheVisitCount(value);
+      if (!alreadyCounted) setVisitCookie();
+    } catch (error) {
+      console.warn('Visitor counter unavailable; showing cached value.', error);
+    }
   }
 
   function actionButtons(asset) {
@@ -273,6 +357,7 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
   renderProfile();
+  initVisitCounter();
 
   const initialAssetId = assetIdFromHash();
   const initialAssetIndex = data.assets.findIndex(asset => asset.id === initialAssetId);

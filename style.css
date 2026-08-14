@@ -542,3 +542,85 @@ body.lightbox-open { overflow: hidden; }
 @media (max-width: 1240px) {
   .desktop-backdrop { display: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Tiny Nixie-style visitor counter
+   -------------------------------------------------------------------------- */
+.profile-card {
+  position: relative;
+}
+.profile-content {
+  min-width: 0;
+  padding-right: 178px;
+}
+.visit-counter {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  right: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 7px 7px;
+  background: rgba(5, 5, 6, .58);
+  border: 1px solid rgba(255, 122, 10, .18);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 7px 20px rgba(0,0,0,.12);
+  user-select: none;
+}
+.visit-counter-label {
+  color: rgba(255, 151, 69, .58);
+  font-size: .52rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .20em;
+  text-indent: .20em;
+}
+.visit-counter-digits {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.visit-counter-digit {
+  display: block;
+  width: auto;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .profile-content {
+    padding-right: 0;
+  }
+  .visit-counter {
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: 2px;
+    padding: 5px 6px 6px;
+    background: rgba(5, 5, 6, .48);
+  }
+  .visit-counter-digit {
+    height: 31px;
+  }
+  .visit-counter-label {
+    font-size: .48rem;
+  }
+}
