@@ -301,7 +301,48 @@ body.lightbox-open { overflow: hidden; }
     -webkit-backdrop-filter: blur(14px) saturate(108%);
     backdrop-filter: blur(14px) saturate(108%);
   }
-  .profile-card { grid-template-columns: 78px 1fr; gap: 14px; padding: 15px; }
+  .profile-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    grid-template-columns: 78px 1fr;
+    gap: 14px;
+    padding: 15px;
+  }
+
+  /* Mobile-only blueprint accent. Desktop styling is untouched. */
+  .profile-card::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("side-blueprint.svg");
+    background-repeat: no-repeat;
+    background-size: 390px auto;
+    background-position: right -105px top -48px;
+    opacity: .13;
+    filter: saturate(.86);
+    -webkit-mask-image: linear-gradient(105deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 50%, #000 100%);
+    mask-image: linear-gradient(105deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 50%, #000 100%);
+  }
+
+  .profile-card::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(100deg,
+      rgba(9,9,11,.08) 0%,
+      rgba(9,9,11,.18) 48%,
+      rgba(9,9,11,.38) 100%);
+  }
+
+  .profile-card > * {
+    position: relative;
+    z-index: 2;
+  }
   .profile-avatar { width: 78px; border-radius: 9px; align-self: start; margin-top: 6px; }
   .profile-title { font-size: 1.35rem; }
   .profile-subtitle { font-size: .9rem; margin-bottom: 7px; }
