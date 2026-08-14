@@ -84,6 +84,33 @@ window.SITE_DATA = {
       youtube: ""
     },
     {
+      id: "retro-tape-recorder-astryx-kp2036",
+      title: "REEL-TO-REEL TAPE RECORDER Astryx KP2036",
+      mainImage: "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
+      gallery: [
+        "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/01.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/02.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/03.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/04.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/05.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/06.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/07.png"
+      ],
+      description: "Detailed low-poly 3D model of a 1980s-style reel-to-reel tape recorder, inspired by the iconic design language of the era. Great for retro interiors, nostalgic scenes, and vintage-themed projects. Includes three texture sets — 1K, 2K, and 4K — in PNG format.",
+      tags: ["Retro", "Vintage", "Tape Recorder", "Electronics", "Props"],
+      keywords: [
+        "retro", "vintage", "tape recorder", "reel-to-reel", "tape deck", "audio",
+        "analog", "electronics", "1980s", "music equipment", "sound recorder",
+        "studio", "interior", "props", "game assets", "low poly"
+      ],
+      stores: {
+        fab: "https://www.fab.com/listings/cd27d76e-1ad5-4cae-a2f2-75f4a1ba194a",
+        unity: ""
+      },
+      youtube: ""
+    },
+    {
       id: "webstrider-fpv-quadcopter-drone",
       title: "WebStrider FPV Quadcopter Drone",
       mainImage: "assets/images/webstrider-fpv/cover.jpg",
