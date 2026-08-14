@@ -48,7 +48,7 @@ a { color: inherit; }
     linear-gradient(180deg, rgba(24, 22, 21, .78), rgba(13, 13, 15, .82)),
     rgba(14, 14, 16, .72);
   border: 1px solid rgba(255, 255, 255, .055);
-  border-radius: 0;
+  border-radius: 20px;
   box-shadow:
     0 22px 54px rgba(0, 0, 0, .28),
     0 0 0 1px rgba(255, 122, 10, .025),
@@ -297,7 +297,7 @@ body.lightbox-open { overflow: hidden; }
     width: min(100% - 12px, 620px);
     margin: 6px auto 18px;
     padding: 8px;
-    border-radius: 0;
+    border-radius: 16px;
     -webkit-backdrop-filter: blur(14px) saturate(108%);
     backdrop-filter: blur(14px) saturate(108%);
   }
@@ -401,9 +401,20 @@ body.lightbox-open { overflow: hidden; }
   mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 610px), transparent calc(50% - 500px), transparent calc(50% + 500px), #000 calc(50% + 610px), #000 100%);
 }
 
-/* Removed the warm edge glow around the content column. */
+/* Straight central backdrop behind the rounded site shell.
+   This is intentionally rectangular: the outer dark field has no rounded top corners. */
 .desktop-backdrop::after {
-  content: none;
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(1300px, calc(100% - 16px));
+  transform: translateX(-50%);
+  background: rgba(7, 7, 8, .82);
+  border-radius: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 1330px) {
