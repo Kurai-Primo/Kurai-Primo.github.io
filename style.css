@@ -164,11 +164,21 @@ a { color: inherit; }
   border-radius: 13px 13px 0 0;
 }
 .asset-tabs-gap {
+  position: relative;
   flex: 1 1 auto;
   min-width: 18px;
   align-self: stretch;
   background: transparent;
   border: 0;
+}
+.asset-tabs-gap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--asset-border);
 }
 .asset-copy-tab {
   position: relative;
@@ -189,6 +199,7 @@ a { color: inherit; }
   overflow: hidden;
   background: rgba(8, 8, 10, .50);
   border: 1px solid var(--asset-border);
+  border-top: 0;
   border-radius: 0 0 var(--radius) var(--radius);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.012);
   transition: border-color .18s ease, box-shadow .18s ease;
