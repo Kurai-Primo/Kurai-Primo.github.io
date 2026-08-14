@@ -20,8 +20,11 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(255,122,10,.040), transparent 42%),
+    linear-gradient(180deg, #080809 0%, #070708 58%, #060607 100%);
   color: var(--text);
+  overflow-x: hidden;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
@@ -40,12 +43,12 @@ body::before {
   pointer-events: none;
   background: linear-gradient(90deg,
     rgba(255,122,10,0) 0%,
-    rgba(255,122,10,.018) 5%,
-    rgba(28,22,18,.30) 10%,
-    rgba(19,17,16,.43) 16%,
-    rgba(19,17,16,.43) 84%,
-    rgba(28,22,18,.30) 90%,
-    rgba(255,122,10,.018) 95%,
+    rgba(255,122,10,.012) 5%,
+    rgba(28,22,18,.23) 10%,
+    rgba(19,17,16,.36) 16%,
+    rgba(19,17,16,.36) 84%,
+    rgba(28,22,18,.23) 90%,
+    rgba(255,122,10,.012) 95%,
     rgba(255,122,10,0) 100%
   );
 }
@@ -347,4 +350,96 @@ body.lightbox-open { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop ambient backdrop
+   Deliberately sparse vector drafting ornaments fill otherwise empty desktop
+   margins without competing with the asset cards. Hidden on compact screens.
+   -------------------------------------------------------------------------- */
+.desktop-backdrop {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.side-blueprint {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(420px, max(120px, calc((100vw - 1190px) / 2)));
+  background-image: url("side-blueprint.svg");
+  background-repeat: repeat-y;
+  background-size: 350px auto;
+  opacity: .48;
+  filter: saturate(.82);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+}
+
+.side-blueprint-left {
+  left: 0;
+  background-position: right 16px top 42px;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.side-blueprint-right {
+  right: 0;
+  transform: scaleX(-1);
+  background-position: right 16px top 185px;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* Subtle drafting grid: visible in the margins, almost disappears beneath the shell. */
+.desktop-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,122,10,.020) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,122,10,.020) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: .55;
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 610px), transparent calc(50% - 500px), transparent calc(50% + 500px), #000 calc(50% + 610px), #000 100%);
+  mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 610px), transparent calc(50% - 500px), transparent calc(50% + 500px), #000 calc(50% + 610px), #000 100%);
+}
+
+/* A very restrained warm edge around the content area on wide monitors. */
+.desktop-backdrop::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(1320px, 100%);
+  transform: translateX(-50%);
+  border-left: 1px solid rgba(255,122,10,.045);
+  border-right: 1px solid rgba(255,122,10,.045);
+  box-shadow:
+    -42px 0 90px rgba(255,122,10,.018),
+    42px 0 90px rgba(255,122,10,.018);
+}
+
+@media (max-width: 1330px) {
+  .side-blueprint { opacity: .30; background-size: 320px auto; }
+}
+
+@media (max-width: 1240px) {
+  .desktop-backdrop { display: none; }
 }
