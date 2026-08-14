@@ -59,6 +59,31 @@ window.SITE_DATA = {
       youtube: ""
     },
     {
+      id: "retro-tv-astryx-novavision",
+      title: "RETRO TV Astryx Novavision",
+      mainImage: "assets/images/retro-tv-astryx-novavision/cover.png",
+      gallery: [
+        "assets/images/retro-tv-astryx-novavision/cover.png",
+        "assets/images/retro-tv-astryx-novavision/01.png",
+        "assets/images/retro-tv-astryx-novavision/02.png",
+        "assets/images/retro-tv-astryx-novavision/03.png",
+        "assets/images/retro-tv-astryx-novavision/04.png",
+        "assets/images/retro-tv-astryx-novavision/05.png"
+      ],
+      description: "Detailed 3D model of a 1970s-style CRT television, inspired by classic designs of the era. Suitable for retro interiors, nostalgic scenes, vintage projects, and horror environments. The antenna and control knobs are separate mesh objects, making them easy to adjust, reposition, or remove when needed. Includes three texture sets — 1K, 2K, and 4K — in PNG format.",
+      tags: ["Retro", "Vintage", "Television", "Electronics", "Props"],
+      keywords: [
+        "retro", "vintage", "television", "tv", "crt", "1970s",
+        "electronics", "analog", "old television", "retro technology",
+        "horror", "interior", "props", "game assets", "antenna"
+      ],
+      stores: {
+        fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807",
+        unity: ""
+      },
+      youtube: ""
+    },
+    {
       id: "webstrider-fpv-quadcopter-drone",
       title: "WebStrider FPV Quadcopter Drone",
       mainImage: "assets/images/webstrider-fpv/cover.jpg",
