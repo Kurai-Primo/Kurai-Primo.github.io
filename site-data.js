@@ -111,6 +111,32 @@ window.SITE_DATA = {
       youtube: ""
     },
     {
+      id: "retro-pc-ibn-5100",
+      title: "Retro PC IBN 5100",
+      mainImage: "assets/images/retro-pc-ibn-5100/cover.png",
+      gallery: [
+        "assets/images/retro-pc-ibn-5100/cover.png",
+        "assets/images/retro-pc-ibn-5100/01.png",
+        "assets/images/retro-pc-ibn-5100/02.png",
+        "assets/images/retro-pc-ibn-5100/03.png",
+        "assets/images/retro-pc-ibn-5100/04.png",
+        "assets/images/retro-pc-ibn-5100/05.png",
+        "assets/images/retro-pc-ibn-5100/06.png"
+      ],
+      description: "Low-poly 3D model of a legendary 1970s retro computer. Includes three texture sets — 1K, 2K, and 4K — in PNG format. Designed for real-time rendering, games, and visualization projects, and especially at home in retro technology scenes — including a certain famous CERN hacking setup.",
+      tags: ["Retro", "Vintage", "Computer", "Electronics", "Props"],
+      keywords: [
+        "retro", "vintage", "computer", "pc", "personal computer", "1970s",
+        "electronics", "technology", "terminal", "crt", "keyboard", "data cartridge",
+        "CERN", "hacking", "retro computer", "low poly", "props", "game assets"
+      ],
+      stores: {
+        fab: "https://www.fab.com/listings/f8303559-173f-4643-89bb-65f4067339d6",
+        unity: ""
+      },
+      youtube: ""
+    },
+    {
       id: "webstrider-fpv-quadcopter-drone",
       title: "WebStrider FPV Quadcopter Drone",
       mainImage: "assets/images/webstrider-fpv/cover.jpg",
