@@ -181,17 +181,6 @@ a { color: inherit; }
   padding: 4px 7px 5px;
   border-radius: 13px 13px 0 0;
 }
-.asset-title-tab::after,
-.asset-copy-tab::before {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  width: 1px;
-  height: 1px;
-  background: var(--asset-border);
-}
-.asset-title-tab::after { right: -1px; }
-.asset-copy-tab::before { left: -1px; }
 
 .asset-card-body {
   position: relative;
