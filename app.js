@@ -64,9 +64,14 @@
       const gallery = (asset.gallery || []).filter(Boolean);
       const extraGallery = gallery.slice(1);
       return `
-      <article class="asset-card" data-asset-id="${asset.id}">
+      <article class="asset-card" id="${asset.id}" data-asset-id="${asset.id}">
         <div class="asset-head">
-          <h2 class="asset-title">${asset.title}</h2>
+          <div class="asset-title-row">
+            <h2 class="asset-title"><a class="asset-title-link" href="#${asset.id}">${asset.title}</a></h2>
+            <button class="copy-link-button" type="button" aria-label="Copy link to ${asset.title}" title="Copy link">
+              ${icons.generic}
+            </button>
+          </div>
           ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}</div>` : ''}
           <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
         </div>
@@ -91,23 +96,110 @@
     bindAssetInteractions();
   }
 
+  function setCardOpen(card, open, { scroll = true } = {}) {
+    if (!card) return;
+    const detailsBtn = card.querySelector('.details-button');
+    const details = card.querySelector('.asset-details');
+
+    card.classList.toggle('is-open', open);
+    detailsBtn.setAttribute('aria-expanded', String(open));
+    detailsBtn.textContent = open ? 'Hide details' : 'Details';
+    details.setAttribute('aria-hidden', String(!open));
+
+    if (open && scroll) {
+      requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+  }
+
+  function assetIdFromHash() {
+    if (!location.hash || location.hash.length < 2) return '';
+    try {
+      return decodeURIComponent(location.hash.slice(1));
+    } catch {
+      return location.hash.slice(1);
+    }
+  }
+
+  function assetShareUrl(assetId) {
+    const url = new URL(window.location.href);
+    url.hash = assetId;
+    return url.toString();
+  }
+
+  async function copyAssetLink(assetId, button) {
+    const url = assetShareUrl(assetId);
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = url;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+
+      history.replaceState(null, '', `#${assetId}`);
+      button.classList.add('is-copied');
+      button.title = 'Copied!';
+      button.setAttribute('aria-label', 'Link copied');
+
+      window.setTimeout(() => {
+        button.classList.remove('is-copied');
+        button.title = 'Copy link';
+        button.setAttribute('aria-label', 'Copy asset link');
+      }, 1400);
+    } catch (error) {
+      console.error('Could not copy asset link:', error);
+      window.prompt('Copy this link:', url);
+    }
+  }
+
+  function openAssetFromHash({ behavior = 'smooth' } = {}) {
+    const assetId = assetIdFromHash();
+    if (!assetId) return;
+
+    const assetIndex = data.assets.findIndex(asset => asset.id === assetId);
+    if (assetIndex < 0) return;
+
+    if (assetIndex >= visibleCount) {
+      visibleCount = assetIndex + 1;
+      renderAssets();
+    }
+
+    requestAnimationFrame(() => {
+      const card = document.getElementById(assetId);
+      if (!card) return;
+      setCardOpen(card, true, { scroll: false });
+      card.scrollIntoView({ behavior, block: 'start' });
+    });
+  }
+
   function bindAssetInteractions() {
     document.querySelectorAll('.asset-card').forEach(card => {
       const asset = data.assets.find(a => a.id === card.dataset.assetId);
       const detailsBtn = card.querySelector('.details-button');
-      const details = card.querySelector('.asset-details');
+      const copyLinkBtn = card.querySelector('.copy-link-button');
+      const titleLink = card.querySelector('.asset-title-link');
 
-      const setOpen = open => {
-        card.classList.toggle('is-open', open);
-        detailsBtn.setAttribute('aria-expanded', String(open));
-        detailsBtn.textContent = open ? 'Hide details' : 'Details';
-        details.setAttribute('aria-hidden', String(!open));
-        if (open) {
-          requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+      detailsBtn.addEventListener('click', () => {
+        const willOpen = !card.classList.contains('is-open');
+        setCardOpen(card, willOpen);
+        if (willOpen) history.replaceState(null, '', `#${asset.id}`);
+      });
+
+      copyLinkBtn.addEventListener('click', () => copyAssetLink(asset.id, copyLinkBtn));
+
+      titleLink.addEventListener('click', () => {
+        if (assetIdFromHash() === asset.id) {
+          setCardOpen(card, true);
         }
-      };
-
-      detailsBtn.addEventListener('click', () => setOpen(!card.classList.contains('is-open')));
+      });
 
       card.querySelectorAll('.js-gallery-image').forEach(img => {
         img.addEventListener('click', () => openLightbox(asset.gallery || [asset.mainImage], Number(img.dataset.galleryIndex || 0), asset.title));
@@ -149,6 +241,7 @@
   }
 
   searchEl.addEventListener('input', () => { visibleCount = data.settings.initialVisibleAssets || 5; renderAssets(); });
+  window.addEventListener('hashchange', () => openAssetFromHash({ behavior: 'smooth' }));
   loadMoreEl.addEventListener('click', () => { visibleCount += data.settings.loadMoreStep || 5; renderAssets(); });
 
   closeButton.addEventListener('click', closeLightbox);
@@ -173,5 +266,11 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
   renderProfile();
+
+  const initialAssetId = assetIdFromHash();
+  const initialAssetIndex = data.assets.findIndex(asset => asset.id === initialAssetId);
+  if (initialAssetIndex >= 0) visibleCount = Math.max(visibleCount, initialAssetIndex + 1);
+
   renderAssets();
+  if (initialAssetIndex >= 0) openAssetFromHash({ behavior: 'auto' });
 })();
