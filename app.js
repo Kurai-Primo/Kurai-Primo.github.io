@@ -130,16 +130,27 @@
   function platformButtons(asset) {
     const stores = asset.stores || {};
     const platforms = [
-      { key: 'fab', label: 'Fab / Unreal Engine', icon: icons.unreal },
-      { key: 'unity', label: 'Unity Asset Store', icon: icons.unity }
+      {
+        key: 'fab',
+        label: 'Unreal',
+        ariaLabel: 'Open on Fab / Unreal Engine',
+        icon: '<img class="platform-icon-image unreal-icon" src="assets/images/ui/unreal.png" alt="">'
+      },
+      {
+        key: 'unity',
+        label: 'Unity',
+        ariaLabel: 'Open on Unity Asset Store',
+        icon: icons.unity
+      }
     ];
 
     return `<div class="store-shortcuts" aria-label="Store links">${platforms.map(platform => {
       const href = (stores[platform.key] || '').trim();
+      const content = `${platform.icon}<span class="platform-label">${platform.label}</span>`;
       if (href) {
-        return `<a class="platform-button platform-${platform.key}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Open ${platform.label}" title="Open ${platform.label}">${platform.icon}</a>`;
+        return `<a class="platform-button platform-${platform.key}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${platform.ariaLabel}" title="${platform.ariaLabel}">${content}</a>`;
       }
-      return `<span class="platform-button platform-${platform.key} is-disabled" aria-disabled="true" title="Not available on ${platform.label} yet">${platform.icon}</span>`;
+      return `<span class="platform-button platform-${platform.key} is-disabled" aria-disabled="true" title="${platform.label} version is not available yet">${content}</span>`;
     }).join('')}</div>`;
   }
 
@@ -163,7 +174,7 @@
 
   function assetMatches(asset, query) {
     if (!query) return true;
-    const haystack = [asset.title, asset.description, ...(asset.keywords || [])].join(' ').toLowerCase();
+    const haystack = [asset.title, asset.description, ...(asset.tags || []), ...(asset.keywords || [])].join(' ').toLowerCase();
     return query.split(/\s+/).filter(Boolean).every(term => haystack.includes(term));
   }
 
@@ -190,7 +201,7 @@
         </div>
         <div class="asset-card-body">
           <div class="asset-head">
-            ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}</div>` : ''}
+            ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<button class="asset-tag" type="button" title="Search for ${tag}">${tag}</button>`).join('')}</div>` : ''}
             <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
           </div>
           <div class="asset-actions">
@@ -320,6 +331,14 @@
         if (assetIdFromHash() === asset.id) {
           setCardOpen(card, true);
         }
+      });
+
+      card.querySelectorAll('.asset-tag').forEach(tagButton => {
+        tagButton.addEventListener('click', () => {
+          searchEl.value = tagButton.textContent.trim();
+          visibleCount = data.settings.initialVisibleAssets || 5;
+          renderAssets();
+        });
       });
 
       card.querySelectorAll('.js-gallery-image').forEach(img => {

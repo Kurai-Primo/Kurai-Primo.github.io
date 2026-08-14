@@ -240,9 +240,20 @@ a { color: inherit; }
   border-radius: 999px;
   background: rgba(255,122,10,.055);
   color: #e3b17d;
+  font: inherit;
   font-size: .78rem;
   line-height: 1;
+  cursor: pointer;
+  transition: color .14s ease, border-color .14s ease, background .14s ease, transform .14s ease;
 }
+.asset-tag:hover,
+.asset-tag:focus-visible {
+  color: #fff;
+  border-color: rgba(255,122,10,.88);
+  background: rgba(255,122,10,.13);
+  outline: none;
+}
+.asset-tag:active { transform: translateY(1px); }
 .asset-main {
   display: block;
   width: 100%;
@@ -267,9 +278,11 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 43px;
+  gap: 8px;
+  min-width: 118px;
   height: 43px;
-  flex: 0 0 43px;
+  padding: 0 14px 0 12px;
+  flex: 0 0 auto;
   border: 1px solid rgba(255,122,10,.68);
   border-radius: 9px;
   background: rgba(8,8,10,.72);
@@ -278,17 +291,23 @@ a { color: inherit; }
   cursor: pointer;
   transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease, opacity .15s ease;
 }
-.platform-button svg {
+.platform-button svg,
+.platform-icon-image {
   width: 25px;
   height: 25px;
+  flex: 0 0 25px;
 }
-.platform-fab svg circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.55;
+.platform-icon-image {
+  display: block;
+  object-fit: contain;
 }
-.platform-fab svg path,
 .platform-unity svg path { fill: currentColor; }
+.platform-label {
+  font-size: .84rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
 .platform-button:hover {
   color: #fff;
   border-color: var(--accent);
@@ -301,7 +320,10 @@ a { color: inherit; }
   background: rgba(8,8,10,.42);
   opacity: .72;
   cursor: not-allowed;
+  transform: none;
 }
+.platform-button.is-disabled .platform-icon-image { opacity: .55; filter: grayscale(1) brightness(.62); }
+
 
 .details-button, .store-button, .load-more {
   border: 1px solid rgba(255,122,10,.75);
@@ -484,8 +506,9 @@ body.lightbox-open { overflow: hidden; }
   .asset-tag { font-size: .7rem; min-height: 23px; padding: 3px 7px; }
   .asset-actions { padding: 11px 14px 14px; gap: 10px; }
   .store-shortcuts { gap: 7px; }
-  .platform-button { width: 38px; height: 38px; flex-basis: 38px; border-radius: 8px; }
-  .platform-button svg { width: 22px; height: 22px; }
+  .platform-button { min-width: 105px; height: 38px; padding: 0 11px 0 10px; gap: 7px; border-radius: 8px; }
+  .platform-button svg, .platform-icon-image { width: 21px; height: 21px; flex-basis: 21px; }
+  .platform-label { font-size: .77rem; }
   .details-button { padding: 8px 14px; font-size: .88rem; }
   .asset-details-content { padding: 0 14px 14px; }
   .asset-description { font-size: .9rem; }
