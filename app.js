@@ -17,12 +17,15 @@
   let currentGallery = [];
   let currentIndex = 0;
   let touchStartX = null;
+  let toastTimer = null;
 
   const icons = {
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z"/><path d="m4.5 7.5 7.5 6 7.5-6"/></svg>',
     telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3.7 10.8c-.9.35-.86 1.62.06 1.92l4.42 1.45 1.64 5.02c.28.86 1.39 1.09 1.99.41l2.46-2.77 4.17 3.08c.72.53 1.75.12 1.91-.76L22 5.4C22.2 4.31 21.98 3.62 21 4Z"/><path d="m8.25 14.16 10.1-6.76"/></svg>',
     youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-4.1-.53-5.6a2.7 2.7 0 0 0-1.87-1.87C17.1 4 12 4 12 4s-5.1 0-6.6.53A2.7 2.7 0 0 0 3.53 6.4C3 7.9 3 12 3 12s0 4.1.53 5.6a2.7 2.7 0 0 0 1.87 1.87C6.9 20 12 20 12 20s5.1 0 6.6-.53a2.7 2.7 0 0 0 1.87-1.87C21 16.1 21 12 21 12Z"/><path d="m10 9 5 3-5 3Z"/></svg>',
-    generic: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07.07l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15"/></svg>'
+    generic: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="2.4"/><rect x="8" y="8" width="12" height="12" rx="2.4"/></svg>',
+    unreal: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><path d="M7.1 7.1v6.1c0 3 1.7 4.8 4.5 4.8 2.1 0 3.7-.9 4.9-2.6v2.1l2-1V6.3l-3.4 1.8v4.8c0 1.9-.9 3-2.5 3-1.5 0-2.3-.9-2.3-2.8V7.1H7.1Z"/></svg>',
+    unity: '<svg viewBox="0 0 448 512" aria-hidden="true"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>'
   };
 
   function renderProfile() {
@@ -124,13 +127,38 @@
     }
   }
 
-  function actionButtons(asset) {
+  function platformButtons(asset) {
     const stores = asset.stores || {};
-    const buttons = [];
-    if (stores.fab) buttons.push(`<a class="store-button primary" href="${stores.fab}" target="_blank" rel="noopener noreferrer">Buy on Fab</a>`);
-    if (stores.unity) buttons.push(`<a class="store-button secondary" href="${stores.unity}" target="_blank" rel="noopener noreferrer">Buy on Unity</a>`);
-    if (asset.youtube) buttons.push(`<a class="store-button youtube-button" href="${asset.youtube}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>`);
-    return buttons.length ? `<div class="store-row">${buttons.join('')}</div>` : '';
+    const platforms = [
+      { key: 'fab', label: 'Fab / Unreal Engine', icon: icons.unreal },
+      { key: 'unity', label: 'Unity Asset Store', icon: icons.unity }
+    ];
+
+    return `<div class="store-shortcuts" aria-label="Store links">${platforms.map(platform => {
+      const href = (stores[platform.key] || '').trim();
+      if (href) {
+        return `<a class="platform-button platform-${platform.key}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Open ${platform.label}" title="Open ${platform.label}">${platform.icon}</a>`;
+      }
+      return `<span class="platform-button platform-${platform.key} is-disabled" aria-disabled="true" title="Not available on ${platform.label} yet">${platform.icon}</span>`;
+    }).join('')}</div>`;
+  }
+
+  function extraActionButtons(asset) {
+    if (!asset.youtube) return '';
+    return `<div class="store-row"><a class="store-button youtube-button" href="${asset.youtube}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></div>`;
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('site-toast');
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.remove('is-visible');
+    void toast.offsetWidth;
+    toast.classList.add('is-visible');
+
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2200);
   }
 
   function assetMatches(asset, query) {
@@ -166,6 +194,7 @@
             <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
           </div>
           <div class="asset-actions">
+            ${platformButtons(asset)}
             <button class="details-button" type="button" aria-expanded="false">Details</button>
           </div>
           <div class="asset-details" aria-hidden="true">
@@ -173,7 +202,7 @@
               <div class="asset-details-content">
                 <p class="asset-description">${asset.description}</p>
                 ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
-                ${actionButtons(asset)}
+                ${extraActionButtons(asset)}
               </div>
             </div>
           </div>
@@ -236,6 +265,7 @@
       }
 
       history.replaceState(null, '', `#${assetId}`);
+      showToast('Link copied!');
       button.classList.add('is-copied');
       button.title = 'Copied!';
       button.setAttribute('aria-label', 'Link copied');
