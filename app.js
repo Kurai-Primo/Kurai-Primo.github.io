@@ -65,25 +65,32 @@
       const extraGallery = gallery.slice(1);
       return `
       <article class="asset-card" id="${asset.id}" data-asset-id="${asset.id}">
-        <div class="asset-head">
-          <div class="asset-title-row">
+        <div class="asset-tabs">
+          <div class="asset-title-tab">
             <h2 class="asset-title"><a class="asset-title-link" href="#${asset.id}">${asset.title}</a></h2>
+          </div>
+          <div class="asset-tabs-gap" aria-hidden="true"></div>
+          <div class="asset-copy-tab">
             <button class="copy-link-button" type="button" aria-label="Copy link to ${asset.title}" title="Copy link">
               ${icons.generic}
             </button>
           </div>
-          ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}</div>` : ''}
-          <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
         </div>
-        <div class="asset-actions">
-          <button class="details-button" type="button" aria-expanded="false">Details</button>
-        </div>
-        <div class="asset-details" aria-hidden="true">
-          <div class="asset-details-inner">
-            <div class="asset-details-content">
-              <p class="asset-description">${asset.description}</p>
-              ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
-              ${actionButtons(asset)}
+        <div class="asset-card-body">
+          <div class="asset-head">
+            ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<span class="asset-tag">${tag}</span>`).join('')}</div>` : ''}
+            <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
+          </div>
+          <div class="asset-actions">
+            <button class="details-button" type="button" aria-expanded="false">Details</button>
+          </div>
+          <div class="asset-details" aria-hidden="true">
+            <div class="asset-details-inner">
+              <div class="asset-details-content">
+                <p class="asset-description">${asset.description}</p>
+                ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
+                ${actionButtons(asset)}
+              </div>
             </div>
           </div>
         </div>
