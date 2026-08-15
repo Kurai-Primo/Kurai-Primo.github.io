@@ -20,18 +20,34 @@ body {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 50% -8%, rgba(255,122,10,.040), transparent 42%),
-    linear-gradient(180deg, #080809 0%, #070708 58%, #060607 100%);
+  background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
-/* Removed the wide ambient side aura around the central column. */
+/* Straight ambient glow behind the whole central column.
+   Unlike the old radial glow, this has no rounded/elliptical top corners. */
 body::before {
-  content: none;
+  content: "";
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(1420px, 100vw);
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(255,122,10,0) 0%,
+    rgba(255,122,10,.018) 5%,
+    rgba(28,22,18,.30) 10%,
+    rgba(19,17,16,.43) 16%,
+    rgba(19,17,16,.43) 84%,
+    rgba(28,22,18,.30) 90%,
+    rgba(255,122,10,.018) 95%,
+    rgba(255,122,10,0) 100%
+  );
 }
 button, input { font: inherit; }
 a { color: inherit; }
@@ -128,108 +144,20 @@ a { color: inherit; }
 .search-wrap input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); }
 .search-wrap input::placeholder { color: #73737a; }
 
-/* Asset cards: folder-file silhouette with title and copy tabs. */
-.asset-list { display: grid; gap: 22px; margin-top: 16px; }
+.asset-list { display: grid; gap: 16px; margin-top: 16px; }
 .asset-card {
-  --asset-border: rgba(255,122,10,.78);
-  scroll-margin-top: 24px;
-  background: transparent;
-}
-.asset-tabs {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  width: 100%;
-  min-height: 42px;
-  margin-bottom: -1px;
-}
-.asset-title-tab,
-.asset-copy-tab {
-  background: rgba(8, 8, 10, .82);
-  border: 1px solid var(--asset-border);
-  border-bottom: 0;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.018);
-}
-.asset-title-tab {
-  position: relative;
-  z-index: 2;
-  flex: 0 1 auto;
-  width: max-content;
-  max-width: calc(100% - 66px);
-  min-height: 42px;
-  display: flex;
-  align-items: center;
-  padding: 8px 18px 7px;
-  border-radius: 13px 13px 0 0;
-}
-.asset-tabs-gap {
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 18px;
-  align-self: stretch;
-  background: transparent;
-  border: 0;
-}
-.asset-tabs-gap::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: var(--asset-border);
-}
-.asset-copy-tab {
-  position: relative;
-  z-index: 2;
-  flex: 0 0 54px;
-  min-height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 7px 5px;
-  border-radius: 13px 13px 0 0;
-}
-
-.asset-card-body {
-  position: relative;
-  z-index: 1;
-  margin-top: -1px;
   overflow: hidden;
   background: rgba(8, 8, 10, .50);
-  border: 1px solid var(--asset-border);
-  border-top: 0;
-  border-radius: 0 0 var(--radius) var(--radius);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.012);
-  transition: border-color .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(255, 255, 255, .055);
+  border-radius: var(--radius);
+  transition: border-color .18s ease;
 }
-.asset-card.is-open { --asset-border: #ff7a0a; }
-.asset-card.is-open .asset-card-body {
-  box-shadow: 0 0 0 1px rgba(255,122,10,.035), inset 0 0 54px rgba(255,122,10,.012);
+.asset-card.is-open {
+  border-color: rgba(255,122,10,.50);
+  box-shadow: 0 0 0 1px rgba(255,122,10,.025), inset 0 0 54px rgba(255,122,10,.012);
 }
-.asset-head { padding: 13px 19px 0; }
-.asset-title { margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); letter-spacing: -.02em; line-height: 1.15; }
-.asset-title-link { color: inherit; text-decoration: none; white-space: nowrap; }
-.asset-title-link:hover { color: #fff; }
-.copy-link-button {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid rgba(255,255,255,.09);
-  border-radius: 8px;
-  background: rgba(8,8,10,.42);
-  color: #a7a7ae;
-  cursor: pointer;
-  transition: color .15s ease, border-color .15s ease, background .15s ease, transform .15s ease;
-}
-.copy-link-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; }
-.copy-link-button:hover { color: var(--accent); border-color: rgba(255,122,10,.52); background: rgba(255,122,10,.06); transform: translateY(-1px); }
-.copy-link-button.is-copied { color: #fff; border-color: rgba(255,122,10,.72); background: rgba(255,122,10,.12); }
+.asset-head { padding: 19px 19px 0; }
+.asset-title { margin: 0 0 9px; font-size: clamp(1.15rem, 2vw, 1.45rem); letter-spacing: -.02em; }
 .asset-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 13px; }
 .asset-tag {
   display: inline-flex;
@@ -240,20 +168,9 @@ a { color: inherit; }
   border-radius: 999px;
   background: rgba(255,122,10,.055);
   color: #e3b17d;
-  font: inherit;
   font-size: .78rem;
   line-height: 1;
-  cursor: pointer;
-  transition: color .14s ease, border-color .14s ease, background .14s ease, transform .14s ease;
 }
-.asset-tag:hover,
-.asset-tag:focus-visible {
-  color: #fff;
-  border-color: rgba(255,122,10,.88);
-  background: rgba(255,122,10,.13);
-  outline: none;
-}
-.asset-tag:active { transform: translateY(1px); }
 .asset-main {
   display: block;
   width: 100%;
@@ -264,68 +181,10 @@ a { color: inherit; }
 }
 .asset-actions {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  justify-content: flex-end;
   padding: 14px 19px 18px;
 }
-.store-shortcuts {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-.platform-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 118px;
-  height: 43px;
-  padding: 0 14px 0 12px;
-  flex: 0 0 auto;
-  border: 1px solid rgba(255,122,10,.68);
-  border-radius: 9px;
-  background: rgba(8,8,10,.72);
-  color: #f0f0f2;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease, opacity .15s ease;
-}
-.platform-button svg,
-.platform-icon-image {
-  width: 25px;
-  height: 25px;
-  flex: 0 0 25px;
-}
-.platform-icon-image {
-  display: block;
-  object-fit: contain;
-}
-.platform-unity svg path { fill: currentColor; }
-.platform-label {
-  font-size: .84rem;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-}
-.platform-button:hover {
-  color: #fff;
-  border-color: var(--accent);
-  background: rgba(255,122,10,.11);
-  transform: translateY(-1px);
-}
-.platform-button.is-disabled {
-  color: #65656b;
-  border-color: rgba(255,255,255,.11);
-  background: rgba(8,8,10,.42);
-  opacity: .72;
-  cursor: not-allowed;
-  transform: none;
-}
-.platform-button.is-disabled .platform-icon-image { opacity: .55; filter: grayscale(1) brightness(.62); }
-
-
-.details-button, .store-button {
+.details-button, .store-button, .load-more {
   border: 1px solid rgba(255,122,10,.75);
   border-radius: 9px;
   background: transparent;
@@ -335,7 +194,7 @@ a { color: inherit; }
   transition: background .15s ease, color .15s ease, border-color .15s ease;
 }
 .details-button { padding: 9px 18px; }
-.details-button:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
+.details-button:hover, .load-more:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
 
 .asset-details {
   display: grid;
@@ -380,135 +239,7 @@ a { color: inherit; }
 .store-button.youtube-button::before { content: "▶"; color: var(--accent); margin-right: 8px; font-size: .82em; }
 
 .empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
-
-/* Nixie-inspired pagination. Only the current page's cards exist in the DOM,
-   so off-page gallery images are not requested by the browser. */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 22px auto 2px;
-  min-height: 48px;
-}
-.pagination-pages {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-}
-.pagination-button {
-  position: relative;
-  isolation: isolate;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 38px;
-  height: 46px;
-  padding: 0 9px;
-  overflow: hidden;
-  border: 1px solid rgba(148, 77, 28, .62);
-  border-radius: 8px 8px 11px 11px;
-  background:
-    linear-gradient(180deg, rgba(255, 190, 128, .055), transparent 25%),
-    radial-gradient(circle at 50% 46%, rgba(255, 105, 16, .075), transparent 60%),
-    #090706;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 220, 178, .018),
-    inset 0 0 15px rgba(255, 91, 0, .035),
-    0 7px 16px rgba(0, 0, 0, .22);
-  color: rgba(255, 136, 47, .62);
-  cursor: pointer;
-  font-family: "Courier New", ui-monospace, monospace;
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: .02em;
-  transition: border-color .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease, background .15s ease;
-}
-.pagination-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 5px 4px 4px;
-  border-radius: 5px 5px 7px 7px;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(190, 115, 63, .13) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(190, 115, 63, .08) 0 1px, transparent 1px 5px);
-  opacity: .42;
-}
-.pagination-button::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 5px;
-  right: 5px;
-  top: 4px;
-  height: 31%;
-  border-radius: 5px 5px 50% 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), transparent);
-  pointer-events: none;
-}
-.pagination-button > span {
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 0 4px rgba(255, 103, 12, .22);
-}
-.pagination-button:hover:not(:disabled) {
-  color: #ff9b47;
-  border-color: rgba(255, 122, 10, .72);
-  background:
-    linear-gradient(180deg, rgba(255, 190, 128, .075), transparent 25%),
-    radial-gradient(circle at 50% 46%, rgba(255, 105, 16, .12), transparent 60%),
-    #0a0705;
-  box-shadow:
-    inset 0 0 16px rgba(255, 91, 0, .06),
-    0 0 10px rgba(255, 105, 10, .08),
-    0 7px 16px rgba(0,0,0,.24);
-  transform: translateY(-1px);
-}
-.pagination-button.is-active {
-  color: #ffad68;
-  border-color: rgba(255, 132, 25, .92);
-  background:
-    linear-gradient(180deg, rgba(255, 201, 151, .085), transparent 27%),
-    radial-gradient(circle at 50% 46%, rgba(255, 102, 8, .20), transparent 63%),
-    #0b0705;
-  box-shadow:
-    inset 0 0 17px rgba(255, 91, 0, .095),
-    0 0 7px rgba(255, 101, 9, .17),
-    0 7px 17px rgba(0,0,0,.25);
-  cursor: default;
-}
-.pagination-button.is-active > span {
-  text-shadow:
-    0 0 2px #ff7a0a,
-    0 0 6px rgba(255, 103, 11, .78),
-    0 0 13px rgba(255, 95, 0, .36);
-}
-.pagination-button:disabled {
-  color: rgba(162, 99, 54, .28);
-  border-color: rgba(105, 68, 43, .30);
-  background: rgba(8, 7, 7, .68);
-  box-shadow: inset 0 0 12px rgba(0,0,0,.22);
-  cursor: default;
-}
-.pagination-arrow {
-  min-width: 42px;
-  font-size: 1.45rem;
-}
-.pagination-ellipsis {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 21px;
-  color: rgba(255, 132, 42, .48);
-  font-family: ui-monospace, monospace;
-  font-size: 1rem;
-  letter-spacing: .08em;
-  user-select: none;
-}
-
+.load-more { display: block; margin: 18px auto 0; padding: 10px 22px; }
 .footer { margin-top: 26px; padding: 0 4px 2px; text-align: center; color: #6f6f75; font-size: .82rem; }
 
 .lightbox {
@@ -552,676 +283,72 @@ body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 760px) {
   .page-shell {
-    width: min(100% - 12px, 620px);
-    margin: 6px auto 18px;
-    padding: 8px;
+    width: min(100% - 16px, 680px);
+    margin: 8px auto 22px;
+    padding: 12px;
     border-radius: 16px;
     -webkit-backdrop-filter: blur(14px) saturate(108%);
     backdrop-filter: blur(14px) saturate(108%);
   }
+
+  /* Keep the profile/header visually close to desktop.
+     Only change the flow so the intro can continue underneath the avatar. */
   .profile-card {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    grid-template-columns: 78px 1fr;
-    gap: 14px;
+    display: flow-root;
     padding: 15px;
   }
-
-  /* Mobile-only blueprint accent. Desktop styling is untouched. */
-  .profile-card::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    pointer-events: none;
-    background-image: url("side-blueprint.svg");
-    background-repeat: no-repeat;
-    background-size: 390px auto;
-    background-position: right -105px top -48px;
-    opacity: .13;
-    filter: saturate(.86);
-    -webkit-mask-image: linear-gradient(105deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 50%, #000 100%);
-    mask-image: linear-gradient(105deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 50%, #000 100%);
+  .profile-card > div { display: contents; }
+  .profile-avatar {
+    float: left;
+    width: 78px;
+    margin: 6px 14px 6px 0;
+    border-radius: 9px;
   }
-
-  .profile-card::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(100deg,
-      rgba(9,9,11,.08) 0%,
-      rgba(9,9,11,.18) 48%,
-      rgba(9,9,11,.38) 100%);
-  }
-
-  .profile-card > * {
-    position: relative;
-    z-index: 2;
-  }
-  .profile-avatar { width: 78px; border-radius: 9px; align-self: start; margin-top: 6px; }
   .profile-title { font-size: 1.35rem; }
   .profile-subtitle { font-size: .9rem; margin-bottom: 7px; }
-  .profile-intro { grid-column: 1 / -1; font-size: .9rem; }
-  .contacts { grid-column: 1 / -1; margin-top: 0; }
-  .contact-chip { font-size: 0; width: 40px; height: 40px; padding: 0; justify-content: center; }
-  .contact-chip svg { width: 19px; height: 19px; }
-  .search-wrap { height: 46px; }
-  .asset-tabs { min-height: 38px; }
-  .asset-title-tab {
-    max-width: calc(100% - 58px);
-    min-height: 38px;
-    padding: 7px 12px 6px;
-    border-radius: 11px 11px 0 0;
-  }
-  .asset-tabs-gap { min-width: 8px; }
-  .asset-copy-tab {
-    flex-basis: 48px;
-    min-height: 38px;
-    padding: 3px 5px 4px;
-    border-radius: 11px 11px 0 0;
-  }
-  .asset-card-body { border-radius: 0 0 12px 12px; }
-  .asset-head { padding: 11px 14px 0; }
-  .asset-title { font-size: 1.05rem; line-height: 1.2; }
-  .asset-title-link { white-space: normal; }
+  .profile-intro { font-size: .9rem; }
 
-  .copy-link-button { width: 31px; height: 31px; border-radius: 7px; }
-  .copy-link-button svg { width: 17px; height: 17px; }
-  .asset-tags { margin-bottom: 10px; gap: 5px; }
-  .asset-tag { font-size: .7rem; min-height: 23px; padding: 3px 7px; }
-  .asset-actions { padding: 11px 14px 14px; gap: 10px; }
-  .store-shortcuts { gap: 7px; }
-  .platform-button { min-width: 105px; height: 38px; padding: 0 11px 0 10px; gap: 7px; border-radius: 8px; }
-  .platform-button svg, .platform-icon-image { width: 21px; height: 21px; flex-basis: 21px; }
-  .platform-label { font-size: .77rem; }
-  .details-button { padding: 8px 14px; font-size: .88rem; }
-  .asset-details-content { padding: 0 14px 14px; }
-  .asset-description { font-size: .9rem; }
-  .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
-  .store-row { display: grid; grid-template-columns: 1fr; }
-  .store-button { width: 100%; }
+  /* Wider, rectangular and evenly aligned contact/social buttons. */
+  .contacts {
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .contact-chip {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+    justify-content: center;
+    font-size: 0;
+  }
+  .contact-chip svg { width: 20px; height: 20px; }
+
+  .search-wrap { height: 48px; }
+
+  /* Asset cards stay much closer to the desktop proportions instead of
+     switching to an aggressively compact mobile presentation. */
+  .asset-list { gap: 16px; margin-top: 16px; }
+  .asset-head { padding: 18px 18px 0; }
+  .asset-title { margin-bottom: 9px; font-size: 1.15rem; }
+  .asset-tags { margin-bottom: 12px; gap: 6px; }
+  .asset-tag { font-size: .76rem; min-height: 25px; padding: 3px 9px; }
+  .asset-actions { padding: 14px 18px 17px; }
+  .details-button { padding: 9px 18px; font-size: .94rem; }
+  .asset-details-content { padding: 0 18px 18px; }
+  .asset-description { font-size: .95rem; }
+
+  /* Still mobile-friendly, but less cramped than the previous layout. */
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .store-row { display: flex; flex-wrap: wrap; }
+  .store-button { flex: 1 1 170px; width: auto; }
+
   .lightbox { grid-template-columns: 36px minmax(0,1fr) 36px; padding: 12px 4px; }
   .lightbox-nav { font-size: 2.2rem; }
   .lightbox-close { right: 7px; top: 6px; }
 }
 
-.site-toast {
-  position: fixed;
-  z-index: 2200;
-  left: 50%;
-  bottom: 26px;
-  min-width: 150px;
-  max-width: min(360px, calc(100% - 32px));
-  padding: 10px 16px;
-  border: 1px solid rgba(255,122,10,.72);
-  border-radius: 10px;
-  background: rgba(12,12,14,.94);
-  box-shadow: 0 12px 30px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.025);
-  color: #f3f3f3;
-  font-size: .88rem;
-  font-weight: 600;
-  text-align: center;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, 12px);
-  transition: opacity .18s ease, transform .18s ease;
-}
-.site-toast.is-visible {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
-}
-
-/* --------------------------------------------------------------------------
-   Desktop ambient backdrop
-   Deliberately sparse vector drafting ornaments fill otherwise empty desktop
-   margins without competing with the asset cards. Hidden on compact screens.
-   -------------------------------------------------------------------------- */
-.desktop-backdrop {
-  position: fixed;
-  z-index: 0;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.side-blueprint {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: min(420px, max(120px, calc((100vw - 1190px) / 2)));
-  background-image: url("side-blueprint.svg");
-  background-repeat: repeat-y;
-  background-size: 350px auto;
-  opacity: .48;
-  filter: saturate(.82);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-}
-
-.side-blueprint-left {
-  left: 0;
-  background-position: right 16px top 42px;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-  mask-image:
-    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-.side-blueprint-right {
-  right: 0;
-  transform: scaleX(-1);
-  background-position: right 16px top 185px;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-  mask-image:
-    linear-gradient(to right, transparent 0, #000 18%, #000 78%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 6%, #000 88%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-/* Subtle drafting grid: visible in the margins, almost disappears beneath the shell. */
-.desktop-backdrop::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,122,10,.020) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,122,10,.020) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: .55;
-  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 610px), transparent calc(50% - 500px), transparent calc(50% + 500px), #000 calc(50% + 610px), #000 100%);
-  mask-image: linear-gradient(90deg, #000 0, #000 calc(50% - 610px), transparent calc(50% - 500px), transparent calc(50% + 500px), #000 calc(50% + 610px), #000 100%);
-}
-
-/* Straight central backdrop behind the rounded site shell.
-   This is intentionally rectangular: the outer dark field has no rounded top corners. */
-.desktop-backdrop::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: min(1300px, calc(100% - 16px));
-  transform: translateX(-50%);
-  background: rgba(7, 7, 8, .82);
-  border-radius: 0;
-  pointer-events: none;
-}
-
-@media (max-width: 1330px) {
-  .side-blueprint { opacity: .30; background-size: 320px auto; }
-}
-
-@media (max-width: 1240px) {
-  .desktop-backdrop { display: none; }
-}
-
-/* --------------------------------------------------------------------------
-   Tiny Nixie-style visitor counter
-   -------------------------------------------------------------------------- */
-.profile-card {
-  position: relative;
-}
-.profile-content {
-  min-width: 0;
-  padding-right: 178px;
-}
-.visit-counter {
-  position: absolute;
-  z-index: 3;
-  top: 18px;
-  right: 20px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 7px 7px;
-  background: rgba(5, 5, 6, .58);
-  border: 1px solid rgba(255, 122, 10, .18);
-  border-radius: 8px;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.025),
-    0 7px 20px rgba(0,0,0,.12);
-  user-select: none;
-}
-.visit-counter-label {
-  color: rgba(255, 151, 69, .58);
-  font-size: .52rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: .20em;
-  text-indent: .20em;
-}
-.visit-counter-digits {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-.visit-counter-digit {
-  display: block;
-  width: auto;
-  height: 36px;
-  object-fit: contain;
-  border-radius: 2px;
-}
-.sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-@media (max-width: 760px) {
-  .profile-content {
-    padding-right: 0;
-  }
-  .visit-counter {
-    position: relative;
-    top: auto;
-    right: auto;
-    grid-column: 1 / -1;
-    justify-self: end;
-    margin-top: 2px;
-    padding: 5px 6px 6px;
-    background: rgba(5, 5, 6, .48);
-  }
-  .visit-counter-digit {
-    height: 31px;
-  }
-  .visit-counter-label {
-    font-size: .48rem;
-  }
-}
-
-/* Mobile robustness: long asset titles must never widen the page. */
-@media (max-width: 760px) {
-  .asset-list,
-  .asset-card,
-  .asset-tabs,
-  .asset-card-body,
-  .asset-head,
-  .asset-actions {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .asset-title-tab {
-    flex: 0 1 auto;
-    width: auto;
-    min-width: 0;
-    max-width: calc(100% - 58px);
-  }
-
-  .asset-title {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .asset-title-link {
-    display: block;
-    min-width: 0;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  .asset-tabs-gap {
-    flex: 1 1 8px;
-    min-width: 8px;
-  }
-
-  .asset-copy-tab {
-    flex: 0 0 48px;
-  }
-
-  /* Keep the store/details row usable even on narrower phones. */
-  .asset-actions {
-    flex-wrap: wrap;
-  }
-
-  .store-shortcuts {
-    min-width: 0;
-    flex: 0 1 auto;
-  }
-
-  .details-button {
-    flex: 0 0 auto;
-    margin-left: auto;
-  }
-}
-
-
-@media (max-width: 760px) {
-  .pagination {
-    gap: 7px;
-    margin-top: 17px;
-    min-height: 42px;
-  }
-  .pagination-pages { gap: 5px; }
-  .pagination-button {
-    min-width: 31px;
-    height: 39px;
-    padding: 0 6px;
-    border-radius: 7px 7px 9px 9px;
-    font-size: .88rem;
-  }
-  .pagination-arrow {
-    min-width: 34px;
-    font-size: 1.25rem;
-  }
-  .pagination-ellipsis {
-    width: 14px;
-    font-size: .85rem;
-  }
-}
-
-
-/* Never show the legacy Show more fallback; it only prevents stale cached JS from crashing. */
-.legacy-load-more { display: none !important; }
-
-/* --------------------------------------------------------------------------
-   Language switcher — stacked directly beneath the VISITS counter.
-   Flags are inline SVGs generated by app.js, so no extra asset files are needed.
-   -------------------------------------------------------------------------- */
-.profile-content {
-  padding-right: 190px;
-}
-
-.profile-tools {
-  position: absolute;
-  z-index: 30;
-  top: 18px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 7px;
-  width: 158px;
-}
-
-.profile-tools .visit-counter {
-  position: static;
-  top: auto;
-  right: auto;
-  width: 100%;
-  margin: 0;
-}
-
-.language-switcher {
-  position: relative;
-  width: 100%;
-}
-
-.language-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 34px;
-  padding: 6px 9px;
-  border: 1px solid rgba(255, 122, 10, .28);
-  border-radius: 8px;
-  background: rgba(5, 5, 6, .62);
-  color: #d9d9dc;
-  cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.025), 0 7px 20px rgba(0,0,0,.10);
-  transition: border-color .15s ease, background .15s ease, color .15s ease;
-}
-
-.language-toggle:hover,
-.language-toggle[aria-expanded="true"] {
-  border-color: rgba(255, 122, 10, .68);
-  background: rgba(255, 122, 10, .075);
-  color: #fff;
-}
-
-.language-toggle:focus-visible,
-.language-option:focus-visible {
-  outline: 2px solid rgba(255, 122, 10, .8);
-  outline-offset: 2px;
-}
-
-.language-flag {
-  display: inline-flex;
-  flex: 0 0 25px;
-  width: 25px;
-  height: 15px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.28);
-  background: #151517;
-}
-
-.language-flag-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.language-current-code {
-  min-width: 0;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  line-height: 1;
-}
-
-.language-chevron {
-  margin-left: 1px;
-  color: rgba(255, 151, 69, .72);
-  font-size: .72rem;
-  transform-origin: center;
-  transition: transform .15s ease;
-}
-.language-toggle[aria-expanded="true"] .language-chevron { transform: rotate(180deg); }
-
-.language-menu {
-  position: absolute;
-  z-index: 70;
-  top: calc(100% + 6px);
-  right: 0;
-  width: 224px;
-  padding: 6px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 122, 10, .40);
-  border-radius: 10px;
-  background: rgba(10, 10, 12, .985);
-  box-shadow: 0 16px 38px rgba(0,0,0,.52), inset 0 1px 0 rgba(255,255,255,.025);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-}
-
-.language-option {
-  display: grid;
-  grid-template-columns: 25px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 9px;
-  width: 100%;
-  min-height: 36px;
-  padding: 7px 8px;
-  border: 0;
-  border-radius: 7px;
-  background: transparent;
-  color: #ceced2;
-  text-align: left;
-  cursor: pointer;
-  transition: color .13s ease, background .13s ease;
-}
-
-.language-option:hover {
-  color: #fff;
-  background: rgba(255, 122, 10, .09);
-}
-
-.language-option.is-active {
-  color: #fff;
-  background: rgba(255, 122, 10, .14);
-}
-
-.language-option-name {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: .82rem;
-  font-weight: 500;
-}
-
-.language-option-code {
-  color: #a76d3d;
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-}
-.language-option.is-active .language-option-code { color: #ff9a42; }
-
-@media (max-width: 760px) {
-  .profile-card {
-    overflow: visible;
-  }
-  .profile-card::before,
-  .profile-card::after {
-    border-radius: inherit;
-  }
-  .profile-content {
-    padding-right: 0;
-  }
-  .profile-tools {
-    position: relative;
-    top: auto;
-    right: auto;
-    grid-column: 1 / -1;
-    justify-self: end;
-    width: 145px;
-    margin-top: 2px;
-    gap: 6px;
-  }
-  .profile-tools .visit-counter {
-    padding: 5px 6px 6px;
-    background: rgba(5, 5, 6, .48);
-  }
-  .language-toggle {
-    min-height: 32px;
-    padding: 5px 8px;
-  }
-  .language-menu {
-    width: min(220px, calc(100vw - 42px));
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Mobile profile polish: clearer blueprint, balanced tools row, clean icons.
-   -------------------------------------------------------------------------- */
-@media (max-width: 760px) {
-  /* Make the technical blueprint read across the whole header instead of
-     disappearing beneath the text on the right. Two sparse placements keep
-     the empty lower-left area visually alive without reducing legibility. */
-  .profile-card::before {
-    background-image: url("side-blueprint.svg"), url("side-blueprint.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-size: 315px auto, 350px auto;
-    background-position: left -118px bottom -78px, right -86px top -42px;
-    opacity: .22;
-    filter: saturate(.92);
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  /* Keep a light readability veil, but let the blueprint remain visible. */
-  .profile-card::after {
-    background: linear-gradient(105deg,
-      rgba(9,9,11,.10) 0%,
-      rgba(9,9,11,.17) 48%,
-      rgba(9,9,11,.24) 100%);
-  }
-
-  /* Counter left + language selector right, matching the visual balance of
-     the second reference screenshot. */
-  .profile-tools {
-    grid-column: 1 / -1;
-    justify-self: stretch;
-    width: 100%;
-    margin-top: 18px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 18px;
-  }
-
-  .profile-tools .visit-counter {
-    flex: 0 0 auto;
-    width: auto;
-    min-width: 145px;
-    margin: 0;
-    padding: 5px 7px 6px;
-  }
-
-  .profile-tools .language-switcher {
-    flex: 0 0 145px;
-    width: 145px;
-  }
-
-  .language-menu {
-    right: 0;
-  }
-}
-
-@media (max-width: 390px) {
-  .profile-tools {
-    gap: 10px;
-  }
-  .profile-tools .visit-counter {
-    min-width: 132px;
-  }
-  .profile-tools .language-switcher {
-    flex-basis: 132px;
-    width: 132px;
-  }
-  .visit-counter-digit {
-    height: 28px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Mobile language menu stacking fix
-   The profile card creates its own stacking context (isolation:isolate).
-   Raise that whole context above the catalog so the dropdown can overlap
-   search/results instead of being painted underneath them.
-   -------------------------------------------------------------------------- */
-@media (max-width: 760px) {
-  .profile-card {
-    z-index: 50;
-  }
-
-  .catalog {
-    position: relative;
-    z-index: 1;
-  }
-
-  .language-menu {
-    z-index: 100;
-  }
 }
