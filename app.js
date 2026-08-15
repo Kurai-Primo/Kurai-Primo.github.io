@@ -1,5 +1,7 @@
 (() => {
   const data = window.SITE_DATA;
+  if (!data) return;
+
   const profileEl = document.getElementById('profile');
   const listEl = document.getElementById('asset-list');
   const searchEl = document.getElementById('asset-search');
@@ -14,42 +16,233 @@
   const prevButton = lightbox.querySelector('.lightbox-prev');
   const nextButton = lightbox.querySelector('.lightbox-next');
 
-  const assetsPerPage = Math.max(1, Number(data.settings.assetsPerPage || data.settings.initialVisibleAssets || 5));
+  const supportedLanguages = Object.keys(data.languages || { en: {} });
+  const languageStorageKey = data.settings?.languageStorageKey || 'kurai_site_language';
+  const assetsPerPage = Math.max(1, Number(data.settings?.assetsPerPage || data.settings?.initialVisibleAssets || 5));
+
+  let currentLanguage = getInitialLanguage();
   let currentPage = 1;
   let currentGallery = [];
   let currentIndex = 0;
   let touchStartX = null;
   let toastTimer = null;
+  let currentVisitCount = 0;
 
   const icons = {
     email: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z"/><path d="m4.5 7.5 7.5 6 7.5-6"/></svg>',
     telegram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3.7 10.8c-.9.35-.86 1.62.06 1.92l4.42 1.45 1.64 5.02c.28.86 1.39 1.09 1.99.41l2.46-2.77 4.17 3.08c.72.53 1.75.12 1.91-.76L22 5.4C22.2 4.31 21.98 3.62 21 4Z"/><path d="m8.25 14.16 10.1-6.76"/></svg>',
-    youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-4.1-.53-5.6a2.7 2.7 0 0 0-1.87-1.87C17.1 4 12 4 12 4s-5.1 0-6.6.53A2.7 2.7 0 0 0 3.53 6.4C3 7.9 3 12 3 12s0 4.1.53 5.6a2.7 2.7 0 0 0 1.87 1.87C6.9 20 12 20 12 20s5.1 0 6.6-.53a2.7 2.7 0 0 0 1.87-1.87C21 16.1 21 12 21 12Z"/><path d="m10 9 5 3-5 3Z"/></svg>',
+    youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12s0-4.1-.53-5.6a2.7 2.7 0 0 0-1.87-1.87C17.1 4 12 4 12 4s-5.1 0-6.6.53A2.7 2.7 0 0 0 3.53 6.4C3 7.9 3 12 3 12s0 4.1.53 5.6a2.7 2.7 0 0 0 1.87 1.87C6.9 20 12 20s5.1 0 6.6-.53a2.7 2.7 0 0 0 1.87-1.87C21 16.1 21 12 21 12Z"/><path d="m10 9 5 3-5 3Z"/></svg>',
     generic: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="2.4"/><rect x="8" y="8" width="12" height="12" rx="2.4"/></svg>',
-    unreal: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><path d="M7.1 7.1v6.1c0 3 1.7 4.8 4.5 4.8 2.1 0 3.7-.9 4.9-2.6v2.1l2-1V6.3l-3.4 1.8v4.8c0 1.9-.9 3-2.5 3-1.5 0-2.3-.9-2.3-2.8V7.1H7.1Z"/></svg>',
     unity: '<svg viewBox="0 0 448 512" aria-hidden="true"><path d="M243.583 91.6027L323.695 138.384C326.575 140.026 326.68 144.583 323.695 146.225L228.503 201.854C225.623 203.55 222.22 203.444 219.549 201.854L124.357 146.225C121.425 144.636 121.373 139.973 124.357 138.384L204.417 91.6027V0L0 119.417V358.252L78.3843 312.477V218.914C78.3319 215.576 82.2066 213.192 85.0865 214.993L180.279 270.622C183.159 272.318 184.782 275.338 184.782 278.464V389.669C184.834 393.007 180.959 395.391 178.079 393.589L97.9673 346.808L19.583 392.583L224 512L428.417 392.583L350.033 346.808L269.921 393.589C267.093 395.338 263.114 393.06 263.218 389.669V278.464C263.218 275.126 265.051 272.159 267.721 270.622L362.914 214.993C365.741 213.245 369.72 215.47 369.616 218.914V312.477L448 358.252V119.417L243.583 0V91.6027Z"/></svg>'
   };
 
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function format(template, variables = {}) {
+    return String(template ?? '').replace(/\{(\w+)\}/g, (_, key) => variables[key] ?? `{${key}}`);
+  }
+
+  function t(key, variables = {}) {
+    const local = data.translations?.[currentLanguage]?.ui?.[key];
+    const fallback = data.translations?.en?.ui?.[key];
+    return format(local ?? fallback ?? key, variables);
+  }
+
+  function languageFromBrowser(value) {
+    const lang = String(value || '').toLowerCase();
+    if (lang.startsWith('uk')) return 'uk';
+    if (lang.startsWith('ru')) return 'ru';
+    if (lang.startsWith('tr')) return 'tr';
+    if (lang.startsWith('ja')) return 'ja';
+    if (lang.startsWith('pt')) return 'pt-BR';
+    if (lang.startsWith('es')) return 'es';
+    return 'en';
+  }
+
+  function getInitialLanguage() {
+    try {
+      const saved = localStorage.getItem(languageStorageKey);
+      if (saved && supportedLanguages.includes(saved)) return saved;
+    } catch {
+      // Ignore storage restrictions and fall back to the browser preference.
+    }
+
+    const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language];
+
+    for (const browserLanguage of browserLanguages) {
+      const candidate = languageFromBrowser(browserLanguage);
+      if (supportedLanguages.includes(candidate)) return candidate;
+    }
+
+    return supportedLanguages.includes('en') ? 'en' : supportedLanguages[0];
+  }
+
+  function saveLanguage(language) {
+    try {
+      localStorage.setItem(languageStorageKey, language);
+    } catch {
+      // Language still changes for the current session when storage is unavailable.
+    }
+  }
+
+  function flagIcon(language) {
+    const common = 'class="language-flag-svg" viewBox="0 0 60 36" aria-hidden="true" focusable="false"';
+    if (language === 'en') {
+      return `<svg ${common}><rect width="60" height="36" fill="#012169"/><path d="M0 0 60 36M60 0 0 36" stroke="#fff" stroke-width="8"/><path d="M0 0 60 36M60 0 0 36" stroke="#c8102e" stroke-width="4"/><path d="M30 0v36M0 18h60" stroke="#fff" stroke-width="12"/><path d="M30 0v36M0 18h60" stroke="#c8102e" stroke-width="7"/></svg>`;
+    }
+    if (language === 'uk') {
+      return `<svg ${common}><rect width="60" height="18" fill="#0057b7"/><rect y="18" width="60" height="18" fill="#ffd700"/></svg>`;
+    }
+    if (language === 'ru') {
+      // Intentionally the white-blue-white flag requested for the Russian-language option.
+      return `<svg ${common}><rect width="60" height="12" fill="#fff"/><rect y="12" width="60" height="12" fill="#5b9bd5"/><rect y="24" width="60" height="12" fill="#fff"/></svg>`;
+    }
+    if (language === 'tr') {
+      return `<svg ${common}><rect width="60" height="36" fill="#e30a17"/><circle cx="24" cy="18" r="10" fill="#fff"/><circle cx="28" cy="18" r="8" fill="#e30a17"/><path d="m37 18 3.5 1.15-2.15-2.95v3.65l2.15-2.95L37 18Z" fill="#fff" transform="scale(1.35) translate(-10.5 -4.7)"/></svg>`;
+    }
+    if (language === 'ja') {
+      return `<svg ${common}><rect width="60" height="36" fill="#fff"/><circle cx="30" cy="18" r="9" fill="#bc002d"/></svg>`;
+    }
+    if (language === 'pt-BR') {
+      return `<svg ${common}><rect width="60" height="36" fill="#009b3a"/><path d="M30 4 54 18 30 32 6 18Z" fill="#ffdf00"/><circle cx="30" cy="18" r="8" fill="#002776"/><path d="M22.5 16.3c5.2-2.1 10.2-1.8 15.2.7" fill="none" stroke="#fff" stroke-width="1.2"/></svg>`;
+    }
+    if (language === 'es') {
+      return `<svg ${common}><rect width="60" height="9" fill="#aa151b"/><rect y="9" width="60" height="18" fill="#f1bf00"/><rect y="27" width="60" height="9" fill="#aa151b"/></svg>`;
+    }
+    return '';
+  }
+
+  function localizedAsset(asset, language = currentLanguage) {
+    const localized = asset.i18n?.[language] || asset.i18n?.en || {};
+    return {
+      ...asset,
+      title: localized.title || asset.id,
+      description: localized.description || '',
+      tags: localized.tags || []
+    };
+  }
+
+  function localizedProfile() {
+    return data.profile.i18n?.[currentLanguage] || data.profile.i18n?.en || {};
+  }
+
+  function languageSwitcherHtml() {
+    const selected = data.languages[currentLanguage];
+    const options = supportedLanguages.map(language => {
+      const item = data.languages[language];
+      const active = language === currentLanguage;
+      return `<button class="language-option${active ? ' is-active' : ''}" type="button" role="option" aria-selected="${active}" data-language="${escapeHtml(language)}">
+        <span class="language-flag">${flagIcon(language)}</span>
+        <span class="language-option-name">${escapeHtml(item.name)}</span>
+        <span class="language-option-code">${escapeHtml(item.code)}</span>
+      </button>`;
+    }).join('');
+
+    return `<div class="language-switcher" id="language-switcher">
+      <button class="language-toggle" id="language-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="${escapeHtml(t('selectLanguage'))}" title="${escapeHtml(t('language'))}">
+        <span class="language-flag">${flagIcon(currentLanguage)}</span>
+        <span class="language-current-code">${escapeHtml(selected.code)}</span>
+        <span class="language-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="language-menu" id="language-menu" role="listbox" aria-label="${escapeHtml(t('selectLanguage'))}" hidden>
+        ${options}
+      </div>
+    </div>`;
+  }
+
   function renderProfile() {
-    const contacts = (data.profile.contacts || []).filter(c => c && c.href && c.label);
+    const profile = localizedProfile();
+    const contacts = (data.profile.contacts || []).filter(contact => contact && contact.href && contact.label);
+
     profileEl.innerHTML = `
-      <img class="profile-avatar" src="${data.profile.avatar}" alt="Kurai avatar">
+      <img class="profile-avatar" src="${escapeHtml(data.profile.avatar)}" alt="Kurai avatar">
       <div class="profile-content">
-        <h1 class="profile-title">${data.profile.brand}</h1>
-        <div class="profile-subtitle">${data.profile.subtitle || ''}</div>
-        <p class="profile-intro">${data.profile.introHtml || ''}</p>
-        ${contacts.length ? `<nav class="contacts" aria-label="Contact links">${contacts.map(c => `
-          <a class="contact-chip" href="${c.href}" ${c.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${c.label}" title="${c.label}">
-            ${icons[c.icon] || icons.generic}<span>${c.label}</span>
+        <h1 class="profile-title">${escapeHtml(data.profile.brand)}</h1>
+        <div class="profile-subtitle">${escapeHtml(profile.subtitle || '')}</div>
+        <p class="profile-intro">${profile.introHtml || ''}</p>
+        ${contacts.length ? `<nav class="contacts" aria-label="Contact links">${contacts.map(contact => `
+          <a class="contact-chip" href="${escapeHtml(contact.href)}" ${contact.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${escapeHtml(contact.label)}" title="${escapeHtml(contact.label)}">
+            ${icons[contact.icon] || icons.generic}<span>${escapeHtml(contact.label)}</span>
           </a>`).join('')}</nav>` : ''}
       </div>
-      <div class="visit-counter" id="visit-counter" aria-label="Visitor counter">
-        <span class="visit-counter-label">VISITS</span>
-        <div class="visit-counter-digits" aria-hidden="true">
-          ${Array.from({ length: 8 }, () => '<img class="visit-counter-digit" src="assets/images/counter/0.png" alt="">').join('')}
+      <div class="profile-tools">
+        <div class="visit-counter" id="visit-counter" aria-label="${escapeHtml(t('visitsCount', { count: currentVisitCount }))}">
+          <span class="visit-counter-label">${escapeHtml(t('visitsLabel'))}</span>
+          <div class="visit-counter-digits" aria-hidden="true">
+            ${Array.from({ length: 8 }, () => '<img class="visit-counter-digit" src="assets/images/counter/0.png" alt="">').join('')}
+          </div>
+          <span class="sr-only" id="visit-counter-value" aria-live="polite">${escapeHtml(t('visitsCount', { count: currentVisitCount }))}</span>
         </div>
-        <span class="sr-only" id="visit-counter-value" aria-live="polite">0 visits</span>
+        ${languageSwitcherHtml()}
       </div>`;
+  }
+
+  function updateStaticUi() {
+    const htmlLanguage = data.languages[currentLanguage]?.htmlLang || currentLanguage;
+    document.documentElement.lang = htmlLanguage;
+
+    const meta = document.querySelector('meta[name="description"]');
+    const translatedMeta = data.translations?.[currentLanguage]?.metaDescription || data.translations?.en?.metaDescription;
+    if (meta && translatedMeta) meta.setAttribute('content', translatedMeta);
+
+    const catalog = document.querySelector('.catalog');
+    if (catalog) catalog.setAttribute('aria-label', t('catalogAria'));
+    searchEl.placeholder = t('searchPlaceholder');
+    searchEl.setAttribute('aria-label', t('searchAria'));
+    emptyEl.textContent = t('emptyState');
+    if (paginationEl) paginationEl.setAttribute('aria-label', t('paginationAria'));
+
+    lightbox.setAttribute('aria-label', t('imageGallery'));
+    closeButton.setAttribute('aria-label', t('closeGallery'));
+    prevButton.setAttribute('aria-label', t('previousImage'));
+    nextButton.setAttribute('aria-label', t('nextImage'));
+  }
+
+  function closeLanguageMenu() {
+    const toggle = document.getElementById('language-toggle');
+    const menu = document.getElementById('language-menu');
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.hidden = true;
+  }
+
+  function toggleLanguageMenu() {
+    const toggle = document.getElementById('language-toggle');
+    const menu = document.getElementById('language-menu');
+    if (!toggle || !menu) return;
+    const willOpen = menu.hidden;
+    menu.hidden = !willOpen;
+    toggle.setAttribute('aria-expanded', String(willOpen));
+  }
+
+  function setLanguage(language) {
+    if (!supportedLanguages.includes(language)) return;
+    if (language === currentLanguage) {
+      closeLanguageMenu();
+      return;
+    }
+
+    currentLanguage = language;
+    saveLanguage(language);
+    updateStaticUi();
+    renderProfile();
+    renderVisitCount(currentVisitCount);
+    renderAssets();
+
+    const assetId = assetIdFromHash();
+    if (assetId) {
+      const card = document.getElementById(assetId);
+      if (card) setCardOpen(card, true, { scroll: false });
+    }
   }
 
   const VISIT_COUNTER = {
@@ -89,6 +282,7 @@
 
   function renderVisitCount(value) {
     const numericValue = Math.max(0, Math.floor(Number(value) || 0));
+    currentVisitCount = numericValue;
     const displayValue = String(numericValue).padStart(8, '0').slice(-8);
     const counterEl = document.getElementById('visit-counter');
     const textEl = document.getElementById('visit-counter-value');
@@ -96,13 +290,16 @@
 
     counterEl.querySelectorAll('.visit-counter-digit').forEach((img, index) => {
       const digit = displayValue[index];
-      const src = `assets/images/counter/${digit}.png`;
-      if (!img.src.endsWith(`/${digit}.png`)) img.src = src;
+      if (!img.src.endsWith(`/${digit}.png`)) img.src = `assets/images/counter/${digit}.png`;
     });
 
+    const locale = data.languages[currentLanguage]?.htmlLang || 'en-US';
+    const formattedCount = numericValue.toLocaleString(locale);
+    const visitText = t('visitsCount', { count: formattedCount });
     counterEl.dataset.value = String(numericValue);
-    counterEl.title = `${numericValue.toLocaleString('en-US')} visits`;
-    if (textEl) textEl.textContent = `${numericValue.toLocaleString('en-US')} visits`;
+    counterEl.title = visitText;
+    counterEl.setAttribute('aria-label', visitText);
+    if (textEl) textEl.textContent = visitText;
   }
 
   async function initVisitCounter() {
@@ -110,7 +307,6 @@
     renderVisitCount(cachedValue ?? 0);
 
     // Never increment the real counter while previewing index.html locally.
-    // This protects the live number during development and repeated refreshes.
     if (location.hostname !== 'kurai-primo.github.io') return;
 
     const alreadyCounted = hasCookie(VISIT_COUNTER.cookieName);
@@ -139,60 +335,73 @@
       {
         key: 'fab',
         label: 'Unreal',
-        ariaLabel: 'Open on Fab / Unreal Engine',
+        ariaLabel: t('openFab'),
         icon: '<img class="platform-icon-image unreal-icon" src="assets/images/ui/unreal.png" alt="">'
       },
       {
         key: 'unity',
         label: 'Unity',
-        ariaLabel: 'Open on Unity Asset Store',
+        ariaLabel: t('openUnity'),
         icon: icons.unity
       }
     ];
 
-    return `<div class="store-shortcuts" aria-label="Store links">${platforms.map(platform => {
+    return `<div class="store-shortcuts" aria-label="${escapeHtml(t('storeLinks'))}">${platforms.map(platform => {
       const href = (stores[platform.key] || '').trim();
       const content = `${platform.icon}<span class="platform-label">${platform.label}</span>`;
       if (href) {
-        return `<a class="platform-button platform-${platform.key}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${platform.ariaLabel}" title="${platform.ariaLabel}">${content}</a>`;
+        return `<a class="platform-button platform-${platform.key}" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(platform.ariaLabel)}" title="${escapeHtml(platform.ariaLabel)}">${content}</a>`;
       }
-      return `<span class="platform-button platform-${platform.key} is-disabled" aria-disabled="true" title="${platform.label} version is not available yet">${content}</span>`;
+      const unavailable = t('notAvailable', { platform: platform.label });
+      return `<span class="platform-button platform-${platform.key} is-disabled" aria-disabled="true" title="${escapeHtml(unavailable)}">${content}</span>`;
     }).join('')}</div>`;
   }
 
   function extraActionButtons(asset) {
     if (!asset.youtube) return '';
-    return `<div class="store-row"><a class="store-button youtube-button" href="${asset.youtube}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></div>`;
+    return `<div class="store-row"><a class="store-button youtube-button" href="${escapeHtml(asset.youtube)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('watchYouTube'))}</a></div>`;
   }
 
   function showToast(message) {
     const toast = document.getElementById('site-toast');
     if (!toast) return;
-
     toast.textContent = message;
     toast.classList.remove('is-visible');
     void toast.offsetWidth;
     toast.classList.add('is-visible');
-
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2200);
   }
 
+  function normalizeSearch(value) {
+    return String(value || '')
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  function assetSearchText(asset) {
+    const localizedContent = Object.values(asset.i18n || {}).flatMap(content => [
+      content?.title || '',
+      content?.description || '',
+      ...(content?.tags || [])
+    ]);
+    return normalizeSearch([...localizedContent, ...(asset.keywords || [])].join(' '));
+  }
+
   function assetMatches(asset, query) {
     if (!query) return true;
-    const haystack = [asset.title, asset.description, ...(asset.tags || []), ...(asset.keywords || [])].join(' ').toLowerCase();
-    return query.split(/\s+/).filter(Boolean).every(term => haystack.includes(term));
+    const haystack = assetSearchText(asset);
+    return normalizeSearch(query).split(/\s+/).filter(Boolean).every(term => haystack.includes(term));
   }
 
   function filteredAssets() {
-    const query = searchEl.value.trim().toLowerCase();
+    const query = searchEl.value.trim();
     return data.assets.filter(asset => assetMatches(asset, query));
   }
 
   function paginationItems(totalPages) {
-    if (totalPages <= 7) {
-      return Array.from({ length: totalPages }, (_, index) => index + 1);
-    }
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
 
     const items = [1];
     let start = Math.max(2, currentPage - 1);
@@ -225,18 +434,15 @@
 
     const items = paginationItems(totalPages);
     const pageButtons = items.map(item => {
-      if (typeof item !== 'number') {
-        return '<span class="pagination-ellipsis" aria-hidden="true">…</span>';
-      }
-
+      if (typeof item !== 'number') return '<span class="pagination-ellipsis" aria-hidden="true">…</span>';
       const active = item === currentPage;
-      return `<button class="pagination-button pagination-number${active ? ' is-active' : ''}" type="button" data-page="${item}" ${active ? 'aria-current="page"' : ''} aria-label="Page ${item}"><span>${item}</span></button>`;
+      return `<button class="pagination-button pagination-number${active ? ' is-active' : ''}" type="button" data-page="${item}" ${active ? 'aria-current="page"' : ''} aria-label="${escapeHtml(t('pageLabel', { page: item }))}"><span>${item}</span></button>`;
     }).join('');
 
     paginationEl.innerHTML = `
-      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage - 1}" aria-label="Previous page" ${currentPage <= 1 ? 'disabled' : ''}><span>‹</span></button>
+      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage - 1}" aria-label="${escapeHtml(t('previousPage'))}" ${currentPage <= 1 ? 'disabled' : ''}><span>‹</span></button>
       <div class="pagination-pages">${pageButtons}</div>
-      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage + 1}" aria-label="Next page" ${currentPage >= totalPages ? 'disabled' : ''}><span>›</span></button>`;
+      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage + 1}" aria-label="${escapeHtml(t('nextPage'))}" ${currentPage >= totalPages ? 'disabled' : ''}><span>›</span></button>`;
   }
 
   function renderAssets() {
@@ -247,36 +453,38 @@
     const startIndex = (currentPage - 1) * assetsPerPage;
     const visible = matches.slice(startIndex, startIndex + assetsPerPage);
 
-    listEl.innerHTML = visible.map(asset => {
+    listEl.innerHTML = visible.map(baseAsset => {
+      const asset = localizedAsset(baseAsset);
       const gallery = (asset.gallery || []).filter(Boolean);
       const extraGallery = gallery.slice(1);
-      return `
-      <article class="asset-card" id="${asset.id}" data-asset-id="${asset.id}">
+      const safeTitle = escapeHtml(asset.title);
+
+      return `<article class="asset-card" id="${escapeHtml(asset.id)}" data-asset-id="${escapeHtml(asset.id)}">
         <div class="asset-tabs">
           <div class="asset-title-tab">
-            <h2 class="asset-title"><a class="asset-title-link" href="#${asset.id}">${asset.title}</a></h2>
+            <h2 class="asset-title"><a class="asset-title-link" href="#${encodeURIComponent(asset.id)}">${safeTitle}</a></h2>
           </div>
           <div class="asset-tabs-gap" aria-hidden="true"></div>
           <div class="asset-copy-tab">
-            <button class="copy-link-button" type="button" aria-label="Copy link to ${asset.title}" title="Copy link">
+            <button class="copy-link-button" type="button" aria-label="${escapeHtml(t('copyLinkTo', { title: asset.title }))}" title="${escapeHtml(t('copyLink'))}">
               ${icons.generic}
             </button>
           </div>
         </div>
         <div class="asset-card-body">
           <div class="asset-head">
-            ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<button class="asset-tag" type="button" title="Search for ${tag}">${tag}</button>`).join('')}</div>` : ''}
-            <img class="asset-main js-gallery-image" src="${asset.mainImage}" alt="${asset.title} preview" loading="lazy" data-gallery-index="0">
+            ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<button class="asset-tag" type="button" title="${escapeHtml(t('searchFor', { tag }))}">${escapeHtml(tag)}</button>`).join('')}</div>` : ''}
+            <img class="asset-main js-gallery-image" src="${escapeHtml(asset.mainImage)}" alt="${escapeHtml(t('previewAlt', { title: asset.title }))}" loading="lazy" data-gallery-index="0">
           </div>
           <div class="asset-actions">
             ${platformButtons(asset)}
-            <button class="details-button" type="button" aria-expanded="false">Details</button>
+            <button class="details-button" type="button" aria-expanded="false">${escapeHtml(t('details'))}</button>
           </div>
           <div class="asset-details" aria-hidden="true">
             <div class="asset-details-inner">
               <div class="asset-details-content">
-                <p class="asset-description">${asset.description}</p>
-                ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, i) => `<img class="gallery-thumb js-gallery-image" src="${src}" alt="${asset.title} gallery image ${i + 2}" loading="lazy" data-gallery-index="${i + 1}">`).join('')}</div>` : ''}
+                <p class="asset-description">${escapeHtml(asset.description)}</p>
+                ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, index) => `<img class="gallery-thumb js-gallery-image" src="${escapeHtml(src)}" alt="${escapeHtml(t('galleryAlt', { title: asset.title, index: index + 2 }))}" loading="lazy" data-gallery-index="${index + 1}">`).join('')}</div>` : ''}
                 ${extraActionButtons(asset)}
               </div>
             </div>
@@ -288,6 +496,10 @@
     emptyEl.hidden = matches.length !== 0;
     renderPagination(matches.length ? totalPages : 0);
     bindAssetInteractions();
+
+    const assetId = assetIdFromHash();
+    const card = assetId ? document.getElementById(assetId) : null;
+    if (card) setCardOpen(card, true, { scroll: false });
   }
 
   function clearAssetHash() {
@@ -306,9 +518,7 @@
     renderAssets();
 
     if (scroll) {
-      requestAnimationFrame(() => {
-        (catalogEl || searchEl).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+      requestAnimationFrame(() => (catalogEl || searchEl).scrollIntoView({ behavior: 'smooth', block: 'start' }));
     }
   }
 
@@ -316,15 +526,14 @@
     if (!card) return;
     const detailsBtn = card.querySelector('.details-button');
     const details = card.querySelector('.asset-details');
+    if (!detailsBtn || !details) return;
 
     card.classList.toggle('is-open', open);
     detailsBtn.setAttribute('aria-expanded', String(open));
-    detailsBtn.textContent = open ? 'Hide details' : 'Details';
+    detailsBtn.textContent = open ? t('hideDetails') : t('details');
     details.setAttribute('aria-hidden', String(!open));
 
-    if (open && scroll) {
-      requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-    }
+    if (open && scroll) requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }
 
   function assetIdFromHash() {
@@ -361,19 +570,19 @@
       }
 
       history.replaceState(null, '', `#${assetId}`);
-      showToast('Link copied!');
+      showToast(t('linkCopied'));
       button.classList.add('is-copied');
-      button.title = 'Copied!';
-      button.setAttribute('aria-label', 'Link copied');
+      button.title = t('copied');
+      button.setAttribute('aria-label', t('linkCopied'));
 
       window.setTimeout(() => {
         button.classList.remove('is-copied');
-        button.title = 'Copy link';
-        button.setAttribute('aria-label', 'Copy asset link');
+        button.title = t('copyLink');
+        button.setAttribute('aria-label', t('copyAssetLink'));
       }, 1400);
     } catch (error) {
       console.error('Could not copy asset link:', error);
-      window.prompt('Copy this link:', url);
+      window.prompt(t('copyPrompt'), url);
     }
   }
 
@@ -384,7 +593,7 @@
     const asset = data.assets.find(item => item.id === assetId);
     if (!asset) return;
 
-    const activeQuery = searchEl.value.trim().toLowerCase();
+    const activeQuery = searchEl.value.trim();
     if (activeQuery && !assetMatches(asset, activeQuery)) searchEl.value = '';
 
     const matches = filteredAssets();
@@ -404,23 +613,23 @@
 
   function bindAssetInteractions() {
     document.querySelectorAll('.asset-card').forEach(card => {
-      const asset = data.assets.find(a => a.id === card.dataset.assetId);
+      const baseAsset = data.assets.find(asset => asset.id === card.dataset.assetId);
+      if (!baseAsset) return;
+      const asset = localizedAsset(baseAsset);
       const detailsBtn = card.querySelector('.details-button');
       const copyLinkBtn = card.querySelector('.copy-link-button');
       const titleLink = card.querySelector('.asset-title-link');
 
-      detailsBtn.addEventListener('click', () => {
+      detailsBtn?.addEventListener('click', () => {
         const willOpen = !card.classList.contains('is-open');
         setCardOpen(card, willOpen);
         if (willOpen) history.replaceState(null, '', `#${asset.id}`);
       });
 
-      copyLinkBtn.addEventListener('click', () => copyAssetLink(asset.id, copyLinkBtn));
+      copyLinkBtn?.addEventListener('click', () => copyAssetLink(asset.id, copyLinkBtn));
 
-      titleLink.addEventListener('click', () => {
-        if (assetIdFromHash() === asset.id) {
-          setCardOpen(card, true);
-        }
+      titleLink?.addEventListener('click', () => {
+        if (assetIdFromHash() === asset.id) setCardOpen(card, true);
       });
 
       card.querySelectorAll('.asset-tag').forEach(tagButton => {
@@ -429,6 +638,7 @@
           currentPage = 1;
           clearAssetHash();
           renderAssets();
+          searchEl.focus({ preventScroll: true });
         });
       });
 
@@ -452,7 +662,7 @@
   function updateLightbox() {
     if (!currentGallery.length) return;
     lightboxImage.src = currentGallery[currentIndex];
-    lightboxImage.alt = `${lightboxImage.dataset.title || 'Asset image'} — image ${currentIndex + 1}`;
+    lightboxImage.alt = t('imageAlt', { title: lightboxImage.dataset.title || 'Asset', index: currentIndex + 1 });
     lightboxCounter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
     const multiple = currentGallery.length > 1;
     prevButton.hidden = !multiple;
@@ -476,34 +686,54 @@
     clearAssetHash();
     renderAssets();
   });
+
   window.addEventListener('hashchange', () => openAssetFromHash({ behavior: 'smooth' }));
+
   paginationEl?.addEventListener('click', event => {
     const button = event.target.closest('button[data-page]');
     if (!button || button.disabled) return;
     goToPage(Number(button.dataset.page));
   });
 
+  document.addEventListener('click', event => {
+    const toggle = event.target.closest('#language-toggle');
+    if (toggle) {
+      toggleLanguageMenu();
+      return;
+    }
+
+    const languageOption = event.target.closest('.language-option[data-language]');
+    if (languageOption) {
+      setLanguage(languageOption.dataset.language);
+      return;
+    }
+
+    if (!event.target.closest('#language-switcher')) closeLanguageMenu();
+  });
+
   closeButton.addEventListener('click', closeLightbox);
   prevButton.addEventListener('click', () => moveLightbox(-1));
   nextButton.addEventListener('click', () => moveLightbox(1));
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
 
-  document.addEventListener('keydown', e => {
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeLanguageMenu();
     if (!lightbox.classList.contains('is-open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') moveLightbox(-1);
-    if (e.key === 'ArrowRight') moveLightbox(1);
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') moveLightbox(-1);
+    if (event.key === 'ArrowRight') moveLightbox(1);
   });
 
-  lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, {passive:true});
-  lightbox.addEventListener('touchend', e => {
+  lightbox.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+  lightbox.addEventListener('touchend', event => {
     if (touchStartX == null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dx = event.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 45) moveLightbox(dx > 0 ? -1 : 1);
     touchStartX = null;
-  }, {passive:true});
+  }, { passive: true });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+  updateStaticUi();
   renderProfile();
   initVisitCounter();
 
