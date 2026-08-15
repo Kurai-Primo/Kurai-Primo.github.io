@@ -1204,3 +1204,24 @@ body.lightbox-open { overflow: hidden; }
     height: 28px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Mobile language menu stacking fix
+   The profile card creates its own stacking context (isolation:isolate).
+   Raise that whole context above the catalog so the dropdown can overlap
+   search/results instead of being painted underneath them.
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .profile-card {
+    z-index: 50;
+  }
+
+  .catalog {
+    position: relative;
+    z-index: 1;
+  }
+
+  .language-menu {
+    z-index: 100;
+  }
+}
