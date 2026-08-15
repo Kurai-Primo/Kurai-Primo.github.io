@@ -325,7 +325,7 @@ a { color: inherit; }
 .platform-button.is-disabled .platform-icon-image { opacity: .55; filter: grayscale(1) brightness(.62); }
 
 
-.details-button, .store-button {
+.details-button, .store-button, .load-more {
   border: 1px solid rgba(255,122,10,.75);
   border-radius: 9px;
   background: transparent;
@@ -335,7 +335,7 @@ a { color: inherit; }
   transition: background .15s ease, color .15s ease, border-color .15s ease;
 }
 .details-button { padding: 9px 18px; }
-.details-button:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
+.details-button:hover, .load-more:hover { background: rgba(255,122,10,.1); border-color: var(--accent); }
 
 .asset-details {
   display: grid;
@@ -380,135 +380,7 @@ a { color: inherit; }
 .store-button.youtube-button::before { content: "▶"; color: var(--accent); margin-right: 8px; font-size: .82em; }
 
 .empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
-
-/* Nixie-inspired pagination. Only the current page's cards exist in the DOM,
-   so off-page gallery images are not requested by the browser. */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 22px auto 2px;
-  min-height: 48px;
-}
-.pagination-pages {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-}
-.pagination-button {
-  position: relative;
-  isolation: isolate;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 38px;
-  height: 46px;
-  padding: 0 9px;
-  overflow: hidden;
-  border: 1px solid rgba(148, 77, 28, .62);
-  border-radius: 8px 8px 11px 11px;
-  background:
-    linear-gradient(180deg, rgba(255, 190, 128, .055), transparent 25%),
-    radial-gradient(circle at 50% 46%, rgba(255, 105, 16, .075), transparent 60%),
-    #090706;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 220, 178, .018),
-    inset 0 0 15px rgba(255, 91, 0, .035),
-    0 7px 16px rgba(0, 0, 0, .22);
-  color: rgba(255, 136, 47, .62);
-  cursor: pointer;
-  font-family: "Courier New", ui-monospace, monospace;
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: .02em;
-  transition: border-color .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease, background .15s ease;
-}
-.pagination-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 5px 4px 4px;
-  border-radius: 5px 5px 7px 7px;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(190, 115, 63, .13) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, rgba(190, 115, 63, .08) 0 1px, transparent 1px 5px);
-  opacity: .42;
-}
-.pagination-button::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 5px;
-  right: 5px;
-  top: 4px;
-  height: 31%;
-  border-radius: 5px 5px 50% 50%;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), transparent);
-  pointer-events: none;
-}
-.pagination-button > span {
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 0 4px rgba(255, 103, 12, .22);
-}
-.pagination-button:hover:not(:disabled) {
-  color: #ff9b47;
-  border-color: rgba(255, 122, 10, .72);
-  background:
-    linear-gradient(180deg, rgba(255, 190, 128, .075), transparent 25%),
-    radial-gradient(circle at 50% 46%, rgba(255, 105, 16, .12), transparent 60%),
-    #0a0705;
-  box-shadow:
-    inset 0 0 16px rgba(255, 91, 0, .06),
-    0 0 10px rgba(255, 105, 10, .08),
-    0 7px 16px rgba(0,0,0,.24);
-  transform: translateY(-1px);
-}
-.pagination-button.is-active {
-  color: #ffad68;
-  border-color: rgba(255, 132, 25, .92);
-  background:
-    linear-gradient(180deg, rgba(255, 201, 151, .085), transparent 27%),
-    radial-gradient(circle at 50% 46%, rgba(255, 102, 8, .20), transparent 63%),
-    #0b0705;
-  box-shadow:
-    inset 0 0 17px rgba(255, 91, 0, .095),
-    0 0 7px rgba(255, 101, 9, .17),
-    0 7px 17px rgba(0,0,0,.25);
-  cursor: default;
-}
-.pagination-button.is-active > span {
-  text-shadow:
-    0 0 2px #ff7a0a,
-    0 0 6px rgba(255, 103, 11, .78),
-    0 0 13px rgba(255, 95, 0, .36);
-}
-.pagination-button:disabled {
-  color: rgba(162, 99, 54, .28);
-  border-color: rgba(105, 68, 43, .30);
-  background: rgba(8, 7, 7, .68);
-  box-shadow: inset 0 0 12px rgba(0,0,0,.22);
-  cursor: default;
-}
-.pagination-arrow {
-  min-width: 42px;
-  font-size: 1.45rem;
-}
-.pagination-ellipsis {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 21px;
-  color: rgba(255, 132, 42, .48);
-  font-family: ui-monospace, monospace;
-  font-size: 1rem;
-  letter-spacing: .08em;
-  user-select: none;
-}
-
+.load-more { display: block; margin: 18px auto 0; padding: 10px 22px; }
 .footer { margin-top: 26px; padding: 0 4px 2px; text-align: center; color: #6f6f75; font-size: .82rem; }
 
 .lightbox {
@@ -907,30 +779,5 @@ body.lightbox-open { overflow: hidden; }
   .details-button {
     flex: 0 0 auto;
     margin-left: auto;
-  }
-}
-
-
-@media (max-width: 760px) {
-  .pagination {
-    gap: 7px;
-    margin-top: 17px;
-    min-height: 42px;
-  }
-  .pagination-pages { gap: 5px; }
-  .pagination-button {
-    min-width: 31px;
-    height: 39px;
-    padding: 0 6px;
-    border-radius: 7px 7px 9px 9px;
-    font-size: .88rem;
-  }
-  .pagination-arrow {
-    min-width: 34px;
-    font-size: 1.25rem;
-  }
-  .pagination-ellipsis {
-    width: 14px;
-    font-size: .85rem;
   }
 }

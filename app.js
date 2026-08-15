@@ -4,8 +4,7 @@
   const listEl = document.getElementById('asset-list');
   const searchEl = document.getElementById('asset-search');
   const emptyEl = document.getElementById('empty-state');
-  const paginationEl = document.getElementById('pagination');
-  const catalogEl = document.querySelector('.catalog');
+  const loadMoreEl = document.getElementById('load-more');
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
@@ -14,8 +13,7 @@
   const prevButton = lightbox.querySelector('.lightbox-prev');
   const nextButton = lightbox.querySelector('.lightbox-next');
 
-  const assetsPerPage = Math.max(1, Number(data.settings.assetsPerPage || data.settings.initialVisibleAssets || 5));
-  let currentPage = 1;
+  let visibleCount = data.settings.initialVisibleAssets || 5;
   let currentGallery = [];
   let currentIndex = 0;
   let touchStartX = null;
@@ -109,10 +107,6 @@
     const cachedValue = getCachedVisitCount();
     renderVisitCount(cachedValue ?? 0);
 
-    // Never increment the real counter while previewing index.html locally.
-    // This protects the live number during development and repeated refreshes.
-    if (location.hostname !== 'kurai-primo.github.io') return;
-
     const alreadyCounted = hasCookie(VISIT_COUNTER.cookieName);
     const action = alreadyCounted ? 'get' : 'hit';
     const endpoint = `${VISIT_COUNTER.apiBase}/${action}/${encodeURIComponent(VISIT_COUNTER.key)}`;
@@ -184,68 +178,10 @@
     return query.split(/\s+/).filter(Boolean).every(term => haystack.includes(term));
   }
 
-  function filteredAssets() {
-    const query = searchEl.value.trim().toLowerCase();
-    return data.assets.filter(asset => assetMatches(asset, query));
-  }
-
-  function paginationItems(totalPages) {
-    if (totalPages <= 7) {
-      return Array.from({ length: totalPages }, (_, index) => index + 1);
-    }
-
-    const items = [1];
-    let start = Math.max(2, currentPage - 1);
-    let end = Math.min(totalPages - 1, currentPage + 1);
-
-    if (currentPage <= 4) {
-      start = 2;
-      end = 4;
-    } else if (currentPage >= totalPages - 3) {
-      start = totalPages - 3;
-      end = totalPages - 1;
-    }
-
-    if (start > 2) items.push('ellipsis-left');
-    for (let page = start; page <= end; page += 1) items.push(page);
-    if (end < totalPages - 1) items.push('ellipsis-right');
-    items.push(totalPages);
-    return items;
-  }
-
-  function renderPagination(totalPages) {
-    if (!paginationEl) return;
-
-    const shouldShow = totalPages > 1;
-    paginationEl.hidden = !shouldShow;
-    if (!shouldShow) {
-      paginationEl.innerHTML = '';
-      return;
-    }
-
-    const items = paginationItems(totalPages);
-    const pageButtons = items.map(item => {
-      if (typeof item !== 'number') {
-        return '<span class="pagination-ellipsis" aria-hidden="true">…</span>';
-      }
-
-      const active = item === currentPage;
-      return `<button class="pagination-button pagination-number${active ? ' is-active' : ''}" type="button" data-page="${item}" ${active ? 'aria-current="page"' : ''} aria-label="Page ${item}"><span>${item}</span></button>`;
-    }).join('');
-
-    paginationEl.innerHTML = `
-      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage - 1}" aria-label="Previous page" ${currentPage <= 1 ? 'disabled' : ''}><span>‹</span></button>
-      <div class="pagination-pages">${pageButtons}</div>
-      <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage + 1}" aria-label="Next page" ${currentPage >= totalPages ? 'disabled' : ''}><span>›</span></button>`;
-  }
-
   function renderAssets() {
-    const matches = filteredAssets();
-    const totalPages = Math.max(1, Math.ceil(matches.length / assetsPerPage));
-    currentPage = Math.min(Math.max(1, currentPage), totalPages);
-
-    const startIndex = (currentPage - 1) * assetsPerPage;
-    const visible = matches.slice(startIndex, startIndex + assetsPerPage);
+    const query = searchEl.value.trim().toLowerCase();
+    const matches = data.assets.filter(a => assetMatches(a, query));
+    const visible = matches.slice(0, visibleCount);
 
     listEl.innerHTML = visible.map(asset => {
       const gallery = (asset.gallery || []).filter(Boolean);
@@ -286,30 +222,9 @@
     }).join('');
 
     emptyEl.hidden = matches.length !== 0;
-    renderPagination(matches.length ? totalPages : 0);
+    loadMoreEl.hidden = visible.length >= matches.length;
+
     bindAssetInteractions();
-  }
-
-  function clearAssetHash() {
-    if (!assetIdFromHash()) return;
-    history.replaceState(null, '', `${location.pathname}${location.search}`);
-  }
-
-  function goToPage(page, { scroll = true } = {}) {
-    const matches = filteredAssets();
-    const totalPages = Math.max(1, Math.ceil(matches.length / assetsPerPage));
-    const nextPage = Math.min(Math.max(1, Number(page) || 1), totalPages);
-    if (nextPage === currentPage) return;
-
-    currentPage = nextPage;
-    clearAssetHash();
-    renderAssets();
-
-    if (scroll) {
-      requestAnimationFrame(() => {
-        (catalogEl || searchEl).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    }
   }
 
   function setCardOpen(card, open, { scroll = true } = {}) {
@@ -381,18 +296,13 @@
     const assetId = assetIdFromHash();
     if (!assetId) return;
 
-    const asset = data.assets.find(item => item.id === assetId);
-    if (!asset) return;
-
-    const activeQuery = searchEl.value.trim().toLowerCase();
-    if (activeQuery && !assetMatches(asset, activeQuery)) searchEl.value = '';
-
-    const matches = filteredAssets();
-    const assetIndex = matches.findIndex(item => item.id === assetId);
+    const assetIndex = data.assets.findIndex(asset => asset.id === assetId);
     if (assetIndex < 0) return;
 
-    currentPage = Math.floor(assetIndex / assetsPerPage) + 1;
-    renderAssets();
+    if (assetIndex >= visibleCount) {
+      visibleCount = assetIndex + 1;
+      renderAssets();
+    }
 
     requestAnimationFrame(() => {
       const card = document.getElementById(assetId);
@@ -426,8 +336,7 @@
       card.querySelectorAll('.asset-tag').forEach(tagButton => {
         tagButton.addEventListener('click', () => {
           searchEl.value = tagButton.textContent.trim();
-          currentPage = 1;
-          clearAssetHash();
+          visibleCount = data.settings.initialVisibleAssets || 5;
           renderAssets();
         });
       });
@@ -471,17 +380,9 @@
     updateLightbox();
   }
 
-  searchEl.addEventListener('input', () => {
-    currentPage = 1;
-    clearAssetHash();
-    renderAssets();
-  });
+  searchEl.addEventListener('input', () => { visibleCount = data.settings.initialVisibleAssets || 5; renderAssets(); });
   window.addEventListener('hashchange', () => openAssetFromHash({ behavior: 'smooth' }));
-  paginationEl?.addEventListener('click', event => {
-    const button = event.target.closest('button[data-page]');
-    if (!button || button.disabled) return;
-    goToPage(Number(button.dataset.page));
-  });
+  loadMoreEl.addEventListener('click', () => { visibleCount += data.settings.loadMoreStep || 5; renderAssets(); });
 
   closeButton.addEventListener('click', closeLightbox);
   prevButton.addEventListener('click', () => moveLightbox(-1));
@@ -509,7 +410,7 @@
 
   const initialAssetId = assetIdFromHash();
   const initialAssetIndex = data.assets.findIndex(asset => asset.id === initialAssetId);
-  if (initialAssetIndex >= 0) currentPage = Math.floor(initialAssetIndex / assetsPerPage) + 1;
+  if (initialAssetIndex >= 0) visibleCount = Math.max(visibleCount, initialAssetIndex + 1);
 
   renderAssets();
   if (initialAssetIndex >= 0) openAssetFromHash({ behavior: 'auto' });
