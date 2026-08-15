@@ -60,7 +60,7 @@ window.SITE_DATA = {
     },
     {
       id: "retro-tv-astryx-novavision",
-      title: "RETRO TV Astryx Novavision",
+      title: "Retro TV Astryx Novavision",
       mainImage: "assets/images/retro-tv-astryx-novavision/cover.png",
       gallery: [
         "assets/images/retro-tv-astryx-novavision/cover.png",
@@ -85,7 +85,7 @@ window.SITE_DATA = {
     },
     {
       id: "retro-tape-recorder-astryx-kp2036",
-      title: "REEL-TO-REEL TAPE RECORDER Astryx KP2036",
+      title: "Tape recorder Astryx KP2036",
       mainImage: "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
       gallery: [
         "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
