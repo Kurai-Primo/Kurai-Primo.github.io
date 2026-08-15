@@ -723,3 +723,61 @@ body.lightbox-open { overflow: hidden; }
     font-size: .48rem;
   }
 }
+
+/* Mobile robustness: long asset titles must never widen the page. */
+@media (max-width: 760px) {
+  .asset-list,
+  .asset-card,
+  .asset-tabs,
+  .asset-card-body,
+  .asset-head,
+  .asset-actions {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .asset-title-tab {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: calc(100% - 58px);
+  }
+
+  .asset-title {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .asset-title-link {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .asset-tabs-gap {
+    flex: 1 1 8px;
+    min-width: 8px;
+  }
+
+  .asset-copy-tab {
+    flex: 0 0 48px;
+  }
+
+  /* Keep the store/details row usable even on narrower phones. */
+  .asset-actions {
+    flex-wrap: wrap;
+  }
+
+  .store-shortcuts {
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+  .details-button {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}
