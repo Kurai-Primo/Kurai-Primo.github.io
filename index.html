@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260815-pagination2">
 </head>
 <body>
   <div class="desktop-backdrop" aria-hidden="true">
@@ -29,7 +29,9 @@
 
       <div id="asset-list" class="asset-list"></div>
       <p id="empty-state" class="empty-state" hidden>No assets found.</p>
-      <button id="load-more" class="load-more" type="button" hidden>Show more</button>
+      <nav id="pagination" class="pagination" aria-label="Asset pages" hidden></nav>
+      <!-- Compatibility fallback for an older cached app.js. Kept permanently hidden. -->
+      <button id="load-more" class="load-more legacy-load-more" type="button" hidden aria-hidden="true" tabindex="-1">Show more</button>
     </section>
 
     <footer class="footer">© <span id="year"></span> Kurai 3D Assets</footer>
@@ -47,7 +49,7 @@
     <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
   </div>
 
-  <script src="site-data.js"></script>
-  <script src="app.js"></script>
+  <script src="site-data.js?v=20260815-pagination2"></script>
+  <script src="app.js?v=20260815-pagination2"></script>
 </body>
 </html>
