@@ -1130,3 +1130,77 @@ body.lightbox-open { overflow: hidden; }
     width: min(220px, calc(100vw - 42px));
   }
 }
+
+/* --------------------------------------------------------------------------
+   Mobile profile polish: clearer blueprint, balanced tools row, clean icons.
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  /* Make the technical blueprint read across the whole header instead of
+     disappearing beneath the text on the right. Two sparse placements keep
+     the empty lower-left area visually alive without reducing legibility. */
+  .profile-card::before {
+    background-image: url("side-blueprint.svg"), url("side-blueprint.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 315px auto, 350px auto;
+    background-position: left -118px bottom -78px, right -86px top -42px;
+    opacity: .22;
+    filter: saturate(.92);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  /* Keep a light readability veil, but let the blueprint remain visible. */
+  .profile-card::after {
+    background: linear-gradient(105deg,
+      rgba(9,9,11,.10) 0%,
+      rgba(9,9,11,.17) 48%,
+      rgba(9,9,11,.24) 100%);
+  }
+
+  /* Counter left + language selector right, matching the visual balance of
+     the second reference screenshot. */
+  .profile-tools {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    width: 100%;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .profile-tools .visit-counter {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 145px;
+    margin: 0;
+    padding: 5px 7px 6px;
+  }
+
+  .profile-tools .language-switcher {
+    flex: 0 0 145px;
+    width: 145px;
+  }
+
+  .language-menu {
+    right: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .profile-tools {
+    gap: 10px;
+  }
+  .profile-tools .visit-counter {
+    min-width: 132px;
+  }
+  .profile-tools .language-switcher {
+    flex-basis: 132px;
+    width: 132px;
+  }
+  .visit-counter-digit {
+    height: 28px;
+  }
+}
