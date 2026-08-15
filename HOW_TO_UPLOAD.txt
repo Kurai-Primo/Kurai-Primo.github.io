@@ -1,21 +1,557 @@
-KURAI 3D ASSETS — FIRST UPLOAD TO GITHUB
+KURAI 3D ASSETS — HOW TO ADD OR UPDATE AN ASSET
+=================================================
 
-1. Open your repository: Kurai-Primo/Kurai-Primo.github.io
-2. Click Add file -> Upload files.
-3. Drag ALL files and folders from this package into the upload area:
-   index.html
-   style.css
-   app.js
-   site-data.js
-   README.md
-   assets folder
-4. At the bottom, click Commit changes.
-5. Wait around 1–3 minutes.
-6. Open: https://kurai-primo.github.io
+This file describes the CURRENT site structure.
+For architecture and feature details, see README.md.
+
+
+QUICK OVERVIEW
+--------------
+
+For a normal new asset you usually need to:
+
+1. Create a new image folder.
+2. Add the cover and gallery images.
+3. Add one new asset object to site-data.js.
+4. Add translations for every supported language.
+5. Add search keywords.
+6. Add Fab / Unity / YouTube links when available.
+7. Bump the cache version in index.html.
+8. Test desktop + mobile.
+9. Commit and push to GitHub.
+
+You normally DO NOT need to edit app.js or style.css just to add another asset.
+
+
+CURRENT LANGUAGES
+-----------------
+
+Every finished asset should currently have content for:
+
+- en      English
+- uk      Ukrainian
+- ru      Russian
+- tr      Turkish
+- ja      Japanese
+- pt-BR   Brazilian Portuguese
+- es      Spanish
+
+If a translation is missing, the site can fall back to English, but complete public entries should normally include all languages.
+
+
+STEP 1 — CHOOSE A PERMANENT ASSET ID
+-------------------------------------
+
+Create a short unique ID using lowercase Latin letters, numbers if needed, and hyphens.
+
+Good:
+
+retro-radio-a11
+industrial-tool-pack
+webstrider-fpv-quadcopter-drone
+
+Avoid:
+
+Retro Radio
+new_asset!!!
+asset 01
 
 IMPORTANT:
-- The Unity button is intentionally hidden because no Unity URL exists yet.
-- Fab links are already included.
-- Email and Telegram are already included.
-- Images open in a full-screen gallery with arrows, swipe on mobile, Esc, and X close button.
-- Search works by title, description, and hidden keywords.
+The ID is also used for direct links such as:
+
+https://kurai-primo.github.io/#retro-radio-a11
+
+Once an asset is published, avoid changing its ID unless you accept that old shared links will break.
+
+
+STEP 2 — CREATE THE IMAGE FOLDER
+--------------------------------
+
+Recommended location:
+
+assets/images/<asset-id>/
+
+Example:
+
+assets/images/retro-radio-a11/
+
+Put the images inside it, for example:
+
+cover.jpg
+01.jpg
+02.jpg
+03.jpg
+04.jpg
+
+PNG is also fine. The important thing is that site-data.js uses the exact real extension and filename.
+
+Recommended naming:
+
+cover.jpg
+01.jpg
+02.jpg
+03.jpg
+...
+
+Keep filenames simple and consistent.
+
+
+STEP 3 — ADD THE ASSET TO site-data.js
+---------------------------------------
+
+Open:
+
+site-data.js
+
+Find:
+
+assets: [
+
+Add the new object in the position where you want the asset to appear in the catalog.
+The array order IS the catalog order.
+
+Use this template:
+
+{
+  id: "YOUR-ASSET-ID",
+  mainImage: "assets/images/YOUR-ASSET-ID/cover.jpg",
+  gallery: [
+    "assets/images/YOUR-ASSET-ID/cover.jpg",
+    "assets/images/YOUR-ASSET-ID/01.jpg",
+    "assets/images/YOUR-ASSET-ID/02.jpg",
+    "assets/images/YOUR-ASSET-ID/03.jpg"
+  ],
+  i18n: {
+    en: {
+      title: "English title",
+      description: `English description.`,
+      tags: ["Tag 1", "Tag 2", "Tag 3"]
+    },
+    uk: {
+      title: "Українська назва",
+      description: `Український опис.`,
+      tags: ["Тег 1", "Тег 2", "Тег 3"]
+    },
+    ru: {
+      title: "Русское название",
+      description: `Русское описание.`,
+      tags: ["Тег 1", "Тег 2", "Тег 3"]
+    },
+    tr: {
+      title: "Türkçe başlık",
+      description: `Türkçe açıklama.`,
+      tags: ["Etiket 1", "Etiket 2", "Etiket 3"]
+    },
+    ja: {
+      title: "日本語タイトル",
+      description: `日本語の説明。`,
+      tags: ["タグ1", "タグ2", "タグ3"]
+    },
+    "pt-BR": {
+      title: "Título em português",
+      description: `Descrição em português.`,
+      tags: ["Tag 1", "Tag 2", "Tag 3"]
+    },
+    es: {
+      title: "Título en español",
+      description: `Descripción en español.`,
+      tags: ["Etiqueta 1", "Etiqueta 2", "Etiqueta 3"]
+    }
+  },
+  keywords: [
+    "main search term",
+    "alternative spelling",
+    "synonym",
+    "category",
+    "game asset"
+  ],
+  stores: {
+    fab: "https://www.fab.com/listings/...",
+    unity: ""
+  },
+  youtube: ""
+},
+
+IMPORTANT:
+- Every asset object except the last one in the array needs a comma after its closing }.
+- Keep brackets, braces, quotes and commas balanced.
+- pt-BR MUST stay in quotes: "pt-BR".
+
+
+STEP 4 — WRITE THE DESCRIPTION
+------------------------------
+
+Short descriptions can use normal quotes:
+
+description: "Short description here."
+
+Long/multiline descriptions are easier to write with backticks:
+
+description: `First paragraph.
+
+Second paragraph.
+
+• Feature one
+• Feature two
+• Feature three`
+
+The site preserves line breaks in the description area.
+
+Do not put an unescaped backtick (`) inside a backtick description.
+
+
+STEP 5 — ADD VISIBLE TAGS
+-------------------------
+
+Tags are visible buttons on the asset card.
+
+Example:
+
+tags: ["Retro", "Electronics", "Props"]
+
+Tags should be translated inside each language block.
+
+When a visitor clicks a tag, the site automatically puts that tag into Search and filters the catalog.
+
+Keep tags short. Very long tags can make the mobile layout ugly.
+
+
+STEP 6 — ADD HIDDEN SEARCH KEYWORDS
+-----------------------------------
+
+keywords are NOT displayed on the website.
+
+Example:
+
+keywords: [
+  "retro",
+  "vintage",
+  "old computer",
+  "crt",
+  "electronics",
+  "game props"
+]
+
+Use keywords for:
+
+- synonyms
+- alternate names
+- abbreviations
+- common misspellings if useful
+- technical terms
+- category words
+- terms that users might search for but that should not become visible tags
+
+The search already scans ALL localized titles, descriptions and tags, so you do not need to duplicate every translated sentence in keywords.
+
+Search uses AND logic for multiple words.
+Example:
+
+retro computer
+
+means the asset must contain both "retro" and "computer" somewhere in its searchable text.
+
+
+STEP 7 — ADD STORE LINKS
+------------------------
+
+Current structure:
+
+stores: {
+  fab: "https://www.fab.com/listings/...",
+  unity: ""
+}
+
+IMPORTANT — current behavior:
+
+Fab and Unity shortcuts are ALWAYS shown.
+
+If the URL exists:
+- the button is clickable.
+
+If the URL is empty:
+- the button stays visible;
+- it is displayed as unavailable/disabled.
+
+So an empty Unity URL is completely valid:
+
+unity: ""
+
+Do not write fake placeholder URLs.
+
+
+STEP 8 — OPTIONAL YOUTUBE LINK
+------------------------------
+
+If the asset has a YouTube video:
+
+youtube: "https://www.youtube.com/watch?v=..."
+
+If there is no video:
+
+youtube: ""
+
+Unlike the Fab/Unity shortcuts, the YouTube button is hidden completely when the value is empty.
+
+
+STEP 9 — CHECK THE GALLERY PATHS
+--------------------------------
+
+The first gallery entry should normally be the cover:
+
+gallery: [
+  "assets/images/my-asset/cover.jpg",
+  "assets/images/my-asset/01.jpg",
+  "assets/images/my-asset/02.jpg"
+]
+
+Check EVERY path for:
+
+- correct folder name
+- correct filename
+- correct .jpg / .png extension
+- correct capitalization
+- no missing comma
+
+A typo here usually produces a broken image icon on the site.
+
+
+STEP 10 — BUMP THE CACHE VERSION
+--------------------------------
+
+This is important.
+Browsers and GitHub Pages may keep an old copy of CSS, JavaScript or site-data.js.
+
+Open index.html.
+
+Near the top/bottom you will see lines similar to:
+
+style.css?v=20260815-i18n1
+site-data.js?v=20260815-i18n1
+app.js?v=20260815-i18n1
+
+Before publishing an update, change the version to a NEW value.
+
+Simple examples:
+
+?v=20260816-1
+?v=20260816-2
+?v=20260817-1
+
+Safest routine:
+Use the same new version value on style.css, site-data.js and app.js even when only one of them changed.
+
+This avoids the situation where a browser mixes old and new site files.
+
+
+STEP 11 — TEST LOCALLY
+----------------------
+
+Recommended:
+Open a terminal in the site folder and run:
+
+python -m http.server 8000
+
+Then open:
+
+http://localhost:8000
+
+The visitor counter intentionally does NOT increment while running locally.
+
+For the new asset, test:
+
+[ ] Cover image loads
+[ ] Title is correct
+[ ] Description is correct
+[ ] Tags are correct
+[ ] All gallery thumbnails load
+[ ] Main image opens the lightbox
+[ ] Gallery arrows work
+[ ] Esc closes the lightbox
+[ ] Swipe works on a phone/touch emulator
+[ ] Details opens and closes
+[ ] Fab link is correct
+[ ] Unity link is correct OR correctly disabled
+[ ] YouTube link appears only if supplied
+[ ] Copy-link button works
+[ ] Copied URL opens the correct asset directly
+[ ] Search finds the asset by title
+[ ] Search finds important keywords
+[ ] Clicking a tag filters correctly
+[ ] Pagination still works
+
+
+STEP 12 — TEST LANGUAGES
+------------------------
+
+Switch through all supported languages:
+
+[ ] ENG
+[ ] UA
+[ ] RUS
+[ ] TR
+[ ] JP
+[ ] PT-BR
+[ ] ES
+
+For each language, quickly check:
+
+- title
+- description
+- tags
+- Details button
+- store button tooltips/states
+- long text wrapping
+
+Pay special attention to mobile because translated titles and tags can be much longer than English.
+
+
+STEP 13 — TEST DESKTOP AND MOBILE
+---------------------------------
+
+DESKTOP:
+
+[ ] Profile/header looks normal
+[ ] Side blueprint decoration looks normal on a wide screen
+[ ] Asset title/file tabs are aligned
+[ ] Images keep the correct proportions
+[ ] Pagination looks normal
+
+MOBILE:
+
+[ ] Header is not overflowing
+[ ] Profile text flows correctly around/below the avatar
+[ ] Social buttons fit correctly
+[ ] Language menu opens above the content correctly
+[ ] Asset title fits in its tab
+[ ] Tags wrap cleanly
+[ ] Store buttons fit
+[ ] Main image is not stretched
+[ ] Details content fits the screen
+[ ] Pagination fits the screen
+
+Do not approve a CSS change after checking only one screen size.
+
+
+STEP 14 — COMMIT TO GITHUB
+---------------------------
+
+Repository:
+
+Kurai-Primo/Kurai-Primo.github.io
+
+Typical changed files for a new asset:
+
+assets/images/<asset-id>/...
+site-data.js
+index.html          (cache version bump)
+
+If layout/logic was also changed, include:
+
+style.css
+app.js
+
+Commit and push the files.
+GitHub Pages should rebuild automatically.
+
+After deployment, open:
+
+https://kurai-primo.github.io
+
+Then HARD REFRESH once and test the direct asset URL too:
+
+https://kurai-primo.github.io/#YOUR-ASSET-ID
+
+
+UPDATING AN EXISTING ASSET
+--------------------------
+
+If only text changes:
+
+1. Edit that asset's i18n content in site-data.js.
+2. Update keywords if needed.
+3. Bump the cache version in index.html.
+4. Test.
+5. Commit/push.
+
+If images change:
+
+1. Replace/add the image files.
+2. Update mainImage/gallery paths if filenames changed.
+3. Bump the cache version.
+4. Test all thumbnails and the lightbox.
+5. Commit/push.
+
+If a store becomes available later:
+
+Change, for example:
+
+unity: ""
+
+to:
+
+unity: "https://assetstore.unity.com/..."
+
+The previously disabled Unity shortcut will become clickable automatically.
+
+
+ADDING A NEW LANGUAGE
+---------------------
+
+This is NOT a normal asset upload and requires several edits.
+
+You must update:
+
+1. languages in site-data.js
+2. translations.<new-language> in site-data.js
+3. profile.i18n.<new-language>
+4. i18n.<new-language> for every asset
+5. languageFromBrowser() in app.js if browser auto-detection is wanted
+6. flagIcon() in app.js if a custom flag icon is needed
+7. cache version in index.html
+
+Then test the whole site in the new language.
+
+
+IMPORTANT FILES THAT SHOULD NOT BE ACCIDENTALLY DELETED
+--------------------------------------------------------
+
+favicon.png
+side-blueprint.svg
+assets/images/avatar.png
+assets/images/ui/unreal.png
+assets/images/counter/0.png
+assets/images/counter/1.png
+assets/images/counter/2.png
+assets/images/counter/3.png
+assets/images/counter/4.png
+assets/images/counter/5.png
+assets/images/counter/6.png
+assets/images/counter/7.png
+assets/images/counter/8.png
+assets/images/counter/9.png
+
+Also keep the hidden #load-more compatibility button in index.html unless old-cache compatibility is intentionally removed.
+
+
+FINAL PRE-PUBLISH CHECKLIST
+---------------------------
+
+[ ] No JavaScript syntax errors
+[ ] New asset ID is unique
+[ ] Asset ID was not unnecessarily changed
+[ ] All image paths exist
+[ ] All 7 language entries exist
+[ ] Store URLs are correct
+[ ] Keywords are useful
+[ ] Cache version was changed
+[ ] Search works
+[ ] Tags work
+[ ] Pagination works
+[ ] Details works
+[ ] Copy link works
+[ ] Direct #asset-id link works
+[ ] Lightbox works
+[ ] Desktop looks correct
+[ ] Mobile looks correct
+[ ] GitHub Pages deployed the new commit
