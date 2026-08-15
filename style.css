@@ -1225,3 +1225,200 @@ body.lightbox-open { overflow: hidden; }
     z-index: 100;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Compact mobile catalog + flowing profile avatar
+   Keep the desktop-like density on phones while preserving the mobile header.
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  /* Let the profile copy flow alongside the avatar and continue beneath it. */
+  .profile-card {
+    display: block;
+  }
+
+  .profile-card::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .profile-avatar {
+    float: left;
+    width: 78px;
+    margin: 6px 14px 9px 0;
+  }
+
+  .profile-content {
+    display: block;
+    min-width: 0;
+    padding-right: 0;
+  }
+
+  .profile-title {
+    padding-top: 1px;
+  }
+
+  .profile-intro {
+    display: block;
+    grid-column: auto;
+  }
+
+  .contacts {
+    grid-column: auto;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .contact-chip {
+    width: 58px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0;
+    border-radius: 9px;
+    justify-content: center;
+  }
+
+  .contact-chip svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .profile-tools {
+    clear: both;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  /* Denser asset cards: much closer to the desktop layout viewed on mobile. */
+  .asset-list {
+    gap: 15px;
+    margin-top: 14px;
+  }
+
+  .asset-tabs {
+    min-height: 32px;
+  }
+
+  .asset-title-tab {
+    max-width: calc(100% - 48px);
+    min-height: 32px;
+    padding: 5px 10px 4px;
+    border-radius: 9px 9px 0 0;
+  }
+
+  .asset-title {
+    font-size: .86rem;
+    line-height: 1.15;
+    letter-spacing: -.015em;
+  }
+
+  .asset-title-link {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .asset-tabs-gap {
+    min-width: 6px;
+    flex-basis: 6px;
+  }
+
+  .asset-copy-tab {
+    flex-basis: 40px;
+    min-height: 32px;
+    padding: 2px 4px 3px;
+    border-radius: 9px 9px 0 0;
+  }
+
+  .copy-link-button {
+    width: 27px;
+    height: 27px;
+    border-radius: 6px;
+  }
+
+  .copy-link-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .asset-head {
+    padding: 8px 10px 0;
+  }
+
+  .asset-tags {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .asset-tag {
+    min-height: 19px;
+    padding: 2px 6px;
+    font-size: .59rem;
+    border-width: 1px;
+  }
+
+  .asset-actions {
+    flex-wrap: nowrap;
+    gap: 7px;
+    padding: 9px 10px 10px;
+  }
+
+  .store-shortcuts {
+    flex: 0 1 auto;
+    gap: 6px;
+  }
+
+  .platform-button {
+    min-width: 88px;
+    height: 34px;
+    padding: 0 9px 0 8px;
+    gap: 6px;
+    border-radius: 7px;
+  }
+
+  .platform-button svg,
+  .platform-icon-image {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+
+  .platform-label {
+    font-size: .68rem;
+  }
+
+  .details-button {
+    flex: 0 0 auto;
+    margin-left: auto;
+    min-height: 34px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    font-size: .72rem;
+  }
+
+  .asset-details-content {
+    padding: 0 10px 11px;
+  }
+
+  .asset-description {
+    font-size: .82rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .platform-button {
+    min-width: 80px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .platform-label {
+    font-size: .64rem;
+  }
+
+  .details-button {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: .68rem;
+  }
+}
