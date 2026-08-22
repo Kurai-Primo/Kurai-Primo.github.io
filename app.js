@@ -113,7 +113,7 @@
       return `<svg ${common}><rect width="60" height="36" fill="#fff"/><circle cx="30" cy="18" r="9" fill="#bc002d"/></svg>`;
     }
     if (language === 'pt-BR') {
-      return `<svg ${common}><rect width="60" height="36" fill="#009b3a"/><path d="M30 4 54 18 30 32 6 18Z" fill="#ffdf00"/><circle cx="30" cy="18" r="8" fill="#002776"/><path d="M22.5 16.3c5.2-2.1 10.2-1.8 15.2.7" fill="none" stroke="#fff" stroke-width="1.2"/></svg>`;
+      return `<svg ${common}><rect width="24" height="36" fill="#046a38"/><rect x="24" width="36" height="36" fill="#da291c"/><circle cx="24" cy="18" r="8.2" fill="none" stroke="#ffcc29" stroke-width="2"/><circle cx="24" cy="18" r="5.8" fill="#fff"/><path d="M20.5 13.5h7v6.7c0 3-3.5 4.5-3.5 4.5s-3.5-1.5-3.5-4.5Z" fill="#fff" stroke="#da291c" stroke-width="1.2"/><path d="M22 15h4v3h-4Z" fill="#0055a4"/><circle cx="23" cy="16" r=".45" fill="#fff"/><circle cx="25" cy="16" r=".45" fill="#fff"/><path d="M21.6 19.4h4.8" stroke="#da291c" stroke-width="1"/><path d="M24 9.8v16.4M15.8 18h16.4" stroke="#ffcc29" stroke-width=".7" opacity=".9"/></svg>`;
     }
     if (language === 'es') {
       return `<svg ${common}><rect width="60" height="9" fill="#aa151b"/><rect y="9" width="60" height="18" fill="#f1bf00"/><rect y="27" width="60" height="9" fill="#aa151b"/></svg>`;

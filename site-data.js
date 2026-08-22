@@ -418,7 +418,7 @@ window.SITE_DATA = {
         es: { title: "TV Retro Astryx Novavision", description: "Modelo 3D detallado de un televisor CRT de estilo años 70, inspirado en los diseños clásicos de la época. Ideal para interiores retro, escenas nostálgicas, proyectos vintage y entornos de terror. La antena y los controles son meshes independientes, por lo que se pueden ajustar, recolocar o retirar fácilmente. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Televisor", "Electrónica", "Props"] }
       },
       keywords: ["retro", "vintage", "television", "tv", "crt", "1970s", "electronics", "analog", "old television", "retro technology", "horror", "interior", "props", "game assets", "antenna"],
-      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "" },
+      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "https://assetstore.unity.com/packages/slug/395902" },
       youtube: ""
     },
 
