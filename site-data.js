@@ -396,7 +396,7 @@ window.SITE_DATA = {
         es: { title: "Paquete de Gadgets Retro", description: "Un pequeño paquete de tecnología retro con una grabadora de cinta de carrete, dos ordenadores personales vintage, un televisor clásico y un reproductor/grabador VHS. Cada modelo incluye tres opciones de resolución de texturas — 1K, 2K y 4K — en formato PNG.", tags: ["Retro", "Vintage", "Electrónica", "Props", "Analógico"] }
       },
       keywords: ["retro", "vintage", "technology", "tech", "electronics", "computer", "personal computer", "television", "tv", "vhs", "video recorder", "tape recorder", "reel-to-reel", "analog", "props", "game assets", "old school", "environment props"],
-      stores: { fab: "https://www.fab.com/listings/e56e5667-9deb-48e4-9193-c2af27e8161f", unity: "" },
+      stores: { fab: "https://www.fab.com/listings/e56e5667-9deb-48e4-9193-c2af27e8161f", unity: "https://assetstore.unity.com/packages/slug/395902" },
       youtube: ""
     },
 
@@ -418,7 +418,7 @@ window.SITE_DATA = {
         es: { title: "TV Retro Astryx Novavision", description: "Modelo 3D detallado de un televisor CRT de estilo años 70, inspirado en los diseños clásicos de la época. Ideal para interiores retro, escenas nostálgicas, proyectos vintage y entornos de terror. La antena y los controles son meshes independientes, por lo que se pueden ajustar, recolocar o retirar fácilmente. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Televisor", "Electrónica", "Props"] }
       },
       keywords: ["retro", "vintage", "television", "tv", "crt", "1970s", "electronics", "analog", "old television", "retro technology", "horror", "interior", "props", "game assets", "antenna"],
-      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "https://assetstore.unity.com/packages/slug/395902" },
+      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "" },
       youtube: ""
     },
 
