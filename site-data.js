@@ -314,7 +314,8 @@ window.SITE_DATA = {
     contacts: [
       { label: "kurai.primo@gmail.com", href: "mailto:kurai.primo@gmail.com", icon: "email" },
       { label: "@Kurai_Primo", href: "https://t.me/Kurai_Primo", icon: "telegram" },
-      { label: "YouTube", href: "https://www.youtube.com/@Kurai_3DAssets", icon: "youtube" }
+      { label: "YouTube", href: "https://www.youtube.com/@Kurai_3DAssets", icon: "youtube" },
+      { label: "Unity Asset Store", href: "https://assetstore.unity.com/publishers/152958", icon: "generic" }
     ]
   },
 
