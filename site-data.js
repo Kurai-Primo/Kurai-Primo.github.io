@@ -284,38 +284,41 @@ window.SITE_DATA = {
     i18n: {
       en: {
         subtitle: "Game-Ready 3D Asset Creator",
-        introHtml: "Hi! I’m Vladyslav, a 3D artist from Ukraine. I publish game-ready assets on <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> and the Unity Asset Store. Here you can quickly browse my work and find useful assets for your projects. I’ll be glad to help make your workflow a little easier, save you some time, and contribute my small part to game development."
+        introHtml: "Hi! I’m Vladyslav, a 3D artist from Ukraine. I publish game-ready assets on <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> and the <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>. Here you can quickly browse my work and find useful assets for your projects. I’ll be glad to help make your workflow a little easier, save you some time, and contribute my small part to game development."
       },
       uk: {
         subtitle: "Автор ігрових 3D-асетів",
-        introHtml: "Привіт! Я Владислав, 3D-художник з України. Я публікую готові до використання в іграх асети на <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> та в Unity Asset Store. Тут ви можете швидко переглянути мої роботи й знайти корисні асети для своїх проєктів. Буду радий трохи спростити ваш робочий процес, заощадити вам час і зробити свій невеликий внесок у розробку ігор."
+        introHtml: "Привіт! Я Владислав, 3D-художник з України. Я публікую готові до використання в іграх асети на <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> та в <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>. Тут ви можете швидко переглянути мої роботи й знайти корисні асети для своїх проєктів. Буду радий трохи спростити ваш робочий процес, заощадити вам час і зробити свій невеликий внесок у розробку ігор."
       },
       ru: {
         subtitle: "Автор игровых 3D-ассетов",
-        introHtml: "Привет! Я Владислав, 3D-художник из Украины. Я публикую готовые для игр ассеты на <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> и в Unity Asset Store. Здесь можно быстро посмотреть мои работы и найти полезные ассеты для своих проектов. Буду рад немного упростить ваш рабочий процесс, сэкономить вам время и внести свой небольшой вклад в разработку игр."
+        introHtml: "Привет! Я Владислав, 3D-художник из Украины. Я публикую готовые для игр ассеты на <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> и в <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>. Здесь можно быстро посмотреть мои работы и найти полезные ассеты для своих проектов. Буду рад немного упростить ваш рабочий процесс, сэкономить вам время и внести свой небольшой вклад в разработку игр."
       },
       tr: {
         subtitle: "Oyunlara Hazır 3D Varlık Üreticisi",
-        introHtml: "Merhaba! Ben Ukrayna’dan 3D sanatçısı Vladyslav. Oyunlara hazır varlıklarımı <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> ve Unity Asset Store’da yayınlıyorum. Burada çalışmalarımı hızlıca inceleyebilir ve projeleriniz için yararlı varlıklar bulabilirsiniz. İş akışınızı biraz kolaylaştırmaya, zaman kazandırmaya ve oyun geliştirmeye küçük bir katkı sunmaya memnun olurum."
+        introHtml: "Merhaba! Ben Ukrayna’dan 3D sanatçısı Vladyslav. Oyunlara hazır varlıklarımı <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> ve <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>’da yayınlıyorum. Burada çalışmalarımı hızlıca inceleyebilir ve projeleriniz için yararlı varlıklar bulabilirsiniz. İş akışınızı biraz kolaylaştırmaya, zaman kazandırmaya ve oyun geliştirmeye küçük bir katkı sunmaya memnun olurum."
       },
       ja: {
         subtitle: "ゲーム向け3Dアセットクリエイター",
-        introHtml: "こんにちは！ウクライナ出身の3Dアーティスト、Vladyslavです。ゲーム向けのアセットを<a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a>とUnity Asset Storeで公開しています。ここでは作品をすばやく確認し、プロジェクトに役立つアセットを見つけられます。制作フローを少し楽にし、時間を節約し、ゲーム開発に小さくても役立てればうれしいです。"
+        introHtml: "こんにちは！ウクライナ出身の3Dアーティスト、Vladyslavです。ゲーム向けのアセットを<a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a>と<a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>で公開しています。ここでは作品をすばやく確認し、プロジェクトに役立つアセットを見つけられます。制作フローを少し楽にし、時間を節約し、ゲーム開発に小さくても役立てればうれしいです。"
       },
       "pt-BR": {
         subtitle: "Criador de Assets 3D Prontos para Jogos",
-        introHtml: "Olá! Sou Vladyslav, artista 3D da Ucrânia. Publico assets prontos para jogos no <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> e na Unity Asset Store. Aqui você pode conhecer rapidamente meu trabalho e encontrar assets úteis para seus projetos. Ficarei feliz em facilitar um pouco seu fluxo de trabalho, economizar seu tempo e contribuir com uma pequena parte para o desenvolvimento de jogos."
+        introHtml: "Olá! Sou Vladyslav, artista 3D da Ucrânia. Publico assets prontos para jogos no <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> e na <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>. Aqui você pode conhecer rapidamente meu trabalho e encontrar assets úteis para seus projetos. Ficarei feliz em facilitar um pouco seu fluxo de trabalho, economizar seu tempo e contribuir com uma pequena parte para o desenvolvimento de jogos."
       },
       es: {
         subtitle: "Creador de Assets 3D Listos para Juegos",
-        introHtml: "¡Hola! Soy Vladyslav, artista 3D de Ucrania. Publico assets listos para juegos en <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> y en Unity Asset Store. Aquí puedes revisar rápidamente mi trabajo y encontrar assets útiles para tus proyectos. Me alegrará hacer tu flujo de trabajo un poco más sencillo, ahorrarte tiempo y aportar mi pequeño granito de arena al desarrollo de videojuegos."
+        introHtml: "¡Hola! Soy Vladyslav, artista 3D de Ucrania. Publico assets listos para juegos en <a href=\"https://www.fab.com/sellers/Kurai\" target=\"_blank\" rel=\"noopener noreferrer\">Fab</a> y en <a href=\"https://assetstore.unity.com/publishers/152958\" target=\"_blank\" rel=\"noopener noreferrer\">Unity Asset Store</a>. Aquí puedes revisar rápidamente mi trabajo y encontrar assets útiles para tus proyectos. Me alegrará hacer tu flujo de trabajo un poco más sencillo, ahorrarte tiempo y aportar mi pequeño granito de arena al desarrollo de videojuegos."
       }
+    },
+    profileStores: {
+      fab: "https://www.fab.com/sellers/Kurai",
+      unity: "https://assetstore.unity.com/publishers/152958"
     },
     contacts: [
       { label: "kurai.primo@gmail.com", href: "mailto:kurai.primo@gmail.com", icon: "email" },
       { label: "@Kurai_Primo", href: "https://t.me/Kurai_Primo", icon: "telegram" },
-      { label: "YouTube", href: "https://www.youtube.com/@Kurai_3DAssets", icon: "youtube" },
-      { label: "Unity Asset Store", href: "https://assetstore.unity.com/publishers/152958", icon: "generic" }
+      { label: "YouTube", href: "https://www.youtube.com/@Kurai_3DAssets", icon: "youtube" }
     ]
   },
 

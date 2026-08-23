@@ -10,13 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260822-ptflag1">
+  <link rel="stylesheet" href="style.css?v=20260823-profile-stores1">
 </head>
 <body>
   <div class="desktop-backdrop" aria-hidden="true">
     <div class="side-blueprint side-blueprint-left"></div>
     <div class="side-blueprint side-blueprint-right"></div>
   </div>
+
   <main class="page-shell">
     <header class="profile-card" id="profile"></header>
 
@@ -25,16 +26,19 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.15A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg>
         <input id="asset-search" type="search" placeholder="Search assets..." autocomplete="off" aria-label="Search assets">
       </div>
+
       <div id="asset-list" class="asset-list"></div>
       <p id="empty-state" class="empty-state" hidden>No assets found.</p>
       <nav id="pagination" class="pagination" aria-label="Asset pages" hidden></nav>
       <!-- Compatibility fallback for an older cached app.js. Kept permanently hidden. -->
       <button id="load-more" class="load-more legacy-load-more" type="button" hidden aria-hidden="true" tabindex="-1">Show more</button>
     </section>
+
     <footer class="footer">© <span id="year"></span> Kurai 3D Assets</footer>
   </main>
 
   <div id="site-toast" class="site-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image gallery">
     <button class="lightbox-close" type="button" aria-label="Close gallery">×</button>
     <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
@@ -44,7 +48,8 @@
     </figure>
     <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
   </div>
-  <script src="site-data.js?v=20260822-ptflag1"></script>
-  <script src="app.js?v=20260822-ptflag1"></script>
+
+  <script src="site-data.js?v=20260823-profile-stores1"></script>
+  <script src="app.js?v=20260823-profile-stores1"></script>
 </body>
 </html>

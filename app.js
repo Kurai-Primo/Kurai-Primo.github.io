@@ -113,7 +113,8 @@
       return `<svg ${common}><rect width="60" height="36" fill="#fff"/><circle cx="30" cy="18" r="9" fill="#bc002d"/></svg>`;
     }
     if (language === 'pt-BR') {
-      return `<svg ${common}><rect width="24" height="36" fill="#046a38"/><rect x="24" width="36" height="36" fill="#da291c"/><circle cx="24" cy="18" r="8.2" fill="none" stroke="#ffcc29" stroke-width="2"/><circle cx="24" cy="18" r="5.8" fill="#fff"/><path d="M20.5 13.5h7v6.7c0 3-3.5 4.5-3.5 4.5s-3.5-1.5-3.5-4.5Z" fill="#fff" stroke="#da291c" stroke-width="1.2"/><path d="M22 15h4v3h-4Z" fill="#0055a4"/><circle cx="23" cy="16" r=".45" fill="#fff"/><circle cx="25" cy="16" r=".45" fill="#fff"/><path d="M21.6 19.4h4.8" stroke="#da291c" stroke-width="1"/><path d="M24 9.8v16.4M15.8 18h16.4" stroke="#ffcc29" stroke-width=".7" opacity=".9"/></svg>`;
+      // Portuguese flag for the Portuguese-language option.
+      return `<svg ${common}><rect width="24" height="36" fill="#046a38"/><rect x="24" width="36" height="36" fill="#da291c"/><circle cx="24" cy="18" r="8.3" fill="none" stroke="#ffcc00" stroke-width="2.1"/><circle cx="24" cy="18" r="5.2" fill="#fff" stroke="#da291c" stroke-width="1"/><path d="M20.4 14.8h7.2v5.6c0 2.4-1.8 4.3-3.6 5.1-1.8-.8-3.6-2.7-3.6-5.1Z" fill="#fff" stroke="#da291c" stroke-width=".8"/><circle cx="22.2" cy="17.2" r=".7" fill="#1f4e9e"/><circle cx="24" cy="17.2" r=".7" fill="#1f4e9e"/><circle cx="25.8" cy="17.2" r=".7" fill="#1f4e9e"/><circle cx="23.1" cy="19.1" r=".7" fill="#1f4e9e"/><circle cx="24.9" cy="19.1" r=".7" fill="#1f4e9e"/></svg>`;
     }
     if (language === 'es') {
       return `<svg ${common}><rect width="60" height="9" fill="#aa151b"/><rect y="9" width="60" height="18" fill="#f1bf00"/><rect y="27" width="60" height="9" fill="#aa151b"/></svg>`;
@@ -159,6 +160,32 @@
     </div>`;
   }
 
+  function profilePlatformButtons() {
+    const stores = data.profile.profileStores || {};
+    const items = [
+      {
+        key: 'fab',
+        label: 'Fab',
+        href: stores.fab,
+        icon: '<img class="profile-platform-icon-image" src="assets/images/ui/unreal.png" alt="">'
+      },
+      {
+        key: 'unity',
+        label: 'Unity Asset Store',
+        href: stores.unity,
+        icon: icons.unity
+      }
+    ].filter(item => item.href);
+
+    if (!items.length) return '';
+
+    return `<nav class="profile-platforms" aria-label="Asset stores">${items.map(item => `
+      <a class="profile-platform-button profile-platform-${item.key}" href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(item.label)}" title="${escapeHtml(item.label)}">
+        <span class="profile-platform-icon">${item.icon}</span>
+        <span>${escapeHtml(item.label)}</span>
+      </a>`).join('')}</nav>`;
+  }
+
   function renderProfile() {
     const profile = localizedProfile();
     const contacts = (data.profile.contacts || []).filter(contact => contact && contact.href && contact.label);
@@ -169,6 +196,7 @@
         <h1 class="profile-title">${escapeHtml(data.profile.brand)}</h1>
         <div class="profile-subtitle">${escapeHtml(profile.subtitle || '')}</div>
         <p class="profile-intro">${profile.introHtml || ''}</p>
+        ${profilePlatformButtons()}
         ${contacts.length ? `<nav class="contacts" aria-label="Contact links">${contacts.map(contact => `
           <a class="contact-chip" href="${escapeHtml(contact.href)}" ${contact.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} aria-label="${escapeHtml(contact.label)}" title="${escapeHtml(contact.label)}">
             ${icons[contact.icon] || icons.generic}<span>${escapeHtml(contact.label)}</span>
