@@ -422,7 +422,7 @@ window.SITE_DATA = {
         es: { title: "TV Retro Astryx Novavision", description: "Modelo 3D detallado de un televisor CRT de estilo años 70, inspirado en los diseños clásicos de la época. Ideal para interiores retro, escenas nostálgicas, proyectos vintage y entornos de terror. La antena y los controles son meshes independientes, por lo que se pueden ajustar, recolocar o retirar fácilmente. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Televisor", "Electrónica", "Props"] }
       },
       keywords: ["retro", "vintage", "television", "tv", "crt", "1970s", "electronics", "analog", "old television", "retro technology", "horror", "interior", "props", "game assets", "antenna"],
-      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "" },
+      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "https://assetstore.unity.com/?q=RETRO%20TV%20Astryx%20Novavision&orderBy=1" },
       youtube: ""
     },
 
@@ -445,7 +445,7 @@ window.SITE_DATA = {
         es: { title: "Grabadora Astryx KP2036", description: "Modelo 3D low-poly detallado de una grabadora de cinta de carrete inspirada en el lenguaje visual icónico de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos de temática vintage. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Grabadora", "Electrónica", "Props"] }
       },
       keywords: ["retro", "vintage", "tape recorder", "reel-to-reel", "tape deck", "audio", "analog", "electronics", "1980s", "music equipment", "sound recorder", "studio", "interior", "props", "game assets", "low poly"],
-      stores: { fab: "https://www.fab.com/listings/cd27d76e-1ad5-4cae-a2f2-75f4a1ba194a", unity: "" },
+      stores: { fab: "https://www.fab.com/listings/cd27d76e-1ad5-4cae-a2f2-75f4a1ba194a", unity: "https://assetstore.unity.com/?q=REEL-TO-REEL%20TAPE%20RECORDER%20Astryx%20KP-2036&orderBy=1" },
       youtube: ""
     },
 
@@ -493,6 +493,1228 @@ window.SITE_DATA = {
       keywords: ["drone", "fpv", "quadcopter", "quadrocopter", "uav", "camera drone", "electronics", "technology", "remote controller", "controller", "storage case", "case", "props", "game assets", "unreal engine", "modular", "camera"],
       stores: { fab: "https://www.fab.com/listings/bf0e504c-d8d5-4baf-9cd8-5450aadf2889", unity: "" },
       youtube: ""
+    },
+    {
+      "id": "poppy-plant-growth-pack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/3c7132a4-6eb2-44ff-a00e-e8b3ee9d2f8e/1ac9b912-6504-411a-ae10-9584c4e92e59.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/3c7132a4-6eb2-44ff-a00e-e8b3ee9d2f8e/1ac9b912-6504-411a-ae10-9584c4e92e59.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Poppy Plant Growth 3D Models Pack",
+          "description": "A set of game-ready poppy plant models in three color variations. Includes multiple growth stages from seedling to full bloom, plus withering and drying states.",
+          "tags": [
+            "Plants",
+            "Poppy",
+            "Growth",
+            "Farm",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "3D-пак стадій росту маку",
+          "description": "Набір готових до використання в іграх моделей маку у трьох кольорових варіаціях. Містить кілька стадій росту від паростка до повного цвітіння, а також стани в’янення й висихання.",
+          "tags": [
+            "Рослини",
+            "Мак",
+            "Ріст",
+            "Ферма",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "3D-пак стадий роста мака",
+          "description": "Набор готовых для игр моделей мака в трёх цветовых вариациях. Включает несколько стадий роста от ростка до полного цветения, а также состояния увядания и высыхания.",
+          "tags": [
+            "Растения",
+            "Мак",
+            "Рост",
+            "Ферма",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Haşhaş Bitkisi Büyüme 3D Model Paketi",
+          "description": "Üç renk varyasyonunda oyunlara hazır haşhaş bitkisi modelleri. Fidandan tam çiçeklenmeye kadar çeşitli büyüme aşamalarının yanı sıra solma ve kuruma durumlarını içerir.",
+          "tags": [
+            "Bitkiler",
+            "Haşhaş",
+            "Büyüme",
+            "Çiftlik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "ポピー成長段階 3Dモデルパック",
+          "description": "3色のバリエーションを備えたゲーム向けポピー植物モデルセットです。苗から満開までの複数の成長段階に加え、しおれ・乾燥状態を収録しています。",
+          "tags": [
+            "植物",
+            "ポピー",
+            "成長",
+            "農場",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote 3D de Crescimento de Papoulas",
+          "description": "Conjunto de modelos de papoula prontos para jogos em três variações de cor. Inclui várias fases de crescimento, da muda à floração completa, além de estados de murchamento e secagem.",
+          "tags": [
+            "Plantas",
+            "Papoula",
+            "Crescimento",
+            "Fazenda",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack 3D de Crecimiento de Amapolas",
+          "description": "Conjunto de modelos de amapola listos para juegos en tres variantes de color. Incluye varias etapas de crecimiento, desde plántula hasta plena floración, además de estados marchitos y secos.",
+          "tags": [
+            "Plantas",
+            "Amapola",
+            "Crecimiento",
+            "Granja",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "poppy",
+        "flower",
+        "plant",
+        "growth stages",
+        "wilting",
+        "drying",
+        "farm",
+        "vegetation",
+        "low poly"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/ae4b6b9f-8ea8-4ced-a18d-a0c257b451dc",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "plant-growing-props-pack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/3088ee95-59bd-40db-9bb6-f797228f1836/620325e7-e247-4b15-a1b7-0b5dfb28de6b.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/3088ee95-59bd-40db-9bb6-f797228f1836/620325e7-e247-4b15-a1b7-0b5dfb28de6b.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Plant Growing Props Pack",
+          "description": "A gardening and farming prop set with planter beds, pots, two soil types in dry, normal and wet states, modular irrigation pipes, soil and fertilizer bags, and plastic canisters.",
+          "tags": [
+            "Gardening",
+            "Farming",
+            "Soil",
+            "Irrigation",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Набір пропсів для вирощування рослин",
+          "description": "Набір для садових і фермерських сцен: грядки, горщики, два типи ґрунту у сухому, звичайному та мокрому станах, модульні труби для зрошення, мішки ґрунту й добрив та пластикові каністри.",
+          "tags": [
+            "Садівництво",
+            "Ферма",
+            "Ґрунт",
+            "Зрошення",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Набор пропсов для выращивания растений",
+          "description": "Набор для садовых и фермерских сцен: грядки, горшки, два типа почвы в сухом, обычном и мокром состояниях, модульные трубы для полива, мешки почвы и удобрений и пластиковые канистры.",
+          "tags": [
+            "Садоводство",
+            "Ферма",
+            "Почва",
+            "Полив",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Bitki Yetiştirme Objeleri Paketi",
+          "description": "Bahçe ve çiftlik sahneleri için saksılar, ekim yatakları, kuru/normal/ıslak durumlarda iki toprak türü, modüler sulama boruları, toprak ve gübre torbaları ile plastik bidonlar içeren set.",
+          "tags": [
+            "Bahçecilik",
+            "Çiftlik",
+            "Toprak",
+            "Sulama",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "植物栽培プロップパック",
+          "description": "ガーデニングや農業シーン向けのプロップセット。プランターベッド、鉢、乾燥・通常・湿潤の3状態を持つ2種類の土、モジュール式灌漑パイプ、土・肥料袋、プラスチック容器を収録。",
+          "tags": [
+            "園芸",
+            "農業",
+            "土",
+            "灌漑",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote de Props para Cultivo de Plantas",
+          "description": "Conjunto para cenas de jardinagem e fazenda com canteiros, vasos, dois tipos de solo em estados seco, normal e molhado, tubos modulares de irrigação, sacos de terra e fertilizante e galões plásticos.",
+          "tags": [
+            "Jardinagem",
+            "Fazenda",
+            "Solo",
+            "Irrigação",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack de Props para Cultivo de Plantas",
+          "description": "Conjunto para escenas de jardinería y granja con bancales, macetas, dos tipos de suelo en estados seco, normal y húmedo, tuberías modulares de riego, sacos de tierra y fertilizante y bidones de plástico.",
+          "tags": [
+            "Jardinería",
+            "Granja",
+            "Suelo",
+            "Riego",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "garden",
+        "gardening",
+        "farm",
+        "planter",
+        "pot",
+        "soil",
+        "irrigation",
+        "pipe",
+        "fertilizer",
+        "canister"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/99e81e90-eac2-48e0-9f39-d943ec7ef0c0",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "hanging-drying-rack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/6db23612-24ec-4547-8052-581419cf6755/ad051920-8b0e-45dd-8ffb-c21fb6d4a9ac.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/6db23612-24ec-4547-8052-581419cf6755/ad051920-8b0e-45dd-8ffb-c21fb6d4a9ac.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Hanging Drying Rack",
+          "description": "A compact hanging drying-rack prop for production, workshop, basement and utility scenes. Designed as a simple ready-to-use environment asset.",
+          "tags": [
+            "Drying",
+            "Rack",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Підвісна сушарка",
+          "description": "Компактний підвісний сушильний проп для виробничих, майстерневих, підвальних та господарських сцен. Простий готовий до використання елемент оточення.",
+          "tags": [
+            "Сушіння",
+            "Стійка",
+            "Промислове",
+            "Інтер’єр",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Подвесная сушилка",
+          "description": "Компактный подвесной сушильный проп для производственных, мастерских, подвальных и хозяйственных сцен. Простой готовый элемент окружения.",
+          "tags": [
+            "Сушка",
+            "Стойка",
+            "Промышленное",
+            "Интерьер",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Asılı Kurutma Rafı",
+          "description": "Üretim, atölye, bodrum ve yardımcı alan sahneleri için kompakt asılı kurutma rafı objesi. Kullanıma hazır basit bir çevre varlığıdır.",
+          "tags": [
+            "Kurutma",
+            "Raf",
+            "Endüstriyel",
+            "İç Mekân",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "吊り下げ式乾燥ラック",
+          "description": "生産設備、作業場、地下室、ユーティリティ空間向けのコンパクトな吊り下げ式乾燥ラックです。すぐに使える環境プロップとして設計されています。",
+          "tags": [
+            "乾燥",
+            "ラック",
+            "工業",
+            "室内",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Rack de Secagem Suspenso",
+          "description": "Prop compacto de rack de secagem suspenso para cenas de produção, oficinas, porões e áreas utilitárias. Um elemento de ambiente simples e pronto para uso.",
+          "tags": [
+            "Secagem",
+            "Rack",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Estante de Secado Colgante",
+          "description": "Prop compacto de estante de secado colgante para escenas de producción, talleres, sótanos y zonas de servicio. Elemento de entorno sencillo y listo para usar.",
+          "tags": [
+            "Secado",
+            "Estante",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "drying",
+        "dryer",
+        "hanging rack",
+        "rope",
+        "industrial",
+        "workshop",
+        "basement",
+        "props"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/c5f9fd02-1d21-4e05-a1e9-9f96978517b0",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "diy-industrial-dryer",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/bf4531c5-db2d-4912-a9d1-a21d12311cf0/6430073b-9afe-4026-b67f-4b105435f4c4.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/bf4531c5-db2d-4912-a9d1-a21d12311cf0/6430073b-9afe-4026-b67f-4b105435f4c4.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "DIY Industrial Dryer 3D Model",
+          "description": "A handmade-style industrial drying cabinet with drawers, top fans and heating coils. Fan motion is implemented through material animation and the heating coils emit light.",
+          "tags": [
+            "Dryer",
+            "Industrial",
+            "DIY",
+            "Machine",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "3D-модель саморобної промислової сушарки",
+          "description": "Промислова сушильна шафа у саморобному стилі з висувними секціями, верхніми вентиляторами та нагрівальними спіралями. Рух вентиляторів реалізований анімацією матеріалу, а спіралі випромінюють світло.",
+          "tags": [
+            "Сушарка",
+            "Промислове",
+            "DIY",
+            "Обладнання",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "3D-модель самодельной промышленной сушилки",
+          "description": "Промышленный сушильный шкаф в самодельном стиле с выдвижными секциями, верхними вентиляторами и нагревательными спиралями. Движение вентиляторов реализовано анимацией материала, а спирали излучают свет.",
+          "tags": [
+            "Сушилка",
+            "Промышленное",
+            "DIY",
+            "Оборудование",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "DIY Endüstriyel Kurutucu 3D Modeli",
+          "description": "Çekmeceler, üst fanlar ve ısıtma bobinleri bulunan el yapımı tarzda endüstriyel kurutma kabini. Fan hareketi malzeme animasyonuyla uygulanır ve ısıtma bobinleri ışık yayar.",
+          "tags": [
+            "Kurutucu",
+            "Endüstriyel",
+            "DIY",
+            "Makine",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "DIY工業用乾燥機 3Dモデル",
+          "description": "引き出し、上部ファン、加熱コイルを備えた手作り風の工業用乾燥キャビネットです。ファンの動きはマテリアルアニメーションで表現され、加熱コイルは発光します。",
+          "tags": [
+            "乾燥機",
+            "工業",
+            "DIY",
+            "機械",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Modelo 3D de Secador Industrial DIY",
+          "description": "Gabinete de secagem industrial com aparência artesanal, gavetas, ventiladores superiores e serpentinas de aquecimento. O movimento dos ventiladores usa animação de material e as serpentinas emitem luz.",
+          "tags": [
+            "Secador",
+            "Industrial",
+            "DIY",
+            "Máquina",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Modelo 3D de Secador Industrial DIY",
+          "description": "Armario de secado industrial de estilo artesanal con cajones, ventiladores superiores y resistencias de calentamiento. El movimiento de los ventiladores usa animación de material y las resistencias emiten luz.",
+          "tags": [
+            "Secador",
+            "Industrial",
+            "DIY",
+            "Máquina",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "dryer",
+        "industrial dryer",
+        "drying cabinet",
+        "fan",
+        "heating coil",
+        "machine",
+        "diy",
+        "props"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/e43e7d7e-0fb0-4f66-a6da-77dc7c81bd40",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "grow-light-pack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/770b22ac-6bc7-4cb3-b40d-a5447fc5c021/749b97c6-6971-41e3-98ea-f5cf0c9faa69.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/770b22ac-6bc7-4cb3-b40d-a5447fc5c021/749b97c6-6971-41e3-98ea-f5cf0c9faa69.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Grow Light Pack – Daylight & UV Lamps",
+          "description": "A pack of grow-light props for indoor cultivation scenes, including daylight and UV lamp variants. Suitable for greenhouses, indoor farms and simulation environments.",
+          "tags": [
+            "Grow Light",
+            "Lamp",
+            "UV",
+            "Farming",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Набір ламп для вирощування – денне світло та UV",
+          "description": "Набір ламп для сцен вирощування в приміщенні, включно з варіантами денного та ультрафіолетового світла. Підходить для теплиць, indoor-ферм і симуляторів.",
+          "tags": [
+            "Лампа",
+            "UV",
+            "Вирощування",
+            "Ферма",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Набор ламп для выращивания – дневной свет и UV",
+          "description": "Набор ламп для сцен выращивания в помещении, включая варианты дневного и ультрафиолетового света. Подходит для теплиц, indoor-ферм и симуляторов.",
+          "tags": [
+            "Лампа",
+            "UV",
+            "Выращивание",
+            "Ферма",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Yetiştirme Lambası Paketi – Gün Işığı ve UV",
+          "description": "İç mekân yetiştirme sahneleri için gün ışığı ve UV lamba varyantları içeren aydınlatma paketi. Seralar, kapalı çiftlikler ve simülasyon ortamları için uygundur.",
+          "tags": [
+            "Yetiştirme Lambası",
+            "Lamba",
+            "UV",
+            "Çiftlik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "育成ライトパック – 昼光・UVランプ",
+          "description": "屋内栽培シーン向けの育成ライトセットで、昼光タイプとUVタイプを収録。温室、屋内農場、シミュレーション環境に適しています。",
+          "tags": [
+            "育成ライト",
+            "ランプ",
+            "UV",
+            "農業",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote de Luzes de Cultivo – Luz do Dia e UV",
+          "description": "Pacote de luminárias para cenas de cultivo interno, com variantes de luz do dia e UV. Adequado para estufas, fazendas internas e ambientes de simulação.",
+          "tags": [
+            "Grow Light",
+            "Lâmpada",
+            "UV",
+            "Fazenda",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack de Luces de Cultivo – Luz Diurna y UV",
+          "description": "Pack de lámparas para escenas de cultivo interior, con variantes de luz diurna y UV. Adecuado para invernaderos, granjas interiores y entornos de simulación.",
+          "tags": [
+            "Luz de Cultivo",
+            "Lámpara",
+            "UV",
+            "Granja",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "grow light",
+        "uv light",
+        "daylight",
+        "lamp",
+        "indoor farm",
+        "greenhouse",
+        "cultivation",
+        "lighting"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9891f19f-e4ed-46b8-bb22-d762a37315b1",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "home-mushroom-growing-kit",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/810b76f0-272c-4cc6-a0a6-9e2accfd1d60/28abdda6-9554-405c-a214-03ba9995a1e3.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/810b76f0-272c-4cc6-a0a6-9e2accfd1d60/28abdda6-9554-405c-a214-03ba9995a1e3.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Home Mushroom Growing Kit – Modular 3D Asset Pack",
+          "description": "A modular mushroom-growing kit with five growth stages from empty substrate to mature mushrooms, six decay variations for each stage, and separate mushroom models for manual placement.",
+          "tags": [
+            "Mushrooms",
+            "Growing",
+            "Modular",
+            "Plants",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Домашній набір для вирощування грибів – модульний 3D-пак",
+          "description": "Модульний набір із п’ятьма стадіями росту від порожнього субстрату до зрілих грибів, шістьма варіаціями псування для кожної стадії та окремими моделями грибів для ручного розміщення.",
+          "tags": [
+            "Гриби",
+            "Вирощування",
+            "Модульне",
+            "Рослини",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Домашний набор для выращивания грибов – модульный 3D-пак",
+          "description": "Модульный набор с пятью стадиями роста от пустого субстрата до зрелых грибов, шестью вариациями порчи для каждой стадии и отдельными моделями грибов для ручного размещения.",
+          "tags": [
+            "Грибы",
+            "Выращивание",
+            "Модульное",
+            "Растения",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Ev Tipi Mantar Yetiştirme Kiti – Modüler 3D Paket",
+          "description": "Boş substrattan olgun mantarlara kadar beş büyüme aşaması, her aşama için altı bozulma varyasyonu ve elle yerleştirme için ayrı mantar modelleri içeren modüler kit.",
+          "tags": [
+            "Mantar",
+            "Yetiştirme",
+            "Modüler",
+            "Bitkiler",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "家庭用キノコ栽培キット – モジュール式3Dパック",
+          "description": "空の培地から成熟したキノコまでの5成長段階、各段階6種類の劣化バリエーション、手動配置用の個別キノコモデルを含むモジュール式セットです。",
+          "tags": [
+            "キノコ",
+            "栽培",
+            "モジュール",
+            "植物",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Kit Caseiro de Cultivo de Cogumelos – Pacote 3D Modular",
+          "description": "Kit modular com cinco fases de crescimento, do substrato vazio aos cogumelos maduros, seis variações de deterioração por fase e modelos individuais para posicionamento manual.",
+          "tags": [
+            "Cogumelos",
+            "Cultivo",
+            "Modular",
+            "Plantas",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Kit Casero de Cultivo de Setas – Pack 3D Modular",
+          "description": "Kit modular con cinco etapas de crecimiento, desde sustrato vacío hasta setas maduras, seis variaciones de deterioro por etapa y modelos individuales para colocación manual.",
+          "tags": [
+            "Setas",
+            "Cultivo",
+            "Modular",
+            "Plantas",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "mushroom",
+        "fungi",
+        "growing kit",
+        "growth stages",
+        "decay",
+        "withering",
+        "substrate",
+        "modular"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9f9a346c-24b7-42db-ac34-cf7cd4aeeba9",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "cannabis-hemp-plant-pack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/d689422e-9d1e-4d2d-bd88-74bbb03fe159/fc5305b6-237b-434d-9931-2563e18868a2.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/d689422e-9d1e-4d2d-bd88-74bbb03fe159/fc5305b6-237b-434d-9931-2563e18868a2.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Cannabis (Hemp) Plant 3D Models Pack",
+          "description": "A game-ready plant pack with multiple cannabis/hemp growth stages and visual variations for farming, botanical and simulation scenes. Includes healthy and wilting states for scene variety.",
+          "tags": [
+            "Plants",
+            "Cannabis",
+            "Hemp",
+            "Growth",
+            "Farming"
+          ]
+        },
+        "uk": {
+          "title": "3D-пак рослин канабісу (конопель)",
+          "description": "Готовий до використання в іграх набір рослин із кількома стадіями росту канабісу/конопель та візуальними варіаціями для фермерських, ботанічних і симуляційних сцен. Містить здорові та зів’ялі стани.",
+          "tags": [
+            "Рослини",
+            "Канабіс",
+            "Коноплі",
+            "Ріст",
+            "Ферма"
+          ]
+        },
+        "ru": {
+          "title": "3D-пак растений каннабиса (конопли)",
+          "description": "Готовый для игр набор растений с несколькими стадиями роста каннабиса/конопли и визуальными вариациями для фермерских, ботанических и симуляционных сцен. Включает здоровые и увядшие состояния.",
+          "tags": [
+            "Растения",
+            "Каннабис",
+            "Конопля",
+            "Рост",
+            "Ферма"
+          ]
+        },
+        "tr": {
+          "title": "Kenevir (Cannabis) Bitkisi 3D Model Paketi",
+          "description": "Çiftlik, botanik ve simülasyon sahneleri için farklı büyüme aşamaları ve görsel varyasyonlar içeren oyunlara hazır kenevir bitkisi paketi. Sağlıklı ve solmuş durumlar içerir.",
+          "tags": [
+            "Bitkiler",
+            "Kenevir",
+            "Cannabis",
+            "Büyüme",
+            "Çiftlik"
+          ]
+        },
+        "ja": {
+          "title": "カンナビス（ヘンプ）植物 3Dモデルパック",
+          "description": "農業、植物、シミュレーションシーン向けに、複数の成長段階と外観バリエーションを備えたゲーム向け植物パックです。健康状態としおれ状態を収録しています。",
+          "tags": [
+            "植物",
+            "カンナビス",
+            "ヘンプ",
+            "成長",
+            "農業"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote 3D de Plantas de Cannabis (Cânhamo)",
+          "description": "Pacote de plantas pronto para jogos com várias fases de crescimento de cannabis/cânhamo e variações visuais para cenas agrícolas, botânicas e de simulação. Inclui estados saudáveis e murchos.",
+          "tags": [
+            "Plantas",
+            "Cannabis",
+            "Cânhamo",
+            "Crescimento",
+            "Fazenda"
+          ]
+        },
+        "es": {
+          "title": "Pack 3D de Plantas de Cannabis (Cáñamo)",
+          "description": "Pack de plantas listo para juegos con varias etapas de crecimiento de cannabis/cáñamo y variaciones visuales para escenas agrícolas, botánicas y de simulación. Incluye estados sanos y marchitos.",
+          "tags": [
+            "Plantas",
+            "Cannabis",
+            "Cáñamo",
+            "Crecimiento",
+            "Granja"
+          ]
+        }
+      },
+      "keywords": [
+        "cannabis",
+        "hemp",
+        "plant",
+        "growth stages",
+        "wilting",
+        "farm",
+        "botanical",
+        "vegetation",
+        "simulation"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/3358286a-8ede-4e7f-84dd-e7f56ef400ba",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "gas-stove",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/3322fcaa-8a73-4319-952c-42b281c89178/f5871729-9c5e-46b5-b1ed-3d564bf8fd2c.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/3322fcaa-8a73-4319-952c-42b281c89178/f5871729-9c5e-46b5-b1ed-3d564bf8fd2c.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Gas Stove",
+          "description": "A compact gas stove prop for workshop, kitchen, industrial, survival and production scenes. Suitable as a standalone environment object or as part of a larger processing setup.",
+          "tags": [
+            "Stove",
+            "Gas",
+            "Industrial",
+            "Kitchen",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Газова плита",
+          "description": "Компактний проп газової плити для майстерень, кухонь, промислових, survival- та виробничих сцен. Підходить як окремий предмет оточення або частина більшого виробничого сетапу.",
+          "tags": [
+            "Плита",
+            "Газ",
+            "Промислове",
+            "Кухня",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Газовая плита",
+          "description": "Компактный проп газовой плиты для мастерских, кухонь, промышленных, survival- и производственных сцен. Подходит как отдельный объект окружения или часть более крупного производственного сетапа.",
+          "tags": [
+            "Плита",
+            "Газ",
+            "Промышленное",
+            "Кухня",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Gaz Ocağı",
+          "description": "Atölye, mutfak, endüstriyel, hayatta kalma ve üretim sahneleri için kompakt gaz ocağı objesi. Tek başına veya daha büyük bir üretim düzeninin parçası olarak kullanılabilir.",
+          "tags": [
+            "Ocak",
+            "Gaz",
+            "Endüstriyel",
+            "Mutfak",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "ガスコンロ",
+          "description": "作業場、キッチン、工業、サバイバル、製造シーン向けのコンパクトなガスコンロプロップです。単体の環境オブジェクトとしても、大きな設備の一部としても使用できます。",
+          "tags": [
+            "コンロ",
+            "ガス",
+            "工業",
+            "キッチン",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Fogão a Gás",
+          "description": "Prop compacto de fogão a gás para oficinas, cozinhas, cenas industriais, de sobrevivência e produção. Pode ser usado sozinho ou como parte de uma instalação maior.",
+          "tags": [
+            "Fogão",
+            "Gás",
+            "Industrial",
+            "Cozinha",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Cocina de Gas",
+          "description": "Prop compacto de cocina de gas para talleres, cocinas y escenas industriales, de supervivencia o producción. Puede usarse como objeto independiente o como parte de una instalación mayor.",
+          "tags": [
+            "Cocina",
+            "Gas",
+            "Industrial",
+            "Cocina",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "gas stove",
+        "stove",
+        "burner",
+        "kitchen",
+        "industrial",
+        "workshop",
+        "production",
+        "prop"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/58e39770-eee6-47db-a04f-499d2e2dd67d",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "vcr-shark-vc-36v",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/0c842785-3fd8-41f5-9aba-b1ae7746e3c2/c9c972da-88a9-4b2e-ba9c-9ea03f6eed71.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/0c842785-3fd8-41f5-9aba-b1ae7746e3c2/c9c972da-88a9-4b2e-ba9c-9ea03f6eed71.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "VCR Shark VC-36V",
+          "description": "A classic 1980s VCR model for retro environments, nostalgic interiors and vintage projects. Includes a VHS cassette and three texture-resolution sets: 1K, 2K and 4K.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Electronics",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Відеомагнітофон Shark VC-36V",
+          "description": "Класична модель відеомагнітофона 1980-х для ретро-оточення, ностальгійних інтер’єрів і вінтажних проєктів. У комплекті VHS-касета та набори текстур 1K, 2K і 4K.",
+          "tags": [
+            "Ретро",
+            "VCR",
+            "VHS",
+            "Електроніка",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Видеомагнитофон Shark VC-36V",
+          "description": "Классическая модель видеомагнитофона 1980-х для ретро-окружения, ностальгических интерьеров и винтажных проектов. В комплекте VHS-кассета и наборы текстур 1K, 2K и 4K.",
+          "tags": [
+            "Ретро",
+            "VCR",
+            "VHS",
+            "Электроника",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "VCR Shark VC-36V",
+          "description": "Retro ortamlar, nostaljik iç mekânlar ve vintage projeler için klasik 1980’ler VCR modeli. VHS kaset ve 1K, 2K, 4K doku setleri içerir.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Elektronik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "VCR Shark VC-36V",
+          "description": "レトロ環境、ノスタルジックな室内、ヴィンテージ系プロジェクト向けの1980年代風VCRモデルです。VHSカセットと1K・2K・4Kテクスチャセットを収録。",
+          "tags": [
+            "レトロ",
+            "VCR",
+            "VHS",
+            "電子機器",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "VCR Shark VC-36V",
+          "description": "Modelo clássico de videocassete dos anos 1980 para ambientes retrô, interiores nostálgicos e projetos vintage. Inclui fita VHS e texturas em 1K, 2K e 4K.",
+          "tags": [
+            "Retrô",
+            "VCR",
+            "VHS",
+            "Eletrônicos",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "VCR Shark VC-36V",
+          "description": "Modelo clásico de videograbadora de los años 80 para entornos retro, interiores nostálgicos y proyectos vintage. Incluye cinta VHS y texturas en 1K, 2K y 4K.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Electrónica",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "vcr",
+        "vhs",
+        "video recorder",
+        "videocassette",
+        "retro",
+        "1980s",
+        "electronics",
+        "shark",
+        "vc-36v"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/aa75cc16-0823-407b-8c4c-63b3225bbff6",
+        "unity": "https://assetstore.unity.com/?q=VCR%20Shark%20VC-36V&orderBy=1"
+      },
+      "youtube": ""
+    },
+    {
+      "id": "ibn-at-5170-retro-pc",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/24263428-14e6-4c16-8532-3c60e356ca94/f7018598-dede-48b2-b049-4b64884442d9.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/24263428-14e6-4c16-8532-3c60e356ca94/f7018598-dede-48b2-b049-4b64884442d9.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "IBN AT 5170 Retro PC",
+          "description": "A vintage personal computer model inspired by 1980s technology. Designed for retro interiors, nostalgic scenes and vintage projects. Includes 1K, 2K and 4K texture sets in PNG format.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Computer",
+            "Electronics",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Ретро-ПК IBN AT 5170",
+          "description": "Модель вінтажного персонального комп’ютера, натхненна технологіями 1980-х. Підходить для ретро-інтер’єрів, ностальгійних сцен і вінтажних проєктів. Містить текстури 1K, 2K та 4K у PNG.",
+          "tags": [
+            "Ретро",
+            "Вінтаж",
+            "Комп’ютер",
+            "Електроніка",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Ретро-ПК IBN AT 5170",
+          "description": "Модель винтажного персонального компьютера, вдохновлённая технологиями 1980-х. Подходит для ретро-интерьеров, ностальгических сцен и винтажных проектов. Включает текстуры 1K, 2K и 4K в PNG.",
+          "tags": [
+            "Ретро",
+            "Винтаж",
+            "Компьютер",
+            "Электроника",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "IBN AT 5170 Retro PC",
+          "description": "1980’ler teknolojisinden ilham alan vintage kişisel bilgisayar modeli. Retro iç mekânlar, nostaljik sahneler ve vintage projeler için uygundur. PNG formatında 1K, 2K ve 4K dokular içerir.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Bilgisayar",
+            "Elektronik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "IBN AT 5170 レトロPC",
+          "description": "1980年代の技術をイメージしたヴィンテージPCモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクトに適しています。PNG形式の1K・2K・4Kテクスチャを収録。",
+          "tags": [
+            "レトロ",
+            "ヴィンテージ",
+            "コンピューター",
+            "電子機器",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "PC Retrô IBN AT 5170",
+          "description": "Modelo de computador pessoal vintage inspirado na tecnologia dos anos 1980. Ideal para interiores retrô, cenas nostálgicas e projetos vintage. Inclui texturas PNG em 1K, 2K e 4K.",
+          "tags": [
+            "Retrô",
+            "Vintage",
+            "Computador",
+            "Eletrônicos",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "PC Retro IBN AT 5170",
+          "description": "Modelo de ordenador personal vintage inspirado en la tecnología de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos vintage. Incluye texturas PNG en 1K, 2K y 4K.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Ordenador",
+            "Electrónica",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "retro pc",
+        "computer",
+        "1980s",
+        "desktop",
+        "monitor",
+        "keyboard",
+        "electronics",
+        "vintage pc",
+        "ibn at 5170"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9631a27b-a86d-4048-98e6-3939b1563ed9",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "alchemy-set",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/7c8a4725-8375-4aa7-be66-9b073c821516/125b1377-2ca2-443d-a168-db154a6b6e1b.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/7c8a4725-8375-4aa7-be66-9b073c821516/125b1377-2ca2-443d-a168-db154a6b6e1b.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Alchemy Set",
+          "description": "A detailed modular set of alchemical equipment with a furnace, distiller, flasks, test tubes, scales, bottles, an alchemist table, primus stove, oil lamp, books, herb pouches, jugs, cauldron and crystals. Includes 61 independent meshes and 61 actors.",
+          "tags": [
+            "Alchemy",
+            "Fantasy",
+            "Laboratory",
+            "Magic",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Алхімічний набір",
+          "description": "Детальний модульний набір алхімічного обладнання: піч, дистилятор, колби, пробірки, ваги, пляшки, стіл алхіміка, примус, олійна лампа, книги, мішечки з травами, глечики, казан і кристали. Містить 61 незалежний меш і 61 actor.",
+          "tags": [
+            "Алхімія",
+            "Фентезі",
+            "Лабораторія",
+            "Магія",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Алхимический набор",
+          "description": "Детальный модульный набор алхимического оборудования: печь, дистиллятор, колбы, пробирки, весы, бутылки, стол алхимика, примус, масляная лампа, книги, мешочки с травами, кувшины, котёл и кристаллы. Включает 61 независимый меш и 61 actor.",
+          "tags": [
+            "Алхимия",
+            "Фэнтези",
+            "Лаборатория",
+            "Магия",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Simya Seti",
+          "description": "Fırın, damıtıcı, şişeler, deney tüpleri, teraziler, simyacı masası, primus ocak, yağ lambası, kitaplar, bitki keseleri, testiler, kazan ve kristaller içeren ayrıntılı modüler simya ekipmanı seti. 61 bağımsız mesh ve 61 actor içerir.",
+          "tags": [
+            "Simya",
+            "Fantastik",
+            "Laboratuvar",
+            "Büyü",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "錬金術セット",
+          "description": "炉、蒸留器、フラスコ、試験管、天秤、瓶、錬金術師の机、プリムスストーブ、オイルランプ、本、薬草袋、壺、大釜、クリスタルを含む詳細なモジュール式セットです。61個の独立メッシュと61個のActorを収録。",
+          "tags": [
+            "錬金術",
+            "ファンタジー",
+            "研究室",
+            "魔法",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Conjunto de Alquimia",
+          "description": "Conjunto modular detalhado com forno, destilador, frascos, tubos de ensaio, balanças, garrafas, mesa de alquimista, fogareiro, lampião, livros, bolsas de ervas, jarros, caldeirão e cristais. Inclui 61 meshes independentes e 61 actors.",
+          "tags": [
+            "Alquimia",
+            "Fantasia",
+            "Laboratório",
+            "Magia",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Set de Alquimia",
+          "description": "Conjunto modular detallado con horno, destilador, matraces, tubos de ensayo, balanzas, botellas, mesa de alquimista, hornillo, lámpara de aceite, libros, bolsas de hierbas, jarras, caldero y cristales. Incluye 61 mallas independientes y 61 actors.",
+          "tags": [
+            "Alquimia",
+            "Fantasía",
+            "Laboratorio",
+            "Magia",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "alchemy",
+        "alchemist",
+        "fantasy",
+        "laboratory",
+        "flask",
+        "test tube",
+        "cauldron",
+        "crystal",
+        "magic",
+        "rpg"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/a6d0e41c-161c-49a9-bcbd-724603cbbdbd",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+    {
+      "id": "nixie-tubes-pack",
+      "mainImage": "https://media.fab.com/image_previews/gallery_images/3203a9a4-63d0-44c8-8acb-e2cb2284616e/4d0766fe-3e24-468e-ac60-a95f9b633483.jpg",
+      "gallery": [
+        "https://media.fab.com/image_previews/gallery_images/3203a9a4-63d0-44c8-8acb-e2cb2284616e/4d0766fe-3e24-468e-ac60-a95f9b633483.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Nixie Tubes Pack",
+          "description": "A collection of 79 retro gas-discharge indicators featuring numbers, symbols, Latin letters and Cyrillic characters, including Ukrainian and Russian letters. Glow color and intensity can be adjusted through the material instance.",
+          "tags": [
+            "Retro",
+            "Nixie",
+            "Display",
+            "Cyberpunk",
+            "Electronics"
+          ]
+        },
+        "uk": {
+          "title": "Набір газорозрядних індикаторів Nixie",
+          "description": "Колекція з 79 ретро газорозрядних індикаторів із цифрами, символами, латинськими та кириличними літерами, включно з українськими й російськими. Колір та інтенсивність світіння налаштовуються через material instance.",
+          "tags": [
+            "Ретро",
+            "Nixie",
+            "Дисплей",
+            "Кіберпанк",
+            "Електроніка"
+          ]
+        },
+        "ru": {
+          "title": "Набор газоразрядных индикаторов Nixie",
+          "description": "Коллекция из 79 ретро газоразрядных индикаторов с цифрами, символами, латинскими и кириллическими буквами, включая украинские и русские. Цвет и интенсивность свечения настраиваются через material instance.",
+          "tags": [
+            "Ретро",
+            "Nixie",
+            "Дисплей",
+            "Киберпанк",
+            "Электроника"
+          ]
+        },
+        "tr": {
+          "title": "Nixie Tüp Paketi",
+          "description": "Sayılar, semboller, Latin ve Kiril harfleri (Ukraynaca ve Rusça dahil) içeren 79 retro gaz deşarj göstergesi koleksiyonu. Işıma rengi ve yoğunluğu material instance üzerinden ayarlanabilir.",
+          "tags": [
+            "Retro",
+            "Nixie",
+            "Ekran",
+            "Cyberpunk",
+            "Elektronik"
+          ]
+        },
+        "ja": {
+          "title": "Nixie管パック",
+          "description": "数字、記号、ラテン文字、ウクライナ語・ロシア語を含むキリル文字を備えた79種類のレトロなガス放電表示管セットです。発光色と強度はマテリアルインスタンスで調整できます。",
+          "tags": [
+            "レトロ",
+            "Nixie",
+            "表示",
+            "サイバーパンク",
+            "電子機器"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote de Tubos Nixie",
+          "description": "Coleção de 79 indicadores retrô de descarga de gás com números, símbolos, letras latinas e caracteres cirílicos, incluindo letras ucranianas e russas. A cor e a intensidade do brilho podem ser ajustadas pela instância de material.",
+          "tags": [
+            "Retrô",
+            "Nixie",
+            "Display",
+            "Cyberpunk",
+            "Eletrônicos"
+          ]
+        },
+        "es": {
+          "title": "Pack de Tubos Nixie",
+          "description": "Colección de 79 indicadores retro de descarga de gas con números, símbolos, letras latinas y caracteres cirílicos, incluidas letras ucranianas y rusas. El color y la intensidad del brillo pueden ajustarse mediante la instancia de material.",
+          "tags": [
+            "Retro",
+            "Nixie",
+            "Display",
+            "Cyberpunk",
+            "Electrónica"
+          ]
+        }
+      },
+      "keywords": [
+        "nixie",
+        "nixie tube",
+        "gas discharge",
+        "indicator",
+        "display",
+        "digits",
+        "letters",
+        "cyrillic",
+        "cyberpunk",
+        "retro futuristic"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/b27715ef-14b3-4f0d-bd73-04c208d1c997",
+        "unity": ""
+      },
+      "youtube": ""
     }
   ]
 };

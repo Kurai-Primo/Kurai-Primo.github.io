@@ -470,3 +470,10 @@ Kurai-Primo/Kurai-Primo.github.io
 After committing and pushing changes, GitHub Pages normally updates automatically. Browser caching can delay visible changes, which is why the version query in `index.html` should be bumped when deploying updated CSS/JS/data.
 
 For the routine process of adding a new asset, see `HOW_TO_UPLOAD.txt`.
+
+## Catalog update — 2026-09-02
+
+The catalog was synchronized with the current Fab seller profile and now contains all 18 Fab listings visible at the time of the update. The newly added cards use Fab-hosted preview images because the supplied archive did not include the existing per-asset screenshot folders. These remote preview URLs can be replaced later with local files in `assets/images/<asset-id>/` without changing the site logic.
+
+The Unity version of **3D Retro Gadget Pack** keeps its direct package link. The newly released Unity versions of **RETRO TV Astryx Novavision**, **REEL-TO-REEL TAPE RECORDER Astryx KP-2036**, and **VCR Shark VC-36V** use exact Unity Asset Store search links until their direct package URLs are available in public indexing.
+
