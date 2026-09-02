@@ -394,780 +394,6 @@ window.SITE_DATA = {
     },
 
     {
-      id: "retro-gadget-pack",
-      mainImage: "assets/images/retro-gadget-pack/cover.png",
-      gallery: [
-        "assets/images/retro-gadget-pack/cover.png",
-        "assets/images/retro-gadget-pack/01.png",
-        "assets/images/retro-gadget-pack/02.png",
-        "assets/images/retro-gadget-pack/03.png",
-        "assets/images/retro-gadget-pack/04.png",
-        "assets/images/retro-gadget-pack/05.png",
-        "assets/images/retro-gadget-pack/06.png",
-        "assets/images/retro-gadget-pack/07.png",
-        "assets/images/retro-gadget-pack/08.png"
-      ],
-      i18n: {
-        en: { title: "Retro Gadget Pack", description: "A small retro technology pack featuring a reel-to-reel tape recorder, two vintage personal computers, one classic television set, and a VHS video recorder. Each model includes three texture resolution options — 1K, 2K, and 4K — provided in PNG format.", tags: ["Retro", "Vintage", "Electronics", "Props", "Analog"] },
-        uk: { title: "Набір ретро-гаджетів", description: "Невеликий набір ретро-техніки, до якого входять котушковий магнітофон, два вінтажні персональні комп’ютери, класичний телевізор і VHS-відеомагнітофон. Для кожної моделі передбачено три варіанти роздільної здатності текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Електроніка", "Пропси", "Аналогове"] },
-        ru: { title: "Набор ретро-гаджетов", description: "Небольшой набор ретро-техники, включающий катушечный магнитофон, два винтажных персональных компьютера, классический телевизор и VHS-видеомагнитофон. Для каждой модели предусмотрены три варианта разрешения текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Электроника", "Пропсы", "Аналог"] },
-        tr: { title: "Retro Cihaz Paketi", description: "Makaralı teyp, iki vintage kişisel bilgisayar, klasik bir televizyon ve VHS video kaydedici içeren küçük bir retro teknoloji paketi. Her model PNG formatında 1K, 2K ve 4K olmak üzere üç farklı doku çözünürlüğü seçeneği içerir.", tags: ["Retro", "Vintage", "Elektronik", "Objeler", "Analog"] },
-        ja: { title: "レトロガジェットパック", description: "オープンリールテープレコーダー、ヴィンテージPC 2台、クラシックテレビ、VHSビデオデッキを収録した小規模なレトロテクノロジーパックです。各モデルにはPNG形式の1K・2K・4Kの3種類のテクスチャ解像度が含まれます。", tags: ["レトロ", "ヴィンテージ", "電子機器", "小物", "アナログ"] },
-        "pt-BR": { title: "Pacote de Gadgets Retrô", description: "Um pequeno pacote de tecnologia retrô com gravador de fita de rolo, dois computadores pessoais vintage, uma televisão clássica e um videocassete VHS. Cada modelo inclui três opções de resolução de textura — 1K, 2K e 4K — em formato PNG.", tags: ["Retrô", "Vintage", "Eletrônicos", "Props", "Analógico"] },
-        es: { title: "Paquete de Gadgets Retro", description: "Un pequeño paquete de tecnología retro con una grabadora de cinta de carrete, dos ordenadores personales vintage, un televisor clásico y un reproductor/grabador VHS. Cada modelo incluye tres opciones de resolución de texturas — 1K, 2K y 4K — en formato PNG.", tags: ["Retro", "Vintage", "Electrónica", "Props", "Analógico"] }
-      },
-      keywords: ["retro", "vintage", "technology", "tech", "electronics", "computer", "personal computer", "television", "tv", "vhs", "video recorder", "tape recorder", "reel-to-reel", "analog", "props", "game assets", "old school", "environment props"],
-      stores: { fab: "https://www.fab.com/listings/e56e5667-9deb-48e4-9193-c2af27e8161f", unity: "https://assetstore.unity.com/packages/slug/395902" },
-      youtube: ""
-    },
-
-    {
-      id: "retro-tv-astryx-novavision",
-      mainImage: "assets/images/retro-tv-astryx-novavision/cover.png",
-      gallery: [
-        "assets/images/retro-tv-astryx-novavision/cover.png",
-        "assets/images/retro-tv-astryx-novavision/01.png",
-        "assets/images/retro-tv-astryx-novavision/02.png",
-        "assets/images/retro-tv-astryx-novavision/03.png",
-        "assets/images/retro-tv-astryx-novavision/04.png",
-        "assets/images/retro-tv-astryx-novavision/05.png"
-      ],
-      i18n: {
-        en: { title: "Retro TV Astryx Novavision", description: "Detailed 3D model of a 1970s-style CRT television, inspired by classic designs of the era. Suitable for retro interiors, nostalgic scenes, vintage projects, and horror environments. The antenna and control knobs are separate mesh objects, making them easy to adjust, reposition, or remove when needed. Includes three texture sets — 1K, 2K, and 4K — in PNG format.", tags: ["Retro", "Vintage", "Television", "Electronics", "Props"] },
-        uk: { title: "Ретро-телевізор Astryx Novavision", description: "Деталізована 3D-модель CRT-телевізора в стилі 1970-х років, натхненна класичним дизайном тієї епохи. Підійде для ретро-інтер’єрів, ностальгійних сцен, вінтажних проєктів і хорор-оточення. Антена та ручки керування виконані окремими мешами, тому їх легко налаштувати, переставити або прибрати. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Телевізор", "Електроніка", "Пропси"] },
-        ru: { title: "Ретро-телевизор Astryx Novavision", description: "Детализированная 3D-модель CRT-телевизора в стиле 1970-х годов, вдохновлённая классическим дизайном эпохи. Подойдёт для ретро-интерьеров, ностальгических сцен, винтажных проектов и хоррор-окружения. Антенна и ручки управления выполнены отдельными мешами, поэтому их легко настроить, переставить или убрать. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Телевизор", "Электроника", "Пропсы"] },
-        tr: { title: "Retro TV Astryx Novavision", description: "1970'lerin klasik tasarımlarından ilham alan ayrıntılı bir CRT televizyon 3D modeli. Retro iç mekânlar, nostaljik sahneler, vintage projeler ve korku ortamları için uygundur. Anten ve kontrol düğmeleri ayrı mesh nesneleridir; gerektiğinde kolayca ayarlanabilir, yeniden konumlandırılabilir veya kaldırılabilir. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Retro", "Vintage", "Televizyon", "Elektronik", "Objeler"] },
-        ja: { title: "レトロTV Astryx Novavision", description: "1970年代のクラシックなデザインをイメージした、細部まで作り込まれたCRTテレビの3Dモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクト、ホラー環境に適しています。アンテナと操作ノブは別メッシュなので、調整・移動・取り外しが簡単です。PNG形式の1K・2K・4Kテクスチャセットを収録しています。", tags: ["レトロ", "ヴィンテージ", "テレビ", "電子機器", "小物"] },
-        "pt-BR": { title: "TV Retrô Astryx Novavision", description: "Modelo 3D detalhado de uma televisão CRT no estilo dos anos 1970, inspirado nos designs clássicos da época. Ideal para interiores retrô, cenas nostálgicas, projetos vintage e ambientes de terror. A antena e os botões de controle são meshes separados, facilitando ajustes, reposicionamento ou remoção. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG.", tags: ["Retrô", "Vintage", "Televisão", "Eletrônicos", "Props"] },
-        es: { title: "TV Retro Astryx Novavision", description: "Modelo 3D detallado de un televisor CRT de estilo años 70, inspirado en los diseños clásicos de la época. Ideal para interiores retro, escenas nostálgicas, proyectos vintage y entornos de terror. La antena y los controles son meshes independientes, por lo que se pueden ajustar, recolocar o retirar fácilmente. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Televisor", "Electrónica", "Props"] }
-      },
-      keywords: ["retro", "vintage", "television", "tv", "crt", "1970s", "electronics", "analog", "old television", "retro technology", "horror", "interior", "props", "game assets", "antenna"],
-      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "https://assetstore.unity.com/?q=RETRO%20TV%20Astryx%20Novavision&orderBy=1" },
-      youtube: ""
-    },
-
-    {
-      id: "retro-tape-recorder-astryx-kp2036",
-      mainImage: "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
-      gallery: [
-        "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/01.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/02.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/03.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/04.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/05.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/06.png",
-        "assets/images/retro-tape-recorder-astryx-kp2036/07.png"
-      ],
-      i18n: {
-        en: { title: "Tape recorder Astryx KP2036", description: "Detailed low-poly 3D model of a 1980s-style reel-to-reel tape recorder, inspired by the iconic design language of the era. Great for retro interiors, nostalgic scenes, and vintage-themed projects. Includes three texture sets — 1K, 2K, and 4K — in PNG format.", tags: ["Retro", "Vintage", "Tape Recorder", "Electronics", "Props"] },
-        uk: { title: "Магнітофон Astryx KP2036", description: "Деталізована low-poly 3D-модель котушкового магнітофона в стилі 1980-х років, натхненна впізнаваною мовою дизайну тієї епохи. Чудово підійде для ретро-інтер’єрів, ностальгійних сцен і вінтажних проєктів. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Магнітофон", "Електроніка", "Пропси"] },
-        ru: { title: "Магнитофон Astryx KP2036", description: "Детализированная low-poly 3D-модель катушечного магнитофона в стиле 1980-х годов, вдохновлённая узнаваемым дизайном эпохи. Отлично подойдёт для ретро-интерьеров, ностальгических сцен и винтажных проектов. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Магнитофон", "Электроника", "Пропсы"] },
-        tr: { title: "Astryx KP2036 Teyp Kaydedici", description: "1980'lerin ikonik tasarım dilinden ilham alan ayrıntılı low-poly makaralı teyp kaydedici 3D modeli. Retro iç mekânlar, nostaljik sahneler ve vintage temalı projeler için idealdir. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Retro", "Vintage", "Teyp Kaydedici", "Elektronik", "Objeler"] },
-        ja: { title: "テープレコーダー Astryx KP2036", description: "1980年代の象徴的なデザインをイメージした、詳細なローポリのオープンリールテープレコーダー3Dモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクトに最適です。PNG形式の1K・2K・4Kテクスチャセットを収録しています。", tags: ["レトロ", "ヴィンテージ", "テープレコーダー", "電子機器", "小物"] },
-        "pt-BR": { title: "Gravador Astryx KP2036", description: "Modelo 3D low-poly detalhado de um gravador de fita de rolo inspirado na linguagem visual icônica dos anos 1980. Ótimo para interiores retrô, cenas nostálgicas e projetos com tema vintage. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG.", tags: ["Retrô", "Vintage", "Gravador", "Eletrônicos", "Props"] },
-        es: { title: "Grabadora Astryx KP2036", description: "Modelo 3D low-poly detallado de una grabadora de cinta de carrete inspirada en el lenguaje visual icónico de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos de temática vintage. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Grabadora", "Electrónica", "Props"] }
-      },
-      keywords: ["retro", "vintage", "tape recorder", "reel-to-reel", "tape deck", "audio", "analog", "electronics", "1980s", "music equipment", "sound recorder", "studio", "interior", "props", "game assets", "low poly"],
-      stores: { fab: "https://www.fab.com/listings/cd27d76e-1ad5-4cae-a2f2-75f4a1ba194a", unity: "https://assetstore.unity.com/?q=REEL-TO-REEL%20TAPE%20RECORDER%20Astryx%20KP-2036&orderBy=1" },
-      youtube: ""
-    },
-
-    {
-      id: "retro-pc-ibn-5100",
-      mainImage: "assets/images/retro-pc-ibn-5100/cover.png",
-      gallery: [
-        "assets/images/retro-pc-ibn-5100/cover.png",
-        "assets/images/retro-pc-ibn-5100/01.png",
-        "assets/images/retro-pc-ibn-5100/02.png",
-        "assets/images/retro-pc-ibn-5100/03.png",
-        "assets/images/retro-pc-ibn-5100/04.png",
-        "assets/images/retro-pc-ibn-5100/05.png",
-        "assets/images/retro-pc-ibn-5100/06.png"
-      ],
-      i18n: {
-        en: { title: "Retro PC IBN 5100", description: "Low-poly 3D model of a legendary 1970s retro computer. Includes three texture sets — 1K, 2K, and 4K — in PNG format. Designed for real-time rendering, games, and visualization projects, and especially at home in retro technology scenes — including a certain famous CERN hacking setup.", tags: ["Retro", "Vintage", "Computer", "Electronics", "Props"] },
-        uk: { title: "Ретро-ПК IBN 5100", description: "Low-poly 3D-модель легендарного ретро-комп’ютера 1970-х років. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG. Модель створена для рендерингу в реальному часі, ігор і візуалізацій та особливо добре підходить для сцен із ретро-технікою — включно з однією відомою сценою злому CERN.", tags: ["Ретро", "Вінтаж", "Комп’ютер", "Електроніка", "Пропси"] },
-        ru: { title: "Ретро-ПК IBN 5100", description: "Low-poly 3D-модель легендарного ретро-компьютера 1970-х годов. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG. Модель рассчитана на рендеринг в реальном времени, игры и визуализации и особенно хорошо подходит для сцен с ретро-техникой — включая одну знаменитую сцену взлома CERN.", tags: ["Ретро", "Винтаж", "Компьютер", "Электроника", "Пропсы"] },
-        tr: { title: "Retro PC IBN 5100", description: "1970'lerin efsanevi retro bilgisayarından ilham alan low-poly bir 3D model. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir. Gerçek zamanlı render, oyun ve görselleştirme projeleri için hazırlanmıştır; özellikle retro teknoloji sahnelerine ve ünlü bir CERN hack sahnesine çok yakışır.", tags: ["Retro", "Vintage", "Bilgisayar", "Elektronik", "Objeler"] },
-        ja: { title: "レトロPC IBN 5100", description: "1970年代の伝説的なレトロコンピューターをイメージしたローポリ3Dモデルです。PNG形式の1K・2K・4Kテクスチャセットを収録。リアルタイムレンダリング、ゲーム、ビジュアライゼーション向けで、レトロテクノロジーのシーン、そして有名なCERNハッキング風のセットアップにもよく合います。", tags: ["レトロ", "ヴィンテージ", "コンピューター", "電子機器", "小物"] },
-        "pt-BR": { title: "PC Retrô IBN 5100", description: "Modelo 3D low-poly de um lendário computador retrô dos anos 1970. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG. Criado para renderização em tempo real, jogos e projetos de visualização, e especialmente adequado para cenas de tecnologia retrô — incluindo uma certa famosa cena de hacking no CERN.", tags: ["Retrô", "Vintage", "Computador", "Eletrônicos", "Props"] },
-        es: { title: "PC Retro IBN 5100", description: "Modelo 3D low-poly de un legendario ordenador retro de los años 70. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG. Diseñado para renderizado en tiempo real, juegos y proyectos de visualización, y especialmente adecuado para escenas de tecnología retro — incluida cierta famosa escena de hacking en el CERN.", tags: ["Retro", "Vintage", "Ordenador", "Electrónica", "Props"] }
-      },
-      keywords: ["retro", "vintage", "computer", "pc", "personal computer", "1970s", "electronics", "technology", "terminal", "crt", "keyboard", "data cartridge", "CERN", "hacking", "retro computer", "low poly", "props", "game assets"],
-      stores: { fab: "https://www.fab.com/listings/f8303559-173f-4643-89bb-65f4067339d6", unity: "https://assetstore.unity.com/packages/package/403430" },
-      youtube: ""
-    },
-
-    {
-      id: "webstrider-fpv-quadcopter-drone",
-      mainImage: "assets/images/webstrider-fpv/cover.jpg",
-      gallery: [
-        "assets/images/webstrider-fpv/cover.jpg",
-        "assets/images/webstrider-fpv/01.jpg",
-        "assets/images/webstrider-fpv/02.jpg",
-        "assets/images/webstrider-fpv/03.jpg",
-        "assets/images/webstrider-fpv/04.jpg",
-        "assets/images/webstrider-fpv/05.jpg",
-        "assets/images/webstrider-fpv/06.jpg",
-        "assets/images/webstrider-fpv/07.jpg",
-        "assets/images/webstrider-fpv/08.jpg",
-        "assets/images/webstrider-fpv/09.jpg",
-        "assets/images/webstrider-fpv/10.jpg",
-        "assets/images/webstrider-fpv/11.jpg",
-        "assets/images/webstrider-fpv/12.jpg"
-      ],
-      i18n: {
-        en: { title: "WebStrider FPV Quadcopter Drone", description: "FPV drone for your projects. Includes the drone in three color variants — red, blue, and green — as well as a remote controller and a storage case. The materials also come with three texture sets: 1K, 2K, and 4K.", tags: ["Drone", "FPV", "Quadcopter", "Electronics", "Props"] },
-        uk: { title: "FPV-квадрокоптер WebStrider", description: "FPV-дрон для ваших проєктів. У комплекті дрон у трьох кольорових варіантах — червоному, синьому та зеленому — а також пульт керування й кейс для зберігання. Матеріали також мають три набори текстур: 1K, 2K та 4K.", tags: ["Дрон", "FPV", "Квадрокоптер", "Електроніка", "Пропси"] },
-        ru: { title: "FPV-квадрокоптер WebStrider", description: "FPV-дрон для ваших проектов. В комплекте дрон в трёх цветовых вариантах — красном, синем и зелёном — а также пульт управления и кейс для хранения. Материалы также включают три набора текстур: 1K, 2K и 4K.", tags: ["Дрон", "FPV", "Квадрокоптер", "Электроника", "Пропсы"] },
-        tr: { title: "WebStrider FPV Quadcopter Drone", description: "Projeleriniz için bir FPV drone. Drone kırmızı, mavi ve yeşil olmak üzere üç renk varyasyonuyla birlikte gelir; ayrıca uzaktan kumanda ve saklama çantası da dahildir. Materyaller 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Drone", "FPV", "Quadcopter", "Elektronik", "Objeler"] },
-        ja: { title: "WebStrider FPVクアッドコプタードローン", description: "プロジェクト向けのFPVドローンです。赤・青・緑の3色バリエーションに加え、リモートコントローラーと収納ケースを収録。マテリアルには1K・2K・4Kの3種類のテクスチャセットが含まれます。", tags: ["ドローン", "FPV", "クアッドコプター", "電子機器", "小物"] },
-        "pt-BR": { title: "Drone Quadricóptero FPV WebStrider", description: "Drone FPV para seus projetos. Inclui o drone em três variações de cor — vermelho, azul e verde — além de controle remoto e estojo de armazenamento. Os materiais também vêm com três conjuntos de texturas: 1K, 2K e 4K.", tags: ["Drone", "FPV", "Quadricóptero", "Eletrônicos", "Props"] },
-        es: { title: "Dron Cuadricóptero FPV WebStrider", description: "Dron FPV para tus proyectos. Incluye el dron en tres variantes de color — rojo, azul y verde — además de un mando a distancia y un estuche de almacenamiento. Los materiales también incluyen tres juegos de texturas: 1K, 2K y 4K.", tags: ["Dron", "FPV", "Cuadricóptero", "Electrónica", "Props"] }
-      },
-      keywords: ["drone", "fpv", "quadcopter", "quadrocopter", "uav", "camera drone", "electronics", "technology", "remote controller", "controller", "storage case", "case", "props", "game assets", "unreal engine", "modular", "camera"],
-      stores: { fab: "https://www.fab.com/listings/bf0e504c-d8d5-4baf-9cd8-5450aadf2889", unity: "" },
-      youtube: ""
-    },
-    {
-      "id": "poppy-plant-growth-pack",
-      "mainImage": "assets/images/poppy-plant-growth-pack/cover.jpg",
-      "gallery": [
-        "assets/images/poppy-plant-growth-pack/cover.jpg",
-        "assets/images/poppy-plant-growth-pack/01.jpg",
-        "assets/images/poppy-plant-growth-pack/02.jpg",
-        "assets/images/poppy-plant-growth-pack/03.jpg",
-        "assets/images/poppy-plant-growth-pack/04.jpg",
-        "assets/images/poppy-plant-growth-pack/05.jpg",
-        "assets/images/poppy-plant-growth-pack/06.jpg",
-        "assets/images/poppy-plant-growth-pack/07.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "Poppy Plant Growth 3D Models Pack",
-          "description": "A set of game-ready poppy plant models in three color variations. Includes multiple growth stages from seedling to full bloom, plus withering and drying states.",
-          "tags": [
-            "Plants",
-            "Poppy",
-            "Growth",
-            "Farm",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "3D-пак стадій росту маку",
-          "description": "Набір готових до використання в іграх моделей маку у трьох кольорових варіаціях. Містить кілька стадій росту від паростка до повного цвітіння, а також стани в’янення й висихання.",
-          "tags": [
-            "Рослини",
-            "Мак",
-            "Ріст",
-            "Ферма",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "3D-пак стадий роста мака",
-          "description": "Набор готовых для игр моделей мака в трёх цветовых вариациях. Включает несколько стадий роста от ростка до полного цветения, а также состояния увядания и высыхания.",
-          "tags": [
-            "Растения",
-            "Мак",
-            "Рост",
-            "Ферма",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "Haşhaş Bitkisi Büyüme 3D Model Paketi",
-          "description": "Üç renk varyasyonunda oyunlara hazır haşhaş bitkisi modelleri. Fidandan tam çiçeklenmeye kadar çeşitli büyüme aşamalarının yanı sıra solma ve kuruma durumlarını içerir.",
-          "tags": [
-            "Bitkiler",
-            "Haşhaş",
-            "Büyüme",
-            "Çiftlik",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "ポピー成長段階 3Dモデルパック",
-          "description": "3色のバリエーションを備えたゲーム向けポピー植物モデルセットです。苗から満開までの複数の成長段階に加え、しおれ・乾燥状態を収録しています。",
-          "tags": [
-            "植物",
-            "ポピー",
-            "成長",
-            "農場",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Pacote 3D de Crescimento de Papoulas",
-          "description": "Conjunto de modelos de papoula prontos para jogos em três variações de cor. Inclui várias fases de crescimento, da muda à floração completa, além de estados de murchamento e secagem.",
-          "tags": [
-            "Plantas",
-            "Papoula",
-            "Crescimento",
-            "Fazenda",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Pack 3D de Crecimiento de Amapolas",
-          "description": "Conjunto de modelos de amapola listos para juegos en tres variantes de color. Incluye varias etapas de crecimiento, desde plántula hasta plena floración, además de estados marchitos y secos.",
-          "tags": [
-            "Plantas",
-            "Amapola",
-            "Crecimiento",
-            "Granja",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "poppy",
-        "flower",
-        "plant",
-        "growth stages",
-        "wilting",
-        "drying",
-        "farm",
-        "vegetation",
-        "low poly"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/ae4b6b9f-8ea8-4ced-a18d-a0c257b451dc",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
-      "id": "plant-growing-props-pack",
-      "mainImage": "assets/images/plant-growing-props-pack/cover.jpg",
-      "gallery": [
-        "assets/images/plant-growing-props-pack/cover.jpg",
-        "assets/images/plant-growing-props-pack/01.jpg",
-        "assets/images/plant-growing-props-pack/02.jpg",
-        "assets/images/plant-growing-props-pack/03.jpg",
-        "assets/images/plant-growing-props-pack/04.jpg",
-        "assets/images/plant-growing-props-pack/05.jpg",
-        "assets/images/plant-growing-props-pack/06.jpg",
-        "assets/images/plant-growing-props-pack/07.jpg",
-        "assets/images/plant-growing-props-pack/08.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "Plant Growing Props Pack",
-          "description": "A gardening and farming prop set with planter beds, pots, two soil types in dry, normal and wet states, modular irrigation pipes, soil and fertilizer bags, and plastic canisters.",
-          "tags": [
-            "Gardening",
-            "Farming",
-            "Soil",
-            "Irrigation",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Набір пропсів для вирощування рослин",
-          "description": "Набір для садових і фермерських сцен: грядки, горщики, два типи ґрунту у сухому, звичайному та мокрому станах, модульні труби для зрошення, мішки ґрунту й добрив та пластикові каністри.",
-          "tags": [
-            "Садівництво",
-            "Ферма",
-            "Ґрунт",
-            "Зрошення",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Набор пропсов для выращивания растений",
-          "description": "Набор для садовых и фермерских сцен: грядки, горшки, два типа почвы в сухом, обычном и мокром состояниях, модульные трубы для полива, мешки почвы и удобрений и пластиковые канистры.",
-          "tags": [
-            "Садоводство",
-            "Ферма",
-            "Почва",
-            "Полив",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "Bitki Yetiştirme Objeleri Paketi",
-          "description": "Bahçe ve çiftlik sahneleri için saksılar, ekim yatakları, kuru/normal/ıslak durumlarda iki toprak türü, modüler sulama boruları, toprak ve gübre torbaları ile plastik bidonlar içeren set.",
-          "tags": [
-            "Bahçecilik",
-            "Çiftlik",
-            "Toprak",
-            "Sulama",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "植物栽培プロップパック",
-          "description": "ガーデニングや農業シーン向けのプロップセット。プランターベッド、鉢、乾燥・通常・湿潤の3状態を持つ2種類の土、モジュール式灌漑パイプ、土・肥料袋、プラスチック容器を収録。",
-          "tags": [
-            "園芸",
-            "農業",
-            "土",
-            "灌漑",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Pacote de Props para Cultivo de Plantas",
-          "description": "Conjunto para cenas de jardinagem e fazenda com canteiros, vasos, dois tipos de solo em estados seco, normal e molhado, tubos modulares de irrigação, sacos de terra e fertilizante e galões plásticos.",
-          "tags": [
-            "Jardinagem",
-            "Fazenda",
-            "Solo",
-            "Irrigação",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Pack de Props para Cultivo de Plantas",
-          "description": "Conjunto para escenas de jardinería y granja con bancales, macetas, dos tipos de suelo en estados seco, normal y húmedo, tuberías modulares de riego, sacos de tierra y fertilizante y bidones de plástico.",
-          "tags": [
-            "Jardinería",
-            "Granja",
-            "Suelo",
-            "Riego",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "garden",
-        "gardening",
-        "farm",
-        "planter",
-        "pot",
-        "soil",
-        "irrigation",
-        "pipe",
-        "fertilizer",
-        "canister"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/99e81e90-eac2-48e0-9f39-d943ec7ef0c0",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
-      "id": "hanging-drying-rack",
-      "mainImage": "assets/images/hanging-drying-rack/cover.jpg",
-      "gallery": [
-        "assets/images/hanging-drying-rack/cover.jpg",
-        "assets/images/hanging-drying-rack/02.jpg",
-        "assets/images/hanging-drying-rack/03.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "Hanging Drying Rack",
-          "description": "A compact hanging drying-rack prop for production, workshop, basement and utility scenes. Designed as a simple ready-to-use environment asset.",
-          "tags": [
-            "Drying",
-            "Rack",
-            "Industrial",
-            "Interior",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Підвісна сушарка",
-          "description": "Компактний підвісний сушильний проп для виробничих, майстерневих, підвальних та господарських сцен. Простий готовий до використання елемент оточення.",
-          "tags": [
-            "Сушіння",
-            "Стійка",
-            "Промислове",
-            "Інтер’єр",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Подвесная сушилка",
-          "description": "Компактный подвесной сушильный проп для производственных, мастерских, подвальных и хозяйственных сцен. Простой готовый элемент окружения.",
-          "tags": [
-            "Сушка",
-            "Стойка",
-            "Промышленное",
-            "Интерьер",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "Asılı Kurutma Rafı",
-          "description": "Üretim, atölye, bodrum ve yardımcı alan sahneleri için kompakt asılı kurutma rafı objesi. Kullanıma hazır basit bir çevre varlığıdır.",
-          "tags": [
-            "Kurutma",
-            "Raf",
-            "Endüstriyel",
-            "İç Mekân",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "吊り下げ式乾燥ラック",
-          "description": "生産設備、作業場、地下室、ユーティリティ空間向けのコンパクトな吊り下げ式乾燥ラックです。すぐに使える環境プロップとして設計されています。",
-          "tags": [
-            "乾燥",
-            "ラック",
-            "工業",
-            "室内",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Rack de Secagem Suspenso",
-          "description": "Prop compacto de rack de secagem suspenso para cenas de produção, oficinas, porões e áreas utilitárias. Um elemento de ambiente simples e pronto para uso.",
-          "tags": [
-            "Secagem",
-            "Rack",
-            "Industrial",
-            "Interior",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Estante de Secado Colgante",
-          "description": "Prop compacto de estante de secado colgante para escenas de producción, talleres, sótanos y zonas de servicio. Elemento de entorno sencillo y listo para usar.",
-          "tags": [
-            "Secado",
-            "Estante",
-            "Industrial",
-            "Interior",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "drying",
-        "dryer",
-        "hanging rack",
-        "rope",
-        "industrial",
-        "workshop",
-        "basement",
-        "props"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/c5f9fd02-1d21-4e05-a1e9-9f96978517b0",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
-      "id": "diy-industrial-dryer",
-      "mainImage": "assets/images/diy-industrial-dryer/cover.jpg",
-      "gallery": [
-        "assets/images/diy-industrial-dryer/cover.jpg",
-        "assets/images/diy-industrial-dryer/01.jpg",
-        "assets/images/diy-industrial-dryer/02.jpg",
-        "assets/images/diy-industrial-dryer/03.jpg",
-        "assets/images/diy-industrial-dryer/04.jpg",
-        "assets/images/diy-industrial-dryer/05.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "DIY Industrial Dryer 3D Model",
-          "description": "A handmade-style industrial drying cabinet with drawers, top fans and heating coils. Fan motion is implemented through material animation and the heating coils emit light.",
-          "tags": [
-            "Dryer",
-            "Industrial",
-            "DIY",
-            "Machine",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "3D-модель саморобної промислової сушарки",
-          "description": "Промислова сушильна шафа у саморобному стилі з висувними секціями, верхніми вентиляторами та нагрівальними спіралями. Рух вентиляторів реалізований анімацією матеріалу, а спіралі випромінюють світло.",
-          "tags": [
-            "Сушарка",
-            "Промислове",
-            "DIY",
-            "Обладнання",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "3D-модель самодельной промышленной сушилки",
-          "description": "Промышленный сушильный шкаф в самодельном стиле с выдвижными секциями, верхними вентиляторами и нагревательными спиралями. Движение вентиляторов реализовано анимацией материала, а спирали излучают свет.",
-          "tags": [
-            "Сушилка",
-            "Промышленное",
-            "DIY",
-            "Оборудование",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "DIY Endüstriyel Kurutucu 3D Modeli",
-          "description": "Çekmeceler, üst fanlar ve ısıtma bobinleri bulunan el yapımı tarzda endüstriyel kurutma kabini. Fan hareketi malzeme animasyonuyla uygulanır ve ısıtma bobinleri ışık yayar.",
-          "tags": [
-            "Kurutucu",
-            "Endüstriyel",
-            "DIY",
-            "Makine",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "DIY工業用乾燥機 3Dモデル",
-          "description": "引き出し、上部ファン、加熱コイルを備えた手作り風の工業用乾燥キャビネットです。ファンの動きはマテリアルアニメーションで表現され、加熱コイルは発光します。",
-          "tags": [
-            "乾燥機",
-            "工業",
-            "DIY",
-            "機械",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Modelo 3D de Secador Industrial DIY",
-          "description": "Gabinete de secagem industrial com aparência artesanal, gavetas, ventiladores superiores e serpentinas de aquecimento. O movimento dos ventiladores usa animação de material e as serpentinas emitem luz.",
-          "tags": [
-            "Secador",
-            "Industrial",
-            "DIY",
-            "Máquina",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Modelo 3D de Secador Industrial DIY",
-          "description": "Armario de secado industrial de estilo artesanal con cajones, ventiladores superiores y resistencias de calentamiento. El movimiento de los ventiladores usa animación de material y las resistencias emiten luz.",
-          "tags": [
-            "Secador",
-            "Industrial",
-            "DIY",
-            "Máquina",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "dryer",
-        "industrial dryer",
-        "drying cabinet",
-        "fan",
-        "heating coil",
-        "machine",
-        "diy",
-        "props"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/e43e7d7e-0fb0-4f66-a6da-77dc7c81bd40",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
-      "id": "grow-light-pack",
-      "mainImage": "assets/images/grow-light-pack/cover.jpg",
-      "gallery": [
-        "assets/images/grow-light-pack/cover.jpg",
-        "assets/images/grow-light-pack/01.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "Grow Light Pack – Daylight & UV Lamps",
-          "description": "A pack of grow-light props for indoor cultivation scenes, including daylight and UV lamp variants. Suitable for greenhouses, indoor farms and simulation environments.",
-          "tags": [
-            "Grow Light",
-            "Lamp",
-            "UV",
-            "Farming",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Набір ламп для вирощування – денне світло та UV",
-          "description": "Набір ламп для сцен вирощування в приміщенні, включно з варіантами денного та ультрафіолетового світла. Підходить для теплиць, indoor-ферм і симуляторів.",
-          "tags": [
-            "Лампа",
-            "UV",
-            "Вирощування",
-            "Ферма",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Набор ламп для выращивания – дневной свет и UV",
-          "description": "Набор ламп для сцен выращивания в помещении, включая варианты дневного и ультрафиолетового света. Подходит для теплиц, indoor-ферм и симуляторов.",
-          "tags": [
-            "Лампа",
-            "UV",
-            "Выращивание",
-            "Ферма",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "Yetiştirme Lambası Paketi – Gün Işığı ve UV",
-          "description": "İç mekân yetiştirme sahneleri için gün ışığı ve UV lamba varyantları içeren aydınlatma paketi. Seralar, kapalı çiftlikler ve simülasyon ortamları için uygundur.",
-          "tags": [
-            "Yetiştirme Lambası",
-            "Lamba",
-            "UV",
-            "Çiftlik",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "育成ライトパック – 昼光・UVランプ",
-          "description": "屋内栽培シーン向けの育成ライトセットで、昼光タイプとUVタイプを収録。温室、屋内農場、シミュレーション環境に適しています。",
-          "tags": [
-            "育成ライト",
-            "ランプ",
-            "UV",
-            "農業",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Pacote de Luzes de Cultivo – Luz do Dia e UV",
-          "description": "Pacote de luminárias para cenas de cultivo interno, com variantes de luz do dia e UV. Adequado para estufas, fazendas internas e ambientes de simulação.",
-          "tags": [
-            "Grow Light",
-            "Lâmpada",
-            "UV",
-            "Fazenda",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Pack de Luces de Cultivo – Luz Diurna y UV",
-          "description": "Pack de lámparas para escenas de cultivo interior, con variantes de luz diurna y UV. Adecuado para invernaderos, granjas interiores y entornos de simulación.",
-          "tags": [
-            "Luz de Cultivo",
-            "Lámpara",
-            "UV",
-            "Granja",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "grow light",
-        "uv light",
-        "daylight",
-        "lamp",
-        "indoor farm",
-        "greenhouse",
-        "cultivation",
-        "lighting"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/9891f19f-e4ed-46b8-bb22-d762a37315b1",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
-      "id": "home-mushroom-growing-kit",
-      "mainImage": "assets/images/home-mushroom-growing-kit/cover.jpg",
-      "gallery": [
-        "assets/images/home-mushroom-growing-kit/cover.jpg",
-        "assets/images/home-mushroom-growing-kit/01.jpg",
-        "assets/images/home-mushroom-growing-kit/02.jpg",
-        "assets/images/home-mushroom-growing-kit/03.jpg",
-        "assets/images/home-mushroom-growing-kit/04.jpg",
-        "assets/images/home-mushroom-growing-kit/05.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "Home Mushroom Growing Kit – Modular 3D Asset Pack",
-          "description": "A modular mushroom-growing kit with five growth stages from empty substrate to mature mushrooms, six decay variations for each stage, and separate mushroom models for manual placement.",
-          "tags": [
-            "Mushrooms",
-            "Growing",
-            "Modular",
-            "Plants",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Домашній набір для вирощування грибів – модульний 3D-пак",
-          "description": "Модульний набір із п’ятьма стадіями росту від порожнього субстрату до зрілих грибів, шістьма варіаціями псування для кожної стадії та окремими моделями грибів для ручного розміщення.",
-          "tags": [
-            "Гриби",
-            "Вирощування",
-            "Модульне",
-            "Рослини",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Домашний набор для выращивания грибов – модульный 3D-пак",
-          "description": "Модульный набор с пятью стадиями роста от пустого субстрата до зрелых грибов, шестью вариациями порчи для каждой стадии и отдельными моделями грибов для ручного размещения.",
-          "tags": [
-            "Грибы",
-            "Выращивание",
-            "Модульное",
-            "Растения",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "Ev Tipi Mantar Yetiştirme Kiti – Modüler 3D Paket",
-          "description": "Boş substrattan olgun mantarlara kadar beş büyüme aşaması, her aşama için altı bozulma varyasyonu ve elle yerleştirme için ayrı mantar modelleri içeren modüler kit.",
-          "tags": [
-            "Mantar",
-            "Yetiştirme",
-            "Modüler",
-            "Bitkiler",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "家庭用キノコ栽培キット – モジュール式3Dパック",
-          "description": "空の培地から成熟したキノコまでの5成長段階、各段階6種類の劣化バリエーション、手動配置用の個別キノコモデルを含むモジュール式セットです。",
-          "tags": [
-            "キノコ",
-            "栽培",
-            "モジュール",
-            "植物",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "Kit Caseiro de Cultivo de Cogumelos – Pacote 3D Modular",
-          "description": "Kit modular com cinco fases de crescimento, do substrato vazio aos cogumelos maduros, seis variações de deterioração por fase e modelos individuais para posicionamento manual.",
-          "tags": [
-            "Cogumelos",
-            "Cultivo",
-            "Modular",
-            "Plantas",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "Kit Casero de Cultivo de Setas – Pack 3D Modular",
-          "description": "Kit modular con cinco etapas de crecimiento, desde sustrato vacío hasta setas maduras, seis variaciones de deterioro por etapa y modelos individuales para colocación manual.",
-          "tags": [
-            "Setas",
-            "Cultivo",
-            "Modular",
-            "Plantas",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "mushroom",
-        "fungi",
-        "growing kit",
-        "growth stages",
-        "decay",
-        "withering",
-        "substrate",
-        "modular"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/9f9a346c-24b7-42db-ac34-cf7cd4aeeba9",
-        "unity": ""
-      },
-      "youtube": ""
-    },
-    {
       "id": "cannabis-hemp-plant-pack",
       "mainImage": "assets/images/cannabis-hemp-plant-pack/cover.jpg",
       "gallery": [
@@ -1284,6 +510,1004 @@ window.SITE_DATA = {
       },
       "youtube": ""
     },
+
+    {
+      "id": "home-mushroom-growing-kit",
+      "mainImage": "assets/images/home-mushroom-growing-kit/cover.jpg",
+      "gallery": [
+        "assets/images/home-mushroom-growing-kit/cover.jpg",
+        "assets/images/home-mushroom-growing-kit/01.jpg",
+        "assets/images/home-mushroom-growing-kit/02.jpg",
+        "assets/images/home-mushroom-growing-kit/03.jpg",
+        "assets/images/home-mushroom-growing-kit/04.jpg",
+        "assets/images/home-mushroom-growing-kit/05.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Home Mushroom Growing Kit – Modular 3D Asset Pack",
+          "description": "A modular mushroom-growing kit with five growth stages from empty substrate to mature mushrooms, six decay variations for each stage, and separate mushroom models for manual placement.",
+          "tags": [
+            "Mushrooms",
+            "Growing",
+            "Modular",
+            "Plants",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Домашній набір для вирощування грибів – модульний 3D-пак",
+          "description": "Модульний набір із п’ятьма стадіями росту від порожнього субстрату до зрілих грибів, шістьма варіаціями псування для кожної стадії та окремими моделями грибів для ручного розміщення.",
+          "tags": [
+            "Гриби",
+            "Вирощування",
+            "Модульне",
+            "Рослини",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Домашний набор для выращивания грибов – модульный 3D-пак",
+          "description": "Модульный набор с пятью стадиями роста от пустого субстрата до зрелых грибов, шестью вариациями порчи для каждой стадии и отдельными моделями грибов для ручного размещения.",
+          "tags": [
+            "Грибы",
+            "Выращивание",
+            "Модульное",
+            "Растения",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Ev Tipi Mantar Yetiştirme Kiti – Modüler 3D Paket",
+          "description": "Boş substrattan olgun mantarlara kadar beş büyüme aşaması, her aşama için altı bozulma varyasyonu ve elle yerleştirme için ayrı mantar modelleri içeren modüler kit.",
+          "tags": [
+            "Mantar",
+            "Yetiştirme",
+            "Modüler",
+            "Bitkiler",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "家庭用キノコ栽培キット – モジュール式3Dパック",
+          "description": "空の培地から成熟したキノコまでの5成長段階、各段階6種類の劣化バリエーション、手動配置用の個別キノコモデルを含むモジュール式セットです。",
+          "tags": [
+            "キノコ",
+            "栽培",
+            "モジュール",
+            "植物",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Kit Caseiro de Cultivo de Cogumelos – Pacote 3D Modular",
+          "description": "Kit modular com cinco fases de crescimento, do substrato vazio aos cogumelos maduros, seis variações de deterioração por fase e modelos individuais para posicionamento manual.",
+          "tags": [
+            "Cogumelos",
+            "Cultivo",
+            "Modular",
+            "Plantas",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Kit Casero de Cultivo de Setas – Pack 3D Modular",
+          "description": "Kit modular con cinco etapas de crecimiento, desde sustrato vacío hasta setas maduras, seis variaciones de deterioro por etapa y modelos individuales para colocación manual.",
+          "tags": [
+            "Setas",
+            "Cultivo",
+            "Modular",
+            "Plantas",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "mushroom",
+        "fungi",
+        "growing kit",
+        "growth stages",
+        "decay",
+        "withering",
+        "substrate",
+        "modular"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9f9a346c-24b7-42db-ac34-cf7cd4aeeba9",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
+    {
+      "id": "poppy-plant-growth-pack",
+      "mainImage": "assets/images/poppy-plant-growth-pack/cover.jpg",
+      "gallery": [
+        "assets/images/poppy-plant-growth-pack/cover.jpg",
+        "assets/images/poppy-plant-growth-pack/01.jpg",
+        "assets/images/poppy-plant-growth-pack/02.jpg",
+        "assets/images/poppy-plant-growth-pack/03.jpg",
+        "assets/images/poppy-plant-growth-pack/04.jpg",
+        "assets/images/poppy-plant-growth-pack/05.jpg",
+        "assets/images/poppy-plant-growth-pack/06.jpg",
+        "assets/images/poppy-plant-growth-pack/07.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Poppy Plant Growth 3D Models Pack",
+          "description": "A set of game-ready poppy plant models in three color variations. Includes multiple growth stages from seedling to full bloom, plus withering and drying states.",
+          "tags": [
+            "Plants",
+            "Poppy",
+            "Growth",
+            "Farm",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "3D-пак стадій росту маку",
+          "description": "Набір готових до використання в іграх моделей маку у трьох кольорових варіаціях. Містить кілька стадій росту від паростка до повного цвітіння, а також стани в’янення й висихання.",
+          "tags": [
+            "Рослини",
+            "Мак",
+            "Ріст",
+            "Ферма",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "3D-пак стадий роста мака",
+          "description": "Набор готовых для игр моделей мака в трёх цветовых вариациях. Включает несколько стадий роста от ростка до полного цветения, а также состояния увядания и высыхания.",
+          "tags": [
+            "Растения",
+            "Мак",
+            "Рост",
+            "Ферма",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Haşhaş Bitkisi Büyüme 3D Model Paketi",
+          "description": "Üç renk varyasyonunda oyunlara hazır haşhaş bitkisi modelleri. Fidandan tam çiçeklenmeye kadar çeşitli büyüme aşamalarının yanı sıra solma ve kuruma durumlarını içerir.",
+          "tags": [
+            "Bitkiler",
+            "Haşhaş",
+            "Büyüme",
+            "Çiftlik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "ポピー成長段階 3Dモデルパック",
+          "description": "3色のバリエーションを備えたゲーム向けポピー植物モデルセットです。苗から満開までの複数の成長段階に加え、しおれ・乾燥状態を収録しています。",
+          "tags": [
+            "植物",
+            "ポピー",
+            "成長",
+            "農場",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote 3D de Crescimento de Papoulas",
+          "description": "Conjunto de modelos de papoula prontos para jogos em três variações de cor. Inclui várias fases de crescimento, da muda à floração completa, além de estados de murchamento e secagem.",
+          "tags": [
+            "Plantas",
+            "Papoula",
+            "Crescimento",
+            "Fazenda",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack 3D de Crecimiento de Amapolas",
+          "description": "Conjunto de modelos de amapola listos para juegos en tres variantes de color. Incluye varias etapas de crecimiento, desde plántula hasta plena floración, además de estados marchitos y secos.",
+          "tags": [
+            "Plantas",
+            "Amapola",
+            "Crecimiento",
+            "Granja",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "poppy",
+        "flower",
+        "plant",
+        "growth stages",
+        "wilting",
+        "drying",
+        "farm",
+        "vegetation",
+        "low poly"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/ae4b6b9f-8ea8-4ced-a18d-a0c257b451dc",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
+    {
+      id: "retro-gadget-pack",
+      mainImage: "assets/images/retro-gadget-pack/cover.png",
+      gallery: [
+        "assets/images/retro-gadget-pack/cover.png",
+        "assets/images/retro-gadget-pack/01.png",
+        "assets/images/retro-gadget-pack/02.png",
+        "assets/images/retro-gadget-pack/03.png",
+        "assets/images/retro-gadget-pack/04.png",
+        "assets/images/retro-gadget-pack/05.png",
+        "assets/images/retro-gadget-pack/06.png",
+        "assets/images/retro-gadget-pack/07.png",
+        "assets/images/retro-gadget-pack/08.png"
+      ],
+      i18n: {
+        en: { title: "Retro Gadget Pack", description: "A small retro technology pack featuring a reel-to-reel tape recorder, two vintage personal computers, one classic television set, and a VHS video recorder. Each model includes three texture resolution options — 1K, 2K, and 4K — provided in PNG format.", tags: ["Retro", "Vintage", "Electronics", "Props", "Analog"] },
+        uk: { title: "Набір ретро-гаджетів", description: "Невеликий набір ретро-техніки, до якого входять котушковий магнітофон, два вінтажні персональні комп’ютери, класичний телевізор і VHS-відеомагнітофон. Для кожної моделі передбачено три варіанти роздільної здатності текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Електроніка", "Пропси", "Аналогове"] },
+        ru: { title: "Набор ретро-гаджетов", description: "Небольшой набор ретро-техники, включающий катушечный магнитофон, два винтажных персональных компьютера, классический телевизор и VHS-видеомагнитофон. Для каждой модели предусмотрены три варианта разрешения текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Электроника", "Пропсы", "Аналог"] },
+        tr: { title: "Retro Cihaz Paketi", description: "Makaralı teyp, iki vintage kişisel bilgisayar, klasik bir televizyon ve VHS video kaydedici içeren küçük bir retro teknoloji paketi. Her model PNG formatında 1K, 2K ve 4K olmak üzere üç farklı doku çözünürlüğü seçeneği içerir.", tags: ["Retro", "Vintage", "Elektronik", "Objeler", "Analog"] },
+        ja: { title: "レトロガジェットパック", description: "オープンリールテープレコーダー、ヴィンテージPC 2台、クラシックテレビ、VHSビデオデッキを収録した小規模なレトロテクノロジーパックです。各モデルにはPNG形式の1K・2K・4Kの3種類のテクスチャ解像度が含まれます。", tags: ["レトロ", "ヴィンテージ", "電子機器", "小物", "アナログ"] },
+        "pt-BR": { title: "Pacote de Gadgets Retrô", description: "Um pequeno pacote de tecnologia retrô com gravador de fita de rolo, dois computadores pessoais vintage, uma televisão clássica e um videocassete VHS. Cada modelo inclui três opções de resolução de textura — 1K, 2K e 4K — em formato PNG.", tags: ["Retrô", "Vintage", "Eletrônicos", "Props", "Analógico"] },
+        es: { title: "Paquete de Gadgets Retro", description: "Un pequeño paquete de tecnología retro con una grabadora de cinta de carrete, dos ordenadores personales vintage, un televisor clásico y un reproductor/grabador VHS. Cada modelo incluye tres opciones de resolución de texturas — 1K, 2K y 4K — en formato PNG.", tags: ["Retro", "Vintage", "Electrónica", "Props", "Analógico"] }
+      },
+      keywords: ["retro", "vintage", "technology", "tech", "electronics", "computer", "personal computer", "television", "tv", "vhs", "video recorder", "tape recorder", "reel-to-reel", "analog", "props", "game assets", "old school", "environment props"],
+      stores: { fab: "https://www.fab.com/listings/e56e5667-9deb-48e4-9193-c2af27e8161f", unity: "https://assetstore.unity.com/packages/slug/395902" },
+      youtube: ""
+    },
+
+    {
+      id: "retro-pc-ibn-5100",
+      mainImage: "assets/images/retro-pc-ibn-5100/cover.png",
+      gallery: [
+        "assets/images/retro-pc-ibn-5100/cover.png",
+        "assets/images/retro-pc-ibn-5100/01.png",
+        "assets/images/retro-pc-ibn-5100/02.png",
+        "assets/images/retro-pc-ibn-5100/03.png",
+        "assets/images/retro-pc-ibn-5100/04.png",
+        "assets/images/retro-pc-ibn-5100/05.png",
+        "assets/images/retro-pc-ibn-5100/06.png"
+      ],
+      i18n: {
+        en: { title: "Retro PC IBN 5100", description: "Low-poly 3D model of a legendary 1970s retro computer. Includes three texture sets — 1K, 2K, and 4K — in PNG format. Designed for real-time rendering, games, and visualization projects, and especially at home in retro technology scenes — including a certain famous CERN hacking setup.", tags: ["Retro", "Vintage", "Computer", "Electronics", "Props"] },
+        uk: { title: "Ретро-ПК IBN 5100", description: "Low-poly 3D-модель легендарного ретро-комп’ютера 1970-х років. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG. Модель створена для рендерингу в реальному часі, ігор і візуалізацій та особливо добре підходить для сцен із ретро-технікою — включно з однією відомою сценою злому CERN.", tags: ["Ретро", "Вінтаж", "Комп’ютер", "Електроніка", "Пропси"] },
+        ru: { title: "Ретро-ПК IBN 5100", description: "Low-poly 3D-модель легендарного ретро-компьютера 1970-х годов. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG. Модель рассчитана на рендеринг в реальном времени, игры и визуализации и особенно хорошо подходит для сцен с ретро-техникой — включая одну знаменитую сцену взлома CERN.", tags: ["Ретро", "Винтаж", "Компьютер", "Электроника", "Пропсы"] },
+        tr: { title: "Retro PC IBN 5100", description: "1970'lerin efsanevi retro bilgisayarından ilham alan low-poly bir 3D model. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir. Gerçek zamanlı render, oyun ve görselleştirme projeleri için hazırlanmıştır; özellikle retro teknoloji sahnelerine ve ünlü bir CERN hack sahnesine çok yakışır.", tags: ["Retro", "Vintage", "Bilgisayar", "Elektronik", "Objeler"] },
+        ja: { title: "レトロPC IBN 5100", description: "1970年代の伝説的なレトロコンピューターをイメージしたローポリ3Dモデルです。PNG形式の1K・2K・4Kテクスチャセットを収録。リアルタイムレンダリング、ゲーム、ビジュアライゼーション向けで、レトロテクノロジーのシーン、そして有名なCERNハッキング風のセットアップにもよく合います。", tags: ["レトロ", "ヴィンテージ", "コンピューター", "電子機器", "小物"] },
+        "pt-BR": { title: "PC Retrô IBN 5100", description: "Modelo 3D low-poly de um lendário computador retrô dos anos 1970. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG. Criado para renderização em tempo real, jogos e projetos de visualização, e especialmente adequado para cenas de tecnologia retrô — incluindo uma certa famosa cena de hacking no CERN.", tags: ["Retrô", "Vintage", "Computador", "Eletrônicos", "Props"] },
+        es: { title: "PC Retro IBN 5100", description: "Modelo 3D low-poly de un legendario ordenador retro de los años 70. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG. Diseñado para renderizado en tiempo real, juegos y proyectos de visualización, y especialmente adecuado para escenas de tecnología retro — incluida cierta famosa escena de hacking en el CERN.", tags: ["Retro", "Vintage", "Ordenador", "Electrónica", "Props"] }
+      },
+      keywords: ["retro", "vintage", "computer", "pc", "personal computer", "1970s", "electronics", "technology", "terminal", "crt", "keyboard", "data cartridge", "CERN", "hacking", "retro computer", "low poly", "props", "game assets"],
+      stores: { fab: "https://www.fab.com/listings/f8303559-173f-4643-89bb-65f4067339d6", unity: "https://assetstore.unity.com/packages/3d/props/electronics/ipn-retro-computer-403430" },
+      youtube: ""
+    },
+
+    {
+      "id": "ibn-at-5170-retro-pc",
+      "mainImage": "assets/images/ibn-at-5170-retro-pc/cover.jpg",
+      "gallery": [
+        "assets/images/ibn-at-5170-retro-pc/cover.jpg",
+        "assets/images/ibn-at-5170-retro-pc/01.jpg",
+        "assets/images/ibn-at-5170-retro-pc/02.jpg",
+        "assets/images/ibn-at-5170-retro-pc/03.jpg",
+        "assets/images/ibn-at-5170-retro-pc/04.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "IBN AT 5170 Retro PC",
+          "description": "A vintage personal computer model inspired by 1980s technology. Designed for retro interiors, nostalgic scenes and vintage projects. Includes 1K, 2K and 4K texture sets in PNG format.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Computer",
+            "Electronics",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Ретро-ПК IBN AT 5170",
+          "description": "Модель вінтажного персонального комп’ютера, натхненна технологіями 1980-х. Підходить для ретро-інтер’єрів, ностальгійних сцен і вінтажних проєктів. Містить текстури 1K, 2K та 4K у PNG.",
+          "tags": [
+            "Ретро",
+            "Вінтаж",
+            "Комп’ютер",
+            "Електроніка",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Ретро-ПК IBN AT 5170",
+          "description": "Модель винтажного персонального компьютера, вдохновлённая технологиями 1980-х. Подходит для ретро-интерьеров, ностальгических сцен и винтажных проектов. Включает текстуры 1K, 2K и 4K в PNG.",
+          "tags": [
+            "Ретро",
+            "Винтаж",
+            "Компьютер",
+            "Электроника",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "IBN AT 5170 Retro PC",
+          "description": "1980’ler teknolojisinden ilham alan vintage kişisel bilgisayar modeli. Retro iç mekânlar, nostaljik sahneler ve vintage projeler için uygundur. PNG formatında 1K, 2K ve 4K dokular içerir.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Bilgisayar",
+            "Elektronik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "IBN AT 5170 レトロPC",
+          "description": "1980年代の技術をイメージしたヴィンテージPCモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクトに適しています。PNG形式の1K・2K・4Kテクスチャを収録。",
+          "tags": [
+            "レトロ",
+            "ヴィンテージ",
+            "コンピューター",
+            "電子機器",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "PC Retrô IBN AT 5170",
+          "description": "Modelo de computador pessoal vintage inspirado na tecnologia dos anos 1980. Ideal para interiores retrô, cenas nostálgicas e projetos vintage. Inclui texturas PNG em 1K, 2K e 4K.",
+          "tags": [
+            "Retrô",
+            "Vintage",
+            "Computador",
+            "Eletrônicos",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "PC Retro IBN AT 5170",
+          "description": "Modelo de ordenador personal vintage inspirado en la tecnología de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos vintage. Incluye texturas PNG en 1K, 2K y 4K.",
+          "tags": [
+            "Retro",
+            "Vintage",
+            "Ordenador",
+            "Electrónica",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "retro pc",
+        "computer",
+        "1980s",
+        "desktop",
+        "monitor",
+        "keyboard",
+        "electronics",
+        "vintage pc",
+        "ibn at 5170"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9631a27b-a86d-4048-98e6-3939b1563ed9",
+        "unity": "https://assetstore.unity.com/packages/3d/props/electronics/ipn-at-retro-computer-403468"
+      },
+      "youtube": ""
+    },
+
+    {
+      id: "retro-tv-astryx-novavision",
+      mainImage: "assets/images/retro-tv-astryx-novavision/cover.png",
+      gallery: [
+        "assets/images/retro-tv-astryx-novavision/cover.png",
+        "assets/images/retro-tv-astryx-novavision/01.png",
+        "assets/images/retro-tv-astryx-novavision/02.png",
+        "assets/images/retro-tv-astryx-novavision/03.png",
+        "assets/images/retro-tv-astryx-novavision/04.png",
+        "assets/images/retro-tv-astryx-novavision/05.png"
+      ],
+      i18n: {
+        en: { title: "Retro TV Astryx Novavision", description: "Detailed 3D model of a 1970s-style CRT television, inspired by classic designs of the era. Suitable for retro interiors, nostalgic scenes, vintage projects, and horror environments. The antenna and control knobs are separate mesh objects, making them easy to adjust, reposition, or remove when needed. Includes three texture sets — 1K, 2K, and 4K — in PNG format.", tags: ["Retro", "Vintage", "Television", "Electronics", "Props"] },
+        uk: { title: "Ретро-телевізор Astryx Novavision", description: "Деталізована 3D-модель CRT-телевізора в стилі 1970-х років, натхненна класичним дизайном тієї епохи. Підійде для ретро-інтер’єрів, ностальгійних сцен, вінтажних проєктів і хорор-оточення. Антена та ручки керування виконані окремими мешами, тому їх легко налаштувати, переставити або прибрати. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Телевізор", "Електроніка", "Пропси"] },
+        ru: { title: "Ретро-телевизор Astryx Novavision", description: "Детализированная 3D-модель CRT-телевизора в стиле 1970-х годов, вдохновлённая классическим дизайном эпохи. Подойдёт для ретро-интерьеров, ностальгических сцен, винтажных проектов и хоррор-окружения. Антенна и ручки управления выполнены отдельными мешами, поэтому их легко настроить, переставить или убрать. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Телевизор", "Электроника", "Пропсы"] },
+        tr: { title: "Retro TV Astryx Novavision", description: "1970'lerin klasik tasarımlarından ilham alan ayrıntılı bir CRT televizyon 3D modeli. Retro iç mekânlar, nostaljik sahneler, vintage projeler ve korku ortamları için uygundur. Anten ve kontrol düğmeleri ayrı mesh nesneleridir; gerektiğinde kolayca ayarlanabilir, yeniden konumlandırılabilir veya kaldırılabilir. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Retro", "Vintage", "Televizyon", "Elektronik", "Objeler"] },
+        ja: { title: "レトロTV Astryx Novavision", description: "1970年代のクラシックなデザインをイメージした、細部まで作り込まれたCRTテレビの3Dモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクト、ホラー環境に適しています。アンテナと操作ノブは別メッシュなので、調整・移動・取り外しが簡単です。PNG形式の1K・2K・4Kテクスチャセットを収録しています。", tags: ["レトロ", "ヴィンテージ", "テレビ", "電子機器", "小物"] },
+        "pt-BR": { title: "TV Retrô Astryx Novavision", description: "Modelo 3D detalhado de uma televisão CRT no estilo dos anos 1970, inspirado nos designs clássicos da época. Ideal para interiores retrô, cenas nostálgicas, projetos vintage e ambientes de terror. A antena e os botões de controle são meshes separados, facilitando ajustes, reposicionamento ou remoção. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG.", tags: ["Retrô", "Vintage", "Televisão", "Eletrônicos", "Props"] },
+        es: { title: "TV Retro Astryx Novavision", description: "Modelo 3D detallado de un televisor CRT de estilo años 70, inspirado en los diseños clásicos de la época. Ideal para interiores retro, escenas nostálgicas, proyectos vintage y entornos de terror. La antena y los controles son meshes independientes, por lo que se pueden ajustar, recolocar o retirar fácilmente. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Televisor", "Electrónica", "Props"] }
+      },
+      keywords: ["retro", "vintage", "television", "tv", "crt", "1970s", "electronics", "analog", "old television", "retro technology", "horror", "interior", "props", "game assets", "antenna"],
+      stores: { fab: "https://www.fab.com/listings/2596a46e-f9d9-4774-a922-2fd44c887807", unity: "https://assetstore.unity.com/packages/3d/props/electronics/retro-tv-astryx-novavision-403232" },
+      youtube: ""
+    },
+
+    {
+      id: "retro-tape-recorder-astryx-kp2036",
+      mainImage: "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
+      gallery: [
+        "assets/images/retro-tape-recorder-astryx-kp2036/cover.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/01.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/02.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/03.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/04.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/05.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/06.png",
+        "assets/images/retro-tape-recorder-astryx-kp2036/07.png"
+      ],
+      i18n: {
+        en: { title: "Tape recorder Astryx KP2036", description: "Detailed low-poly 3D model of a 1980s-style reel-to-reel tape recorder, inspired by the iconic design language of the era. Great for retro interiors, nostalgic scenes, and vintage-themed projects. Includes three texture sets — 1K, 2K, and 4K — in PNG format.", tags: ["Retro", "Vintage", "Tape Recorder", "Electronics", "Props"] },
+        uk: { title: "Магнітофон Astryx KP2036", description: "Деталізована low-poly 3D-модель котушкового магнітофона в стилі 1980-х років, натхненна впізнаваною мовою дизайну тієї епохи. Чудово підійде для ретро-інтер’єрів, ностальгійних сцен і вінтажних проєктів. У комплекті три набори текстур — 1K, 2K та 4K — у форматі PNG.", tags: ["Ретро", "Вінтаж", "Магнітофон", "Електроніка", "Пропси"] },
+        ru: { title: "Магнитофон Astryx KP2036", description: "Детализированная low-poly 3D-модель катушечного магнитофона в стиле 1980-х годов, вдохновлённая узнаваемым дизайном эпохи. Отлично подойдёт для ретро-интерьеров, ностальгических сцен и винтажных проектов. В комплекте три набора текстур — 1K, 2K и 4K — в формате PNG.", tags: ["Ретро", "Винтаж", "Магнитофон", "Электроника", "Пропсы"] },
+        tr: { title: "Astryx KP2036 Teyp Kaydedici", description: "1980'lerin ikonik tasarım dilinden ilham alan ayrıntılı low-poly makaralı teyp kaydedici 3D modeli. Retro iç mekânlar, nostaljik sahneler ve vintage temalı projeler için idealdir. PNG formatında 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Retro", "Vintage", "Teyp Kaydedici", "Elektronik", "Objeler"] },
+        ja: { title: "テープレコーダー Astryx KP2036", description: "1980年代の象徴的なデザインをイメージした、詳細なローポリのオープンリールテープレコーダー3Dモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクトに最適です。PNG形式の1K・2K・4Kテクスチャセットを収録しています。", tags: ["レトロ", "ヴィンテージ", "テープレコーダー", "電子機器", "小物"] },
+        "pt-BR": { title: "Gravador Astryx KP2036", description: "Modelo 3D low-poly detalhado de um gravador de fita de rolo inspirado na linguagem visual icônica dos anos 1980. Ótimo para interiores retrô, cenas nostálgicas e projetos com tema vintage. Inclui três conjuntos de texturas — 1K, 2K e 4K — em PNG.", tags: ["Retrô", "Vintage", "Gravador", "Eletrônicos", "Props"] },
+        es: { title: "Grabadora Astryx KP2036", description: "Modelo 3D low-poly detallado de una grabadora de cinta de carrete inspirada en el lenguaje visual icónico de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos de temática vintage. Incluye tres juegos de texturas — 1K, 2K y 4K — en PNG.", tags: ["Retro", "Vintage", "Grabadora", "Electrónica", "Props"] }
+      },
+      keywords: ["retro", "vintage", "tape recorder", "reel-to-reel", "tape deck", "audio", "analog", "electronics", "1980s", "music equipment", "sound recorder", "studio", "interior", "props", "game assets", "low poly"],
+      stores: { fab: "https://www.fab.com/listings/cd27d76e-1ad5-4cae-a2f2-75f4a1ba194a", unity: "https://assetstore.unity.com/packages/3d/props/electronics/reel-to-reel-tape-recorder-astryx-kp-2036-403242" },
+      youtube: ""
+    },
+
+    {
+      "id": "vcr-shark-vc-36v",
+      "mainImage": "assets/images/vcr-shark-vc-36v/cover.jpg",
+      "gallery": [
+        "assets/images/vcr-shark-vc-36v/cover.jpg",
+        "assets/images/vcr-shark-vc-36v/01.jpg",
+        "assets/images/vcr-shark-vc-36v/02.jpg",
+        "assets/images/vcr-shark-vc-36v/03.jpg",
+        "assets/images/vcr-shark-vc-36v/04.jpg",
+        "assets/images/vcr-shark-vc-36v/05.jpg",
+        "assets/images/vcr-shark-vc-36v/06.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "VCR Shark VC-36V",
+          "description": "A classic 1980s VCR model for retro environments, nostalgic interiors and vintage projects. Includes a VHS cassette and three texture-resolution sets: 1K, 2K and 4K.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Electronics",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Відеомагнітофон Shark VC-36V",
+          "description": "Класична модель відеомагнітофона 1980-х для ретро-оточення, ностальгійних інтер’єрів і вінтажних проєктів. У комплекті VHS-касета та набори текстур 1K, 2K і 4K.",
+          "tags": [
+            "Ретро",
+            "VCR",
+            "VHS",
+            "Електроніка",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Видеомагнитофон Shark VC-36V",
+          "description": "Классическая модель видеомагнитофона 1980-х для ретро-окружения, ностальгических интерьеров и винтажных проектов. В комплекте VHS-кассета и наборы текстур 1K, 2K и 4K.",
+          "tags": [
+            "Ретро",
+            "VCR",
+            "VHS",
+            "Электроника",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "VCR Shark VC-36V",
+          "description": "Retro ortamlar, nostaljik iç mekânlar ve vintage projeler için klasik 1980’ler VCR modeli. VHS kaset ve 1K, 2K, 4K doku setleri içerir.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Elektronik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "VCR Shark VC-36V",
+          "description": "レトロ環境、ノスタルジックな室内、ヴィンテージ系プロジェクト向けの1980年代風VCRモデルです。VHSカセットと1K・2K・4Kテクスチャセットを収録。",
+          "tags": [
+            "レトロ",
+            "VCR",
+            "VHS",
+            "電子機器",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "VCR Shark VC-36V",
+          "description": "Modelo clássico de videocassete dos anos 1980 para ambientes retrô, interiores nostálgicos e projetos vintage. Inclui fita VHS e texturas em 1K, 2K e 4K.",
+          "tags": [
+            "Retrô",
+            "VCR",
+            "VHS",
+            "Eletrônicos",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "VCR Shark VC-36V",
+          "description": "Modelo clásico de videograbadora de los años 80 para entornos retro, interiores nostálgicos y proyectos vintage. Incluye cinta VHS y texturas en 1K, 2K y 4K.",
+          "tags": [
+            "Retro",
+            "VCR",
+            "VHS",
+            "Electrónica",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "vcr",
+        "vhs",
+        "video recorder",
+        "videocassette",
+        "retro",
+        "1980s",
+        "electronics",
+        "shark",
+        "vc-36v"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/aa75cc16-0823-407b-8c4c-63b3225bbff6",
+        "unity": "https://assetstore.unity.com/packages/3d/props/electronics/vcr-shark-vc-36v-403258"
+      },
+      "youtube": ""
+    },
+
+    {
+      id: "webstrider-fpv-quadcopter-drone",
+      mainImage: "assets/images/webstrider-fpv/cover.jpg",
+      gallery: [
+        "assets/images/webstrider-fpv/cover.jpg",
+        "assets/images/webstrider-fpv/01.jpg",
+        "assets/images/webstrider-fpv/02.jpg",
+        "assets/images/webstrider-fpv/03.jpg",
+        "assets/images/webstrider-fpv/04.jpg",
+        "assets/images/webstrider-fpv/05.jpg",
+        "assets/images/webstrider-fpv/06.jpg",
+        "assets/images/webstrider-fpv/07.jpg",
+        "assets/images/webstrider-fpv/08.jpg",
+        "assets/images/webstrider-fpv/09.jpg",
+        "assets/images/webstrider-fpv/10.jpg",
+        "assets/images/webstrider-fpv/11.jpg",
+        "assets/images/webstrider-fpv/12.jpg"
+      ],
+      i18n: {
+        en: { title: "WebStrider FPV Quadcopter Drone", description: "FPV drone for your projects. Includes the drone in three color variants — red, blue, and green — as well as a remote controller and a storage case. The materials also come with three texture sets: 1K, 2K, and 4K.", tags: ["Drone", "FPV", "Quadcopter", "Electronics", "Props"] },
+        uk: { title: "FPV-квадрокоптер WebStrider", description: "FPV-дрон для ваших проєктів. У комплекті дрон у трьох кольорових варіантах — червоному, синьому та зеленому — а також пульт керування й кейс для зберігання. Матеріали також мають три набори текстур: 1K, 2K та 4K.", tags: ["Дрон", "FPV", "Квадрокоптер", "Електроніка", "Пропси"] },
+        ru: { title: "FPV-квадрокоптер WebStrider", description: "FPV-дрон для ваших проектов. В комплекте дрон в трёх цветовых вариантах — красном, синем и зелёном — а также пульт управления и кейс для хранения. Материалы также включают три набора текстур: 1K, 2K и 4K.", tags: ["Дрон", "FPV", "Квадрокоптер", "Электроника", "Пропсы"] },
+        tr: { title: "WebStrider FPV Quadcopter Drone", description: "Projeleriniz için bir FPV drone. Drone kırmızı, mavi ve yeşil olmak üzere üç renk varyasyonuyla birlikte gelir; ayrıca uzaktan kumanda ve saklama çantası da dahildir. Materyaller 1K, 2K ve 4K olmak üzere üç doku seti içerir.", tags: ["Drone", "FPV", "Quadcopter", "Elektronik", "Objeler"] },
+        ja: { title: "WebStrider FPVクアッドコプタードローン", description: "プロジェクト向けのFPVドローンです。赤・青・緑の3色バリエーションに加え、リモートコントローラーと収納ケースを収録。マテリアルには1K・2K・4Kの3種類のテクスチャセットが含まれます。", tags: ["ドローン", "FPV", "クアッドコプター", "電子機器", "小物"] },
+        "pt-BR": { title: "Drone Quadricóptero FPV WebStrider", description: "Drone FPV para seus projetos. Inclui o drone em três variações de cor — vermelho, azul e verde — além de controle remoto e estojo de armazenamento. Os materiais também vêm com três conjuntos de texturas: 1K, 2K e 4K.", tags: ["Drone", "FPV", "Quadricóptero", "Eletrônicos", "Props"] },
+        es: { title: "Dron Cuadricóptero FPV WebStrider", description: "Dron FPV para tus proyectos. Incluye el dron en tres variantes de color — rojo, azul y verde — además de un mando a distancia y un estuche de almacenamiento. Los materiales también incluyen tres juegos de texturas: 1K, 2K y 4K.", tags: ["Dron", "FPV", "Cuadricóptero", "Electrónica", "Props"] }
+      },
+      keywords: ["drone", "fpv", "quadcopter", "quadrocopter", "uav", "camera drone", "electronics", "technology", "remote controller", "controller", "storage case", "case", "props", "game assets", "unreal engine", "modular", "camera"],
+      stores: { fab: "https://www.fab.com/listings/bf0e504c-d8d5-4baf-9cd8-5450aadf2889", unity: "" },
+      youtube: ""
+    },
+
+    {
+      "id": "plant-growing-props-pack",
+      "mainImage": "assets/images/plant-growing-props-pack/cover.jpg",
+      "gallery": [
+        "assets/images/plant-growing-props-pack/cover.jpg",
+        "assets/images/plant-growing-props-pack/01.jpg",
+        "assets/images/plant-growing-props-pack/02.jpg",
+        "assets/images/plant-growing-props-pack/03.jpg",
+        "assets/images/plant-growing-props-pack/04.jpg",
+        "assets/images/plant-growing-props-pack/05.jpg",
+        "assets/images/plant-growing-props-pack/06.jpg",
+        "assets/images/plant-growing-props-pack/07.jpg",
+        "assets/images/plant-growing-props-pack/08.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Plant Growing Props Pack",
+          "description": "A gardening and farming prop set with planter beds, pots, two soil types in dry, normal and wet states, modular irrigation pipes, soil and fertilizer bags, and plastic canisters.",
+          "tags": [
+            "Gardening",
+            "Farming",
+            "Soil",
+            "Irrigation",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Набір пропсів для вирощування рослин",
+          "description": "Набір для садових і фермерських сцен: грядки, горщики, два типи ґрунту у сухому, звичайному та мокрому станах, модульні труби для зрошення, мішки ґрунту й добрив та пластикові каністри.",
+          "tags": [
+            "Садівництво",
+            "Ферма",
+            "Ґрунт",
+            "Зрошення",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Набор пропсов для выращивания растений",
+          "description": "Набор для садовых и фермерских сцен: грядки, горшки, два типа почвы в сухом, обычном и мокром состояниях, модульные трубы для полива, мешки почвы и удобрений и пластиковые канистры.",
+          "tags": [
+            "Садоводство",
+            "Ферма",
+            "Почва",
+            "Полив",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Bitki Yetiştirme Objeleri Paketi",
+          "description": "Bahçe ve çiftlik sahneleri için saksılar, ekim yatakları, kuru/normal/ıslak durumlarda iki toprak türü, modüler sulama boruları, toprak ve gübre torbaları ile plastik bidonlar içeren set.",
+          "tags": [
+            "Bahçecilik",
+            "Çiftlik",
+            "Toprak",
+            "Sulama",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "植物栽培プロップパック",
+          "description": "ガーデニングや農業シーン向けのプロップセット。プランターベッド、鉢、乾燥・通常・湿潤の3状態を持つ2種類の土、モジュール式灌漑パイプ、土・肥料袋、プラスチック容器を収録。",
+          "tags": [
+            "園芸",
+            "農業",
+            "土",
+            "灌漑",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote de Props para Cultivo de Plantas",
+          "description": "Conjunto para cenas de jardinagem e fazenda com canteiros, vasos, dois tipos de solo em estados seco, normal e molhado, tubos modulares de irrigação, sacos de terra e fertilizante e galões plásticos.",
+          "tags": [
+            "Jardinagem",
+            "Fazenda",
+            "Solo",
+            "Irrigação",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack de Props para Cultivo de Plantas",
+          "description": "Conjunto para escenas de jardinería y granja con bancales, macetas, dos tipos de suelo en estados seco, normal y húmedo, tuberías modulares de riego, sacos de tierra y fertilizante y bidones de plástico.",
+          "tags": [
+            "Jardinería",
+            "Granja",
+            "Suelo",
+            "Riego",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "garden",
+        "gardening",
+        "farm",
+        "planter",
+        "pot",
+        "soil",
+        "irrigation",
+        "pipe",
+        "fertilizer",
+        "canister"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/99e81e90-eac2-48e0-9f39-d943ec7ef0c0",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
+    {
+      "id": "grow-light-pack",
+      "mainImage": "assets/images/grow-light-pack/cover.jpg",
+      "gallery": [
+        "assets/images/grow-light-pack/cover.jpg",
+        "assets/images/grow-light-pack/01.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Grow Light Pack – Daylight & UV Lamps",
+          "description": "A pack of grow-light props for indoor cultivation scenes, including daylight and UV lamp variants. Suitable for greenhouses, indoor farms and simulation environments.",
+          "tags": [
+            "Grow Light",
+            "Lamp",
+            "UV",
+            "Farming",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Набір ламп для вирощування – денне світло та UV",
+          "description": "Набір ламп для сцен вирощування в приміщенні, включно з варіантами денного та ультрафіолетового світла. Підходить для теплиць, indoor-ферм і симуляторів.",
+          "tags": [
+            "Лампа",
+            "UV",
+            "Вирощування",
+            "Ферма",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Набор ламп для выращивания – дневной свет и UV",
+          "description": "Набор ламп для сцен выращивания в помещении, включая варианты дневного и ультрафиолетового света. Подходит для теплиц, indoor-ферм и симуляторов.",
+          "tags": [
+            "Лампа",
+            "UV",
+            "Выращивание",
+            "Ферма",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Yetiştirme Lambası Paketi – Gün Işığı ve UV",
+          "description": "İç mekân yetiştirme sahneleri için gün ışığı ve UV lamba varyantları içeren aydınlatma paketi. Seralar, kapalı çiftlikler ve simülasyon ortamları için uygundur.",
+          "tags": [
+            "Yetiştirme Lambası",
+            "Lamba",
+            "UV",
+            "Çiftlik",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "育成ライトパック – 昼光・UVランプ",
+          "description": "屋内栽培シーン向けの育成ライトセットで、昼光タイプとUVタイプを収録。温室、屋内農場、シミュレーション環境に適しています。",
+          "tags": [
+            "育成ライト",
+            "ランプ",
+            "UV",
+            "農業",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Pacote de Luzes de Cultivo – Luz do Dia e UV",
+          "description": "Pacote de luminárias para cenas de cultivo interno, com variantes de luz do dia e UV. Adequado para estufas, fazendas internas e ambientes de simulação.",
+          "tags": [
+            "Grow Light",
+            "Lâmpada",
+            "UV",
+            "Fazenda",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Pack de Luces de Cultivo – Luz Diurna y UV",
+          "description": "Pack de lámparas para escenas de cultivo interior, con variantes de luz diurna y UV. Adecuado para invernaderos, granjas interiores y entornos de simulación.",
+          "tags": [
+            "Luz de Cultivo",
+            "Lámpara",
+            "UV",
+            "Granja",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "grow light",
+        "uv light",
+        "daylight",
+        "lamp",
+        "indoor farm",
+        "greenhouse",
+        "cultivation",
+        "lighting"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/9891f19f-e4ed-46b8-bb22-d762a37315b1",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
+    {
+      "id": "hanging-drying-rack",
+      "mainImage": "assets/images/hanging-drying-rack/cover.jpg",
+      "gallery": [
+        "assets/images/hanging-drying-rack/cover.jpg",
+        "assets/images/hanging-drying-rack/02.jpg",
+        "assets/images/hanging-drying-rack/03.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "Hanging Drying Rack",
+          "description": "A compact hanging drying-rack prop for production, workshop, basement and utility scenes. Designed as a simple ready-to-use environment asset.",
+          "tags": [
+            "Drying",
+            "Rack",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "Підвісна сушарка",
+          "description": "Компактний підвісний сушильний проп для виробничих, майстерневих, підвальних та господарських сцен. Простий готовий до використання елемент оточення.",
+          "tags": [
+            "Сушіння",
+            "Стійка",
+            "Промислове",
+            "Інтер’єр",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "Подвесная сушилка",
+          "description": "Компактный подвесной сушильный проп для производственных, мастерских, подвальных и хозяйственных сцен. Простой готовый элемент окружения.",
+          "tags": [
+            "Сушка",
+            "Стойка",
+            "Промышленное",
+            "Интерьер",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "Asılı Kurutma Rafı",
+          "description": "Üretim, atölye, bodrum ve yardımcı alan sahneleri için kompakt asılı kurutma rafı objesi. Kullanıma hazır basit bir çevre varlığıdır.",
+          "tags": [
+            "Kurutma",
+            "Raf",
+            "Endüstriyel",
+            "İç Mekân",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "吊り下げ式乾燥ラック",
+          "description": "生産設備、作業場、地下室、ユーティリティ空間向けのコンパクトな吊り下げ式乾燥ラックです。すぐに使える環境プロップとして設計されています。",
+          "tags": [
+            "乾燥",
+            "ラック",
+            "工業",
+            "室内",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Rack de Secagem Suspenso",
+          "description": "Prop compacto de rack de secagem suspenso para cenas de produção, oficinas, porões e áreas utilitárias. Um elemento de ambiente simples e pronto para uso.",
+          "tags": [
+            "Secagem",
+            "Rack",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Estante de Secado Colgante",
+          "description": "Prop compacto de estante de secado colgante para escenas de producción, talleres, sótanos y zonas de servicio. Elemento de entorno sencillo y listo para usar.",
+          "tags": [
+            "Secado",
+            "Estante",
+            "Industrial",
+            "Interior",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "drying",
+        "dryer",
+        "hanging rack",
+        "rope",
+        "industrial",
+        "workshop",
+        "basement",
+        "props"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/c5f9fd02-1d21-4e05-a1e9-9f96978517b0",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
+    {
+      "id": "diy-industrial-dryer",
+      "mainImage": "assets/images/diy-industrial-dryer/cover.jpg",
+      "gallery": [
+        "assets/images/diy-industrial-dryer/cover.jpg",
+        "assets/images/diy-industrial-dryer/01.jpg",
+        "assets/images/diy-industrial-dryer/02.jpg",
+        "assets/images/diy-industrial-dryer/03.jpg",
+        "assets/images/diy-industrial-dryer/04.jpg",
+        "assets/images/diy-industrial-dryer/05.jpg"
+      ],
+      "i18n": {
+        "en": {
+          "title": "DIY Industrial Dryer 3D Model",
+          "description": "A handmade-style industrial drying cabinet with drawers, top fans and heating coils. Fan motion is implemented through material animation and the heating coils emit light.",
+          "tags": [
+            "Dryer",
+            "Industrial",
+            "DIY",
+            "Machine",
+            "Props"
+          ]
+        },
+        "uk": {
+          "title": "3D-модель саморобної промислової сушарки",
+          "description": "Промислова сушильна шафа у саморобному стилі з висувними секціями, верхніми вентиляторами та нагрівальними спіралями. Рух вентиляторів реалізований анімацією матеріалу, а спіралі випромінюють світло.",
+          "tags": [
+            "Сушарка",
+            "Промислове",
+            "DIY",
+            "Обладнання",
+            "Пропси"
+          ]
+        },
+        "ru": {
+          "title": "3D-модель самодельной промышленной сушилки",
+          "description": "Промышленный сушильный шкаф в самодельном стиле с выдвижными секциями, верхними вентиляторами и нагревательными спиралями. Движение вентиляторов реализовано анимацией материала, а спирали излучают свет.",
+          "tags": [
+            "Сушилка",
+            "Промышленное",
+            "DIY",
+            "Оборудование",
+            "Пропсы"
+          ]
+        },
+        "tr": {
+          "title": "DIY Endüstriyel Kurutucu 3D Modeli",
+          "description": "Çekmeceler, üst fanlar ve ısıtma bobinleri bulunan el yapımı tarzda endüstriyel kurutma kabini. Fan hareketi malzeme animasyonuyla uygulanır ve ısıtma bobinleri ışık yayar.",
+          "tags": [
+            "Kurutucu",
+            "Endüstriyel",
+            "DIY",
+            "Makine",
+            "Objeler"
+          ]
+        },
+        "ja": {
+          "title": "DIY工業用乾燥機 3Dモデル",
+          "description": "引き出し、上部ファン、加熱コイルを備えた手作り風の工業用乾燥キャビネットです。ファンの動きはマテリアルアニメーションで表現され、加熱コイルは発光します。",
+          "tags": [
+            "乾燥機",
+            "工業",
+            "DIY",
+            "機械",
+            "小物"
+          ]
+        },
+        "pt-BR": {
+          "title": "Modelo 3D de Secador Industrial DIY",
+          "description": "Gabinete de secagem industrial com aparência artesanal, gavetas, ventiladores superiores e serpentinas de aquecimento. O movimento dos ventiladores usa animação de material e as serpentinas emitem luz.",
+          "tags": [
+            "Secador",
+            "Industrial",
+            "DIY",
+            "Máquina",
+            "Props"
+          ]
+        },
+        "es": {
+          "title": "Modelo 3D de Secador Industrial DIY",
+          "description": "Armario de secado industrial de estilo artesanal con cajones, ventiladores superiores y resistencias de calentamiento. El movimiento de los ventiladores usa animación de material y las resistencias emiten luz.",
+          "tags": [
+            "Secador",
+            "Industrial",
+            "DIY",
+            "Máquina",
+            "Props"
+          ]
+        }
+      },
+      "keywords": [
+        "dryer",
+        "industrial dryer",
+        "drying cabinet",
+        "fan",
+        "heating coil",
+        "machine",
+        "diy",
+        "props"
+      ],
+      "stores": {
+        "fab": "https://www.fab.com/listings/e43e7d7e-0fb0-4f66-a6da-77dc7c81bd40",
+        "unity": ""
+      },
+      "youtube": ""
+    },
+
     {
       "id": "gas-stove",
       "mainImage": "assets/images/gas-stove/cover.jpg",
@@ -1391,220 +1615,7 @@ window.SITE_DATA = {
       },
       "youtube": ""
     },
-    {
-      "id": "vcr-shark-vc-36v",
-      "mainImage": "assets/images/vcr-shark-vc-36v/cover.jpg",
-      "gallery": [
-        "assets/images/vcr-shark-vc-36v/cover.jpg",
-        "assets/images/vcr-shark-vc-36v/01.jpg",
-        "assets/images/vcr-shark-vc-36v/02.jpg",
-        "assets/images/vcr-shark-vc-36v/03.jpg",
-        "assets/images/vcr-shark-vc-36v/04.jpg",
-        "assets/images/vcr-shark-vc-36v/05.jpg",
-        "assets/images/vcr-shark-vc-36v/06.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "VCR Shark VC-36V",
-          "description": "A classic 1980s VCR model for retro environments, nostalgic interiors and vintage projects. Includes a VHS cassette and three texture-resolution sets: 1K, 2K and 4K.",
-          "tags": [
-            "Retro",
-            "VCR",
-            "VHS",
-            "Electronics",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Відеомагнітофон Shark VC-36V",
-          "description": "Класична модель відеомагнітофона 1980-х для ретро-оточення, ностальгійних інтер’єрів і вінтажних проєктів. У комплекті VHS-касета та набори текстур 1K, 2K і 4K.",
-          "tags": [
-            "Ретро",
-            "VCR",
-            "VHS",
-            "Електроніка",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Видеомагнитофон Shark VC-36V",
-          "description": "Классическая модель видеомагнитофона 1980-х для ретро-окружения, ностальгических интерьеров и винтажных проектов. В комплекте VHS-кассета и наборы текстур 1K, 2K и 4K.",
-          "tags": [
-            "Ретро",
-            "VCR",
-            "VHS",
-            "Электроника",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "VCR Shark VC-36V",
-          "description": "Retro ortamlar, nostaljik iç mekânlar ve vintage projeler için klasik 1980’ler VCR modeli. VHS kaset ve 1K, 2K, 4K doku setleri içerir.",
-          "tags": [
-            "Retro",
-            "VCR",
-            "VHS",
-            "Elektronik",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "VCR Shark VC-36V",
-          "description": "レトロ環境、ノスタルジックな室内、ヴィンテージ系プロジェクト向けの1980年代風VCRモデルです。VHSカセットと1K・2K・4Kテクスチャセットを収録。",
-          "tags": [
-            "レトロ",
-            "VCR",
-            "VHS",
-            "電子機器",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "VCR Shark VC-36V",
-          "description": "Modelo clássico de videocassete dos anos 1980 para ambientes retrô, interiores nostálgicos e projetos vintage. Inclui fita VHS e texturas em 1K, 2K e 4K.",
-          "tags": [
-            "Retrô",
-            "VCR",
-            "VHS",
-            "Eletrônicos",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "VCR Shark VC-36V",
-          "description": "Modelo clásico de videograbadora de los años 80 para entornos retro, interiores nostálgicos y proyectos vintage. Incluye cinta VHS y texturas en 1K, 2K y 4K.",
-          "tags": [
-            "Retro",
-            "VCR",
-            "VHS",
-            "Electrónica",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "vcr",
-        "vhs",
-        "video recorder",
-        "videocassette",
-        "retro",
-        "1980s",
-        "electronics",
-        "shark",
-        "vc-36v"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/aa75cc16-0823-407b-8c4c-63b3225bbff6",
-        "unity": "https://assetstore.unity.com/?q=VCR%20Shark%20VC-36V&orderBy=1"
-      },
-      "youtube": ""
-    },
-    {
-      "id": "ibn-at-5170-retro-pc",
-      "mainImage": "assets/images/ibn-at-5170-retro-pc/cover.jpg",
-      "gallery": [
-        "assets/images/ibn-at-5170-retro-pc/cover.jpg",
-        "assets/images/ibn-at-5170-retro-pc/01.jpg",
-        "assets/images/ibn-at-5170-retro-pc/02.jpg",
-        "assets/images/ibn-at-5170-retro-pc/03.jpg",
-        "assets/images/ibn-at-5170-retro-pc/04.jpg"
-      ],
-      "i18n": {
-        "en": {
-          "title": "IBN AT 5170 Retro PC",
-          "description": "A vintage personal computer model inspired by 1980s technology. Designed for retro interiors, nostalgic scenes and vintage projects. Includes 1K, 2K and 4K texture sets in PNG format.",
-          "tags": [
-            "Retro",
-            "Vintage",
-            "Computer",
-            "Electronics",
-            "Props"
-          ]
-        },
-        "uk": {
-          "title": "Ретро-ПК IBN AT 5170",
-          "description": "Модель вінтажного персонального комп’ютера, натхненна технологіями 1980-х. Підходить для ретро-інтер’єрів, ностальгійних сцен і вінтажних проєктів. Містить текстури 1K, 2K та 4K у PNG.",
-          "tags": [
-            "Ретро",
-            "Вінтаж",
-            "Комп’ютер",
-            "Електроніка",
-            "Пропси"
-          ]
-        },
-        "ru": {
-          "title": "Ретро-ПК IBN AT 5170",
-          "description": "Модель винтажного персонального компьютера, вдохновлённая технологиями 1980-х. Подходит для ретро-интерьеров, ностальгических сцен и винтажных проектов. Включает текстуры 1K, 2K и 4K в PNG.",
-          "tags": [
-            "Ретро",
-            "Винтаж",
-            "Компьютер",
-            "Электроника",
-            "Пропсы"
-          ]
-        },
-        "tr": {
-          "title": "IBN AT 5170 Retro PC",
-          "description": "1980’ler teknolojisinden ilham alan vintage kişisel bilgisayar modeli. Retro iç mekânlar, nostaljik sahneler ve vintage projeler için uygundur. PNG formatında 1K, 2K ve 4K dokular içerir.",
-          "tags": [
-            "Retro",
-            "Vintage",
-            "Bilgisayar",
-            "Elektronik",
-            "Objeler"
-          ]
-        },
-        "ja": {
-          "title": "IBN AT 5170 レトロPC",
-          "description": "1980年代の技術をイメージしたヴィンテージPCモデルです。レトロな室内、ノスタルジックなシーン、ヴィンテージ系プロジェクトに適しています。PNG形式の1K・2K・4Kテクスチャを収録。",
-          "tags": [
-            "レトロ",
-            "ヴィンテージ",
-            "コンピューター",
-            "電子機器",
-            "小物"
-          ]
-        },
-        "pt-BR": {
-          "title": "PC Retrô IBN AT 5170",
-          "description": "Modelo de computador pessoal vintage inspirado na tecnologia dos anos 1980. Ideal para interiores retrô, cenas nostálgicas e projetos vintage. Inclui texturas PNG em 1K, 2K e 4K.",
-          "tags": [
-            "Retrô",
-            "Vintage",
-            "Computador",
-            "Eletrônicos",
-            "Props"
-          ]
-        },
-        "es": {
-          "title": "PC Retro IBN AT 5170",
-          "description": "Modelo de ordenador personal vintage inspirado en la tecnología de los años 80. Ideal para interiores retro, escenas nostálgicas y proyectos vintage. Incluye texturas PNG en 1K, 2K y 4K.",
-          "tags": [
-            "Retro",
-            "Vintage",
-            "Ordenador",
-            "Electrónica",
-            "Props"
-          ]
-        }
-      },
-      "keywords": [
-        "retro pc",
-        "computer",
-        "1980s",
-        "desktop",
-        "monitor",
-        "keyboard",
-        "electronics",
-        "vintage pc",
-        "ibn at 5170"
-      ],
-      "stores": {
-        "fab": "https://www.fab.com/listings/9631a27b-a86d-4048-98e6-3939b1563ed9",
-        "unity": "https://assetstore.unity.com/packages/package/403468"
-      },
-      "youtube": ""
-    },
+
     {
       "id": "alchemy-set",
       "mainImage": "assets/images/alchemy-set/cover.jpg",
@@ -1715,6 +1726,7 @@ window.SITE_DATA = {
       },
       "youtube": ""
     },
+
     {
       "id": "nixie-tubes-pack",
       "mainImage": "assets/images/nixie-tubes-pack/cover.jpg",
