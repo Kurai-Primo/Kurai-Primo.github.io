@@ -439,6 +439,9 @@ a { color: inherit; }
   margin: 22px auto 2px;
   min-height: 48px;
 }
+.pagination.pagination-top {
+  margin: 18px auto 22px;
+}
 .pagination-pages {
   display: flex;
   align-items: center;

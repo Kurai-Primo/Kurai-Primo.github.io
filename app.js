@@ -19,6 +19,8 @@
   const searchEl = document.getElementById('asset-search');
   const emptyEl = document.getElementById('empty-state');
   const paginationEl = document.getElementById('pagination');
+  const paginationTopEl = document.getElementById('pagination-top');
+  const paginationEls = [paginationTopEl, paginationEl].filter(Boolean);
   const catalogEl = document.querySelector('.catalog');
 
   const lightbox = document.getElementById('lightbox');
@@ -239,7 +241,7 @@
     searchEl.placeholder = t('searchPlaceholder');
     searchEl.setAttribute('aria-label', t('searchAria'));
     emptyEl.textContent = t('emptyState');
-    if (paginationEl) paginationEl.setAttribute('aria-label', t('paginationAria'));
+    paginationEls.forEach(el => el.setAttribute('aria-label', t('paginationAria')));
 
     lightbox.setAttribute('aria-label', t('imageGallery'));
     closeButton.setAttribute('aria-label', t('closeGallery'));
@@ -463,14 +465,14 @@
   }
 
   function renderPagination(totalPages) {
-    if (!paginationEl) return;
+    if (!paginationEls.length) return;
 
     const shouldShow = totalPages > 1;
-    paginationEl.hidden = !shouldShow;
-    if (!shouldShow) {
-      paginationEl.innerHTML = '';
-      return;
-    }
+    paginationEls.forEach(el => {
+      el.hidden = !shouldShow;
+      if (!shouldShow) el.innerHTML = '';
+    });
+    if (!shouldShow) return;
 
     const items = paginationItems(totalPages);
     const pageButtons = items.map(item => {
@@ -479,10 +481,12 @@
       return `<button class="pagination-button pagination-number${active ? ' is-active' : ''}" type="button" data-page="${item}" ${active ? 'aria-current="page"' : ''} aria-label="${escapeHtml(t('pageLabel', { page: item }))}"><span>${item}</span></button>`;
     }).join('');
 
-    paginationEl.innerHTML = `
+    const markup = `
       <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage - 1}" aria-label="${escapeHtml(t('previousPage'))}" ${currentPage <= 1 ? 'disabled' : ''}><span>‹</span></button>
       <div class="pagination-pages">${pageButtons}</div>
       <button class="pagination-button pagination-arrow" type="button" data-page="${currentPage + 1}" aria-label="${escapeHtml(t('nextPage'))}" ${currentPage >= totalPages ? 'disabled' : ''}><span>›</span></button>`;
+
+    paginationEls.forEach(el => { el.innerHTML = markup; });
   }
 
   function renderAssets() {
@@ -752,10 +756,12 @@
 
   window.addEventListener('hashchange', () => openAssetFromHash({ behavior: 'smooth' }));
 
-  paginationEl?.addEventListener('click', event => {
-    const button = event.target.closest('button[data-page]');
-    if (!button || button.disabled) return;
-    goToPage(Number(button.dataset.page));
+  paginationEls.forEach(el => {
+    el.addEventListener('click', event => {
+      const button = event.target.closest('button[data-page]');
+      if (!button || button.disabled) return;
+      goToPage(Number(button.dataset.page));
+    });
   });
 
   document.addEventListener('click', event => {
