@@ -2,6 +2,18 @@
   const data = window.SITE_DATA;
   if (!data) return;
 
+  // Keep ordinary visits/reloads at the top instead of restoring an old scroll position.
+  // Direct asset links (#asset-id) are handled separately and still scroll to that asset.
+  const navigationType = performance.getEntriesByType?.('navigation')?.[0]?.type || '';
+  const shouldResetScrollOnLoad = !location.hash && navigationType !== 'back_forward';
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (shouldResetScrollOnLoad) {
+    window.scrollTo(0, 0);
+    window.addEventListener('pageshow', () => {
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    }, { once: true });
+  }
+
   const profileEl = document.getElementById('profile');
   const listEl = document.getElementById('asset-list');
   const searchEl = document.getElementById('asset-search');
@@ -484,7 +496,7 @@
     listEl.innerHTML = visible.map(baseAsset => {
       const asset = localizedAsset(baseAsset);
       const gallery = (asset.gallery || []).filter(Boolean);
-      const extraGallery = gallery.slice(1);
+      const hasExtraGallery = gallery.length > 1;
       const safeTitle = escapeHtml(asset.title);
 
       return `<article class="asset-card" id="${escapeHtml(asset.id)}" data-asset-id="${escapeHtml(asset.id)}">
@@ -502,7 +514,7 @@
         <div class="asset-card-body">
           <div class="asset-head">
             ${(asset.tags || []).length ? `<div class="asset-tags">${asset.tags.map(tag => `<button class="asset-tag" type="button" title="${escapeHtml(t('searchFor', { tag }))}">${escapeHtml(tag)}</button>`).join('')}</div>` : ''}
-            <img class="asset-main js-gallery-image" src="${escapeHtml(asset.mainImage)}" alt="${escapeHtml(t('previewAlt', { title: asset.title }))}" loading="lazy" data-gallery-index="0">
+            <img class="asset-main js-gallery-image" src="${escapeHtml(asset.mainImage)}" alt="${escapeHtml(t('previewAlt', { title: asset.title }))}" loading="lazy" decoding="async" data-gallery-index="0">
           </div>
           <div class="asset-actions">
             ${platformButtons(asset)}
@@ -512,7 +524,7 @@
             <div class="asset-details-inner">
               <div class="asset-details-content">
                 <p class="asset-description">${escapeHtml(asset.description)}</p>
-                ${extraGallery.length ? `<div class="gallery-grid">${extraGallery.map((src, index) => `<img class="gallery-thumb js-gallery-image" src="${escapeHtml(src)}" alt="${escapeHtml(t('galleryAlt', { title: asset.title, index: index + 2 }))}" loading="lazy" data-gallery-index="${index + 1}">`).join('')}</div>` : ''}
+                ${hasExtraGallery ? '<div class="gallery-grid" data-gallery-grid></div>' : ''}
                 ${extraActionButtons(asset)}
               </div>
             </div>
@@ -550,11 +562,37 @@
     }
   }
 
+  function bindGalleryImage(img, asset) {
+    if (!img || img.dataset.galleryBound === 'true') return;
+    img.dataset.galleryBound = 'true';
+    img.addEventListener('click', () => {
+      openLightbox(asset.gallery || [asset.mainImage], Number(img.dataset.galleryIndex || 0), asset.title);
+    });
+  }
+
+  function ensureGalleryLoaded(card) {
+    const grid = card?.querySelector('[data-gallery-grid]');
+    if (!grid || grid.dataset.loaded === 'true') return;
+
+    const baseAsset = data.assets.find(asset => asset.id === card.dataset.assetId);
+    if (!baseAsset) return;
+    const asset = localizedAsset(baseAsset);
+    const extraGallery = (asset.gallery || []).filter(Boolean).slice(1);
+
+    grid.innerHTML = extraGallery.map((src, index) =>
+      `<img class="gallery-thumb js-gallery-image" src="${escapeHtml(src)}" alt="${escapeHtml(t('galleryAlt', { title: asset.title, index: index + 2 }))}" loading="lazy" decoding="async" fetchpriority="low" data-gallery-index="${index + 1}">`
+    ).join('');
+    grid.dataset.loaded = 'true';
+    grid.querySelectorAll('.js-gallery-image').forEach(img => bindGalleryImage(img, asset));
+  }
+
   function setCardOpen(card, open, { scroll = true } = {}) {
     if (!card) return;
     const detailsBtn = card.querySelector('.details-button');
     const details = card.querySelector('.asset-details');
     if (!detailsBtn || !details) return;
+
+    if (open) ensureGalleryLoaded(card);
 
     card.classList.toggle('is-open', open);
     detailsBtn.setAttribute('aria-expanded', String(open));
@@ -597,7 +635,6 @@
         textarea.remove();
       }
 
-      history.replaceState(null, '', `#${assetId}`);
       showToast(t('linkCopied'));
       button.classList.add('is-copied');
       button.title = t('copied');
@@ -651,13 +688,13 @@
       detailsBtn?.addEventListener('click', () => {
         const willOpen = !card.classList.contains('is-open');
         setCardOpen(card, willOpen);
-        if (willOpen) history.replaceState(null, '', `#${asset.id}`);
       });
 
       copyLinkBtn?.addEventListener('click', () => copyAssetLink(asset.id, copyLinkBtn));
 
-      titleLink?.addEventListener('click', () => {
-        if (assetIdFromHash() === asset.id) setCardOpen(card, true);
+      titleLink?.addEventListener('click', event => {
+        event.preventDefault();
+        setCardOpen(card, true);
       });
 
       card.querySelectorAll('.asset-tag').forEach(tagButton => {
@@ -670,9 +707,7 @@
         });
       });
 
-      card.querySelectorAll('.js-gallery-image').forEach(img => {
-        img.addEventListener('click', () => openLightbox(asset.gallery || [asset.mainImage], Number(img.dataset.galleryIndex || 0), asset.title));
-      });
+      card.querySelectorAll('.js-gallery-image').forEach(img => bindGalleryImage(img, asset));
     });
   }
 
